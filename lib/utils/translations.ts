@@ -1,0 +1,2791 @@
+import { useLanguage } from '../../contexts/language-context'
+import { SupportedLanguage } from './i18n'
+
+export interface Translations {
+  // Navigation
+  'navigation': string
+  'home': string
+  'categories': string
+  'popular': string
+  'about': string
+  'search': string
+  'language': string
+  'limited': string
+  'simple-process': string
+  'some-extra-steps': string
+  'contact-support': string
+  'privacy-rights-only': string
+  'cannot-be-deleted': string
+  
+  // Search
+  'search-placeholder': string
+  'search-page-title': string
+  'search-page-subtitle': string
+  'search-start-title': string
+  'search-start-desc': string
+  'search-tips-title': string
+  'search-tip-1': string
+  'search-tip-2': string
+  'search-tip-3': string
+  'popular-searches-title': string
+  'search-results-for': string
+  'search-range': string
+  'search-no-results': string
+  'browse-all-categories': string
+  
+  // Breadcrumb
+  'category': string
+  'difficulty': string
+  'easy': string
+  'medium': string
+  'hard': string
+  'impossible': string
+  'feedback': string
+  'social-media': string
+  'e-commerce': string
+  'gaming': string
+  'finance': string
+  'productivity': string
+  'entertainment': string
+  'communication': string
+  'education': string
+  'health': string
+  'travel': string
+  'shopping': string
+  'news': string
+  'developer': string
+  'business': string
+  'other': string
+  'contribute': string
+  'privacy-policy': string
+  'terms-of-service': string
+  'difficulty-config-not-found': string
+  // Difficulty descriptions
+  'difficulty-easy-desc': string
+  'difficulty-medium-desc': string
+  'difficulty-hard-desc': string
+  'difficulty-limited-desc': string
+  'difficulty-impossible-desc': string
+  
+  // Footer
+  'footer-about-desc': string
+  'learn-more': string
+  'resources': string
+  'all-categories': string
+  'popular-guides': string
+  'legal': string
+  'disclaimer': string
+  'contact': string
+  'submit-feedback': string
+  'footer-tagline': string
+  'footer-disclaimer': string
+  
+  // Dialog components
+  'report-error': string
+  'report-issue': string
+  'report-issue-desc': string
+  'your-email-optional': string
+  'email-placeholder': string
+  'subject': string
+  'guide-url': string
+  'your-feedback': string
+  'feedback-placeholder': string
+  'cancel': string
+  'submitting': string
+  'submit-feedback-btn': string
+  'feedback-submitted': string
+  'feedback-submitted-desc': string
+  'error': string
+  'feedback-error': string
+  'feedback-for': string
+  'suggest-feature': string
+  'suggest-feature-desc': string
+  'feature-suggestion': string
+  'feature-placeholder': string
+  'suggestion-placeholder': string
+  'submit-suggestion': string
+  'suggestion-submitted': string
+  'suggestion-submitted-desc': string
+  'suggestion-error': string
+  'general-feedback': string
+  'submit-new-guide': string
+  'submit-guide-desc': string
+  'website-name': string
+  'website-url': string
+  'deletion-url': string
+  'difficulty-level': string
+  'deletion-steps': string
+  'additional-notes': string
+  'submit-guide': string
+  'guide-submitted': string
+  'guide-submitted-desc': string
+  'guide-error': string
+  'update-existing-guide': string
+  'update-guide-desc': string
+  'guide-to-update': string
+  'what-changed': string
+  'update-guide': string
+  'update-submitted': string
+  'update-submitted-desc': string
+  'update-error': string
+  
+  // Common UI
+  'view-all': string
+  'guides': string
+  'guides-count': string
+  'no-guides-category': string
+  'no-guides-difficulty': string
+  'no-guides-in-category': string
+  'no-guides-in-difficulty': string
+  'deletion': string
+  'pagination-previous': string
+  'pagination-next': string
+  'pagination-aria-previous': string
+  'pagination-aria-next': string
+  'pagination-ellipsis': string
+  'breadcrumb-more': string
+  
+  // Page titles and descriptions
+  'site-title': string
+  'site-description': string
+  'site-keywords': string
+  'category-title': string
+  'category-description': string
+  'popular-title': string
+  'popular-description': string
+  'about-title': string
+  'about-description': string
+  // Guide page (detail)
+  'guide-title-template': string
+  'guide-description-template': string
+  'guide-keywords-template': string
+  'tldr-title': string
+  'tldr-can-delete': string
+  'tldr-cannot-delete': string
+  'applicable-regions-title': string
+  'applicable-regions-limited-title': string
+  'applicable-regions-limited-desc': string
+  'applicable-regions-global-title': string
+  'applicable-regions-global-desc': string
+  'prerequisites-title': string
+  'prereq-access-title': string
+  'prereq-access-desc': string
+  'prereq-email-title': string
+  'prereq-email-desc': string
+  'prereq-verification-title': string
+  'prereq-verification-desc': string
+  'alert-impossible-desc': string
+  'alert-limited-desc': string
+  'official-links-title': string
+  'official-links-desc': string
+  'official-links-primary': string
+  'official-links-email': string
+  'official-links-domains': string
+  'deletion-process-title': string
+  'deletion-process-expected': string
+  'deletion-notes-title': string
+  'quick-access-title': string
+  'quick-access-btn': string
+  'email-support-title': string
+  'email-address-label': string
+  'email-suggested-label': string
+  'email-suggested-subject': string
+  'email-subject': string
+  'email-suggested-body': string
+  'email-send-btn': string
+  'jump-to-process': string
+  'general-steps-title': string
+  'general-step-1': string
+  'general-step-2': string
+  'general-step-3': string
+  'general-step-4': string
+  'general-step-note-medium': string
+  'general-step-note-hard': string
+  'general-step-note-limited': string
+  'deletion-timeline-title': string
+  'timeline-immediate': string
+  'timeline-grace': string
+  'timeline-removal': string
+  'timeline-immediate-desc': string
+  'timeline-grace-desc': string
+  'timeline-removal-desc': string
+  'timeline-note': string
+  'important-info-title': string
+  'before-delete-title': string
+  'before-download-data': string
+  'before-cancel-subs': string
+  'before-remove-payment': string
+  'before-inform-contacts': string
+  'after-delete-title': string
+  'after-grace-period': string
+  'after-data-retention': string
+  'after-reuse-email': string
+  'troubleshooting-title': string
+  'troubleshoot-find-option': string
+  'troubleshoot-find-option-desc': string
+  'troubleshoot-denied': string
+  'troubleshoot-denied-desc': string
+  'troubleshoot-still-accessible': string
+  'troubleshoot-still-accessible-desc': string
+  'need-help-title': string
+  'need-help-intro': string
+  'need-help-contact-support': string
+  'need-help-help-center': string
+  'need-help-community': string
+  'reco-category-title': string
+  'reco-category-desc': string
+  'reco-difficulty-title': string
+  'reco-difficulty-desc': string
+
+  // Home page
+  'home-hero-title': string
+  'home-hero-subtitle': string
+  'trust-verified-title': string
+  'trust-verified-desc': string
+  'trust-updated-title': string
+  'trust-updated-desc': string
+  'trust-no-tricks-title': string
+  'trust-no-tricks-desc': string
+  'popular-subtitle': string
+  'category-delete-from': string
+  'home-cta-title': string
+  'home-cta-desc': string
+
+  // About page
+  'about-page-title': string
+  'about-intro': string
+  'our-mission-title': string
+  'our-mission-desc': string
+  'why-built-title': string
+  'why-built-desc': string
+  'how-rate-difficulty-title': string
+  'data-sources-title': string
+  'data-sources-desc': string
+
+  // Popular page
+  'popular-page-title': string
+  'popular-page-subtitle-count': string
+
+  // Not Found
+  'not-found-title': string
+  'not-found-desc': string
+  'go-home': string
+    'view-popular-guides': string
+
+  // Feedback page
+  'feedback-page-title': string
+  'feedback-page-subtitle': string
+  'feedback-alert-desc': string
+  'report-error-card-title': string
+  'report-error-card-desc': string
+  'report-error-card-help': string
+  'suggest-feature-card-title': string
+  'suggest-feature-card-desc': string
+  'suggest-feature-card-help': string
+  'what-we-need': string
+  'feedback-need-service-name': string
+  'feedback-need-incorrect': string
+  'feedback-need-current': string
+  'feedback-need-screenshots': string
+
+  // Contribute page
+  'contribute-subtitle': string
+  'contribute-intro': string
+  'improve-code-title': string
+  'technical-contributions': string
+  'developers-contribute-desc': string
+  'contribution-guidelines': string
+  'what-we-accept-title': string
+  'quality-standards-title': string
+  'accept-official-links': string
+  'accept-verified-steps': string
+  'accept-updates': string
+  'accept-difficulty-ratings': string
+  'standard-official-sources': string
+  'standard-clear-accurate': string
+  'standard-include-warnings': string
+  'standard-test-process': string
+  // Allow dynamic category keys (slug-based), e.g. "security--vpn", "cloud--hosting"
+  [key: string]: string
+}
+
+export const translations: {
+  en: Translations
+} & Record<string, Partial<Translations>> = {
+  en: {
+    // Navigation
+    'navigation': 'Navigation',
+    'home': 'Home',
+    'categories': 'Categories',
+    'popular': 'Popular',
+    'about': 'About',
+    'search': 'Search',
+    'language': 'Language',
+    'limited': 'Limited Availability',
+    'simple-process': 'Simple Process',
+    'some-extra-steps': 'Some Extra Steps',
+    'contact-support': 'Contact Support',
+    'privacy-rights-only': 'Privacy Rights Only',
+    'cannot-be-deleted': 'Cannot Be Deleted',
+    
+    // Search
+    'search-placeholder': 'Search for a website or service...',
+    'search-page-title': 'Search Deletion Guides',
+    'search-page-subtitle': 'Search thousands of account deletion guides for websites and services',
+    'search-start-title': 'Start Searching',
+    'search-start-desc': 'Enter a website name, domain, or service name to find deletion guides',
+    'search-tips-title': 'Search Tips:',
+    'search-tip-1': '• Try searching for website names (e.g., "Facebook", "Google")',
+    'search-tip-2': '• Use domain names (e.g., "facebook.com")',
+    'search-tip-3': '• Search by service type (e.g., "social media", "email")',
+    'popular-searches-title': 'Popular Searches:',
+    'search-results-for': 'Search results for "{query}"',
+    'search-range': 'Showing {start}-{end} of {total} results',
+    'search-no-results': 'No deletion guides found for "{query}". Please try other search terms or {browseLink}.',
+    'browse-all-categories': 'browse all categories',
+    
+    // Breadcrumb
+    'category': 'Category',
+    'difficulty': 'Difficulty',
+    'easy': 'Easy',
+    'medium': 'Medium',
+    'hard': 'Hard',
+    'impossible': 'Impossible',
+    'guides': 'guides',
+    'no-guides-in-category': 'No guides available in this category',
+    'no-guides-in-difficulty': 'No guides available for this difficulty level',
+    'difficulty-config-not-found': 'Difficulty configuration not found',
+    'difficulty-easy-desc': 'Simple process - Quick and direct deletion that can be completed in just a few clicks.',
+    'difficulty-medium-desc': 'Requires some additional steps - The deletion process needs some extra verification methods.',
+    'difficulty-hard-desc': 'Cannot be fully deleted, need to contact customer service - Complex process requiring support team contact.',
+    'difficulty-limited-desc': 'Account deletion is only available in regions with privacy rights (GDPR, CCPA, etc.).',
+    'difficulty-impossible-desc': 'Cannot be deleted - These accounts cannot be permanently removed from the platform.',
+    'feedback': 'Feedback',
+    'social-media': 'Social Media',
+    'e-commerce': 'E-commerce',
+    'gaming': 'Gaming',
+    'finance': 'Finance',
+    'productivity': 'Productivity',
+    'entertainment': 'Entertainment',
+    'communication': 'Communication',
+    'education': 'Education',
+    'health': 'Health',
+    'travel': 'Travel',
+    'shopping': 'Shopping',
+    'news': 'News',
+    'developer': 'Developer',
+    'business': 'Business',
+    // Extended categories
+    'china-apps': 'China Apps',
+    'automotive': 'Automotive',
+    'security--vpn': 'Security & VPN',
+    'government--services': 'Government & Services',
+    'software--tools': 'Software & Tools',
+    'stock-photos': 'Stock Photos',
+    'utilities': 'Utilities',
+    'books--reading': 'Books & Reading',
+    'design--creative': 'Design & Creative',
+    'dating--relationships': 'Dating & Relationships',
+    'real-estate': 'Real Estate',
+    'food--delivery': 'Food & Delivery',
+    'cloud--hosting': 'Cloud & Hosting',
+    'domain--dns': 'Domain & DNS',
+    'file-storage--sharing': 'File Storage & Sharing',
+    'anime--manga': 'Anime & Manga',
+    'forums--communities': 'Forums & Communities',
+    'fashion--lifestyle': 'Fashion & Lifestyle',
+    'qa--knowledge': 'Q&A & Knowledge',
+    'maps--navigation': 'Maps & Navigation',
+    'cryptocurrency--blockchain': 'Cryptocurrency & Blockchain',
+    'other': 'Other',
+    'contribute': 'Contribute',
+    'privacy-policy': 'Privacy Policy',
+    'terms-of-service': 'Terms of Service',
+    
+    // Footer
+    'footer-about-desc': 'Clear, verified guides for deleting your accounts from popular websites and services.',
+    'learn-more': 'Learn more →',
+    'resources': 'Resources',
+    'all-categories': 'All Categories',
+    'popular-guides': 'Popular Guides',
+    'legal': 'Legal',
+    'disclaimer': 'Disclaimer',
+    'contact': 'Contact',
+    'submit-feedback': 'Submit Feedback',
+    'footer-tagline': 'Making account deletion simple and transparent.',
+    'footer-disclaimer': 'This website is not affiliated with any of the services mentioned. All trademarks belong to their respective owners.',
+    
+    // Dialog components
+    'report-error': 'Report Error',
+    'report-issue': 'Report an Issue',
+    'report-issue-desc': 'Found an error or have feedback about this guide? Let us know and we\'ll fix it.',
+    'your-email-optional': 'Your Email (Optional)',
+    'email-placeholder': 'your@email.com',
+    'subject': 'Subject',
+    'guide-url': 'Guide URL',
+    'your-feedback': 'Your Feedback',
+    'feedback-placeholder': 'Please describe the issue or provide your feedback...',
+    'cancel': 'Cancel',
+    'submitting': 'Submitting...',
+    'submit-feedback-btn': 'Submit Feedback',
+    'feedback-submitted': 'Feedback Submitted Successfully!',
+    'feedback-submitted-desc': 'Thank you for your feedback. We appreciate your input and will review it carefully.',
+    'error': 'Error',
+    'feedback-error': 'Failed to submit feedback. Please try again.',
+    'feedback-for': 'Feedback for',
+    'suggest-feature': 'Suggest Feature',
+    'suggest-feature-desc': 'Have an idea for improving our service? We\'d love to hear it!',
+    'feature-suggestion': 'Feature Suggestion',
+    'feature-placeholder': 'Please describe your feature suggestion...',
+    'suggestion-placeholder': 'Please describe your feature suggestion...',
+    'submit-suggestion': 'Submit Suggestion',
+    'suggestion-submitted': 'Suggestion Submitted Successfully!',
+    'suggestion-submitted-desc': 'Thank you for your suggestion. We\'ll review it and consider it for future updates.',
+    'suggestion-error': 'Failed to submit suggestion. Please try again.',
+    'general-feedback': 'General Feedback',
+    'submit-new-guide': 'Submit New Guide',
+    'submit-guide-desc': 'Know how to delete an account that we don\'t have a guide for? Help others by submitting it!',
+    'website-name': 'Website Name',
+    'website-url': 'Website URL',
+    'deletion-url': 'Deletion URL',
+    'difficulty-level': 'Difficulty Level',
+    'deletion-steps': 'Deletion Steps',
+    'additional-notes': 'Additional Notes',
+    'submit-guide': 'Submit Guide',
+    'guide-submitted': 'Guide Submitted Successfully!',
+    'guide-submitted-desc': 'Thank you for contributing! We\'ll review your guide and add it to our database.',
+    'guide-error': 'Failed to submit guide. Please try again.',
+    'update-existing-guide': 'Update Existing Guide',
+    'update-guide-desc': 'Found outdated information in one of our guides? Help us keep it current!',
+    'guide-to-update': 'Guide to Update',
+    'what-changed': 'What Changed?',
+    'update-guide': 'Update Guide',
+    'update-submitted': 'Update Submitted Successfully!',
+    'update-submitted-desc': 'Thank you for helping us keep our guides up to date!',
+    'update-error': 'Failed to submit update. Please try again.',
+    
+    // Common UI
+    'view-all': 'View All',
+    'guides-count': '{count} guides',
+    'no-guides-category': 'No guides available in this category',
+    'no-guides-difficulty': 'No guides available for this difficulty level',
+    'deletion': 'Deletion',
+    'pagination-previous': 'Previous',
+    'pagination-next': 'Next',
+    'pagination-aria-previous': 'Go to previous page',
+    'pagination-aria-next': 'Go to next page',
+    'pagination-ellipsis': 'More pages',
+    'breadcrumb-more': 'More',
+    
+    // Page titles and descriptions
+    'site-title': 'How to Delete - Complete Guides for Account Deletion',
+    'site-description': 'Step-by-step guides for deleting your accounts from popular websites and services. Clear instructions, verified methods, and privacy-focused solutions.',
+    'site-keywords': 'delete account, remove profile, close account, deactivate, privacy, data protection',
+    'category-title': 'Categories - How to Delete',
+    'category-description': 'Browse account deletion guides by category. Find step-by-step instructions for deleting accounts from social media, email services, and more.',
+    'popular-title': 'Popular Guides - How to Delete',
+    'popular-description': 'Most requested account deletion guides. Learn how to delete accounts from the most popular websites and services.',
+    'about-title': 'About - How to Delete',
+    'about-description': 'Learn about our mission to make account deletion simple and transparent. Discover how we verify our guides and protect your privacy.'
+    ,
+    
+    // Home page
+    'home-hero-title': 'Take back control of your online accounts',
+    'home-hero-subtitle': 'Clear, verified guides on how to permanently delete accounts from thousands of websites and apps — updated regularly, no fluff.',
+    'trust-verified-title': 'Verified Sources',
+    'trust-verified-desc': 'Every guide links to official help pages',
+    'trust-updated-title': 'Always Updated',
+    'trust-updated-desc': 'We check and refresh steps regularly',
+    'trust-no-tricks-title': 'No Tricks',
+    'trust-no-tricks-desc': 'No popups, no data collection, no nonsense',
+    'popular-subtitle': 'Most searched account deletion guides',
+    'category-delete-from': 'Delete accounts from {category} services',
+    'home-cta-title': "Can't find what you're looking for?",
+    'home-cta-desc': 'Use our search to find deletion guides for over 2,000 websites and services.',
+
+    // About page
+    'about-page-title': 'About howtodelete.me',
+    'about-intro': 'We believe you should have full control over your online presence and the right to leave any platform whenever you choose.',
+    'our-mission-title': 'Our Mission',
+    'our-mission-desc': 'howtodelete.me provides clear, verified instructions for permanently deleting accounts from thousands of websites and services. We make it easy to find the information you need without the hassle of searching through help pages or dealing with dark patterns designed to keep you on platforms.',
+    'why-built-title': 'Why We Built This',
+    'why-built-desc': 'Many companies make it deliberately difficult to delete your account. They hide deletion options, require multiple steps, or force you to contact support. We cut through the confusion by providing direct links and clear instructions for every service.',
+    'how-rate-difficulty-title': 'How We Rate Difficulty',
+    'data-sources-title': 'Data Sources',
+    'data-sources-desc': 'Our guides are compiled from official company documentation, help centers, and verified community sources. We prioritize accuracy and regularly update our database to reflect changes in deletion processes.',
+
+    // Popular page
+    'popular-page-title': 'Popular Guides',
+    'popular-page-subtitle-count': '{count} popular service account deletion guides',
+
+    // Not Found
+    'not-found-title': 'Page Not Found',
+    'not-found-desc': "We couldn't find the guide you're looking for. Try searching for it below or browse our categories.",
+    'go-home': 'Go Home',
+    'view-popular-guides': 'View Popular Guides',
+
+    // Guide page (detail)
+    'guide-title-template': 'How to Permanently Delete Your {name} Account (2025 Guide)',
+    'guide-description-template': 'Step-by-step guide to permanently delete your {name} account.',
+    'guide-keywords-template': 'delete {name}, remove {name} account, close {name}, deactivate {name}, privacy, data removal',
+    'tldr-title': '⚡ TL;DR (Quick Summary)',
+    'tldr-can-delete': '{name} accounts can be permanently deleted',
+    'tldr-cannot-delete': '{name} accounts cannot be deleted',
+    'applicable-regions-title': 'Applicable Regions',
+    'applicable-regions-limited-title': 'GDPR/CCPA Protected Regions',
+    'applicable-regions-limited-desc': 'This deletion method is primarily available for users in EU, UK, California, and other regions with strong data protection laws.',
+    'applicable-regions-global-title': 'Global Availability',
+    'applicable-regions-global-desc': 'This deletion method is available worldwide for all users.',
+    'prerequisites-title': "What You'll Need",
+    'prereq-access-title': 'Access to your account',
+    'prereq-access-desc': 'Make sure you can log in to your {name} account',
+    'prereq-email-title': 'Email access',
+    'prereq-email-desc': 'You may need to verify deletion via email',
+    'prereq-verification-title': 'Additional verification',
+    'prereq-verification-desc': 'May require ID verification or additional steps',
+    'alert-impossible-desc': 'This account cannot be deleted. The service does not provide account deletion functionality.',
+    'alert-limited-desc': 'Account deletion is only available if you live in a location with privacy rights (GDPR, CCPA, etc.).',
+    'official-links-title': 'Official Deletion Links',
+    'official-links-desc': "Direct links to {name}'s account deletion pages",
+    'official-links-primary': 'Primary Deletion Page:',
+    'official-links-email': 'Contact Email:',
+    'official-links-domains': 'Related Domains:',
+    'deletion-process-title': '🗑️ Deletion Process',
+    'deletion-process-expected': 'Expected difficulty:',
+    'deletion-notes-title': 'Important Information',
+    'quick-access-title': 'Quick Access',
+    'quick-access-btn': 'Go to {name} Deletion Page',
+    'email-support-title': 'Contact Support via Email',
+    'email-address-label': 'Email Address:',
+    'email-suggested-label': 'Suggested Email Content:',
+    'email-suggested-subject': 'Subject: Account Deletion Request',
+    'email-subject': 'Account Deletion Request',
+    'email-suggested-body': 'Dear {name} Support Team,\n\nI would like to permanently delete my account associated with this email address. Please process this request and confirm when the deletion is complete.\n\nAccount details:\n- Email: [Your email address]\n- Username: [Your username if applicable]\n\nThank you for your assistance.\n\nBest regards,\n[Your name]',
+    'email-send-btn': 'Send Email Now',
+    'jump-to-process': 'Jump to Process',
+    'general-steps-title': 'General Steps',
+    'general-step-1': 'Log into your {name} account',
+    'general-step-2': 'Navigate to account settings or privacy settings',
+    'general-step-3': 'Find the account deletion or deactivation option',
+    'general-step-4': 'Follow the on-screen instructions to confirm deletion',
+    'general-step-note-medium': 'Note: This service may require some additional verification steps',
+    'general-step-note-hard': 'Note: You will need to contact customer support to complete the deletion process',
+    'general-step-note-limited': 'Note: Deletion may only be available if you reside in a region with data privacy laws',
+    'deletion-timeline-title': '⏰ Deletion Timeline',
+    'timeline-immediate': 'Immediate',
+    'timeline-grace': '7-30 days',
+    'timeline-removal': '30-90 days',
+    'timeline-immediate-desc': 'Account access is typically disabled immediately',
+    'timeline-grace-desc': 'Grace period where you can recover your account',
+    'timeline-removal-desc': 'Complete data removal from active systems',
+    'timeline-note': "Note: Some data may be retained longer for legal, security, or backup purposes as outlined in the service's privacy policy.",
+    'important-info-title': 'Important Information',
+    'before-delete-title': 'Before You Delete:',
+    'before-download-data': 'Download any data you want to keep',
+    'before-cancel-subs': 'Cancel any active subscriptions',
+    'before-remove-payment': 'Remove payment methods',
+    'before-inform-contacts': 'Inform contacts if necessary',
+    'after-delete-title': 'After Deletion:',
+    'after-grace-period': 'Some services have a grace period before permanent deletion',
+    'after-data-retention': 'Your data may be retained for legal or backup purposes',
+    'after-reuse-email': 'You may not be able to reuse the same email or username',
+    'troubleshooting-title': '🔧 Troubleshooting',
+    'troubleshoot-find-option': "Can't find the deletion option?",
+    'troubleshoot-find-option-desc': "Try searching for 'delete account', 'close account', or 'deactivate' in settings.",
+    'troubleshoot-denied': 'Deletion request denied?',
+    'troubleshoot-denied-desc': 'Contact customer support directly. In GDPR regions, you have a legal right to data erasure.',
+    'troubleshoot-still-accessible': 'Account still accessible after deletion?',
+    'troubleshoot-still-accessible-desc': 'Some services have a grace period. Wait 24–48 hours and try again.',
+    'need-help-title': '💬 Need Help?',
+    'need-help-intro': "If you're having trouble deleting your {name} account, here are some additional resources:",
+    'need-help-contact-support': 'Contact {name} customer support directly',
+    'need-help-help-center': 'Check their help center or FAQ section',
+    'need-help-community': 'Look for community forums or user guides',
+    'reco-category-title': 'More {category} Guides',
+    'reco-category-desc': 'Other services in the {category} category',
+    'reco-difficulty-title': 'More {label} Difficulty Guides',
+    'reco-difficulty-desc': 'Other services with a similar deletion process',
+
+  // Feedback page
+  'feedback-page-title': 'Submit Feedback and Suggest',
+  'feedback-page-subtitle': 'Help us improve by reporting outdated guides or suggesting new features.',
+  'feedback-alert-desc': 'We value your feedback! Let us know if you find any outdated information or have suggestions for improvement.',
+  'report-error-card-title': 'Report an error',
+  'report-error-card-desc': 'Found an outdated guide or broken link?',
+  'report-error-card-help': 'Please include the service name and what needs to be updated. We review all reports and update guides regularly.',
+  'suggest-feature-card-title': 'Suggest a Feature',
+  'suggest-feature-card-desc': 'Have an idea to make the site better?',
+  'suggest-feature-card-help': "We're always looking to improve. Share your suggestions for new features or improvements to existing ones.",
+  'what-we-need': 'What We Need',
+  'feedback-need-service-name': 'Service name and URL',
+  'feedback-need-incorrect': "What's incorrect or outdated",
+  'feedback-need-current': 'Current correct information (if known)',
+  'feedback-need-screenshots': 'Screenshots (if applicable)'
+  ,
+  // Contribute page
+  'contribute-subtitle': 'Help us build the most comprehensive database of account deletion guides.',
+  'contribute-intro': 'howtodelete.me is a community effort. We welcome contributions from anyone who wants to help make the internet a more user-friendly place where people have control over their data.',
+  'improve-code-title': 'Improve Code',
+  'technical-contributions': 'Technical contributions',
+  'developers-contribute-desc': 'Developers can contribute to the codebase, improve features, or fix bugs.',
+  'contribution-guidelines': 'Contribution Guidelines',
+  'what-we-accept-title': 'What We Accept',
+  'quality-standards-title': 'Quality Standards',
+  'accept-official-links': 'Official deletion links from company help pages',
+  'accept-verified-steps': 'Verified step-by-step instructions',
+  'accept-updates': 'Updates to existing guides when processes change',
+  'accept-difficulty-ratings': 'Difficulty ratings based on actual experience',
+  'standard-official-sources': 'All links must be to official sources',
+  'standard-clear-accurate': 'Instructions must be clear and accurate',
+  'standard-include-warnings': 'Include relevant warnings or notes',
+  'standard-test-process': 'Test the process before submitting'
+  },
+  es: {
+    // Navigation
+    'navigation': 'Navegación',
+    'home': 'Inicio',
+    'categories': 'Categorías',
+    'popular': 'Popular',
+    'about': 'Acerca de',
+    'search': 'Buscar',
+    'language': 'Idioma',
+    'limited': 'Disponibilidad limitada',
+    'simple-process': 'Proceso sencillo',
+    'some-extra-steps': 'Algunos pasos extra',
+    'contact-support': 'Contactar soporte',
+    'privacy-rights-only': 'Solo derechos de privacidad',
+    'cannot-be-deleted': 'No se puede eliminar',
+    'category': 'Categoría',
+    'difficulty': 'Dificultad',
+    'easy': 'Fácil',
+    'medium': 'Media',
+    'hard': 'Difícil',
+    'impossible': 'Imposible',
+    'difficulty-config-not-found': 'Configuración de dificultad no encontrada',
+    'feedback': 'Comentarios',
+    'social-media': 'Redes sociales',
+    'e-commerce': 'Comercio electrónico',
+    'gaming': 'Juegos',
+    'finance': 'Finanzas',
+    'productivity': 'Productividad',
+    'entertainment': 'Entretenimiento',
+    'communication': 'Comunicación',
+    'education': 'Educación',
+    'health': 'Salud',
+    'travel': 'Viajes',
+    'shopping': 'Compras',
+    'news': 'Noticias',
+    'developer': 'Desarrollador',
+    'business': 'Negocios',
+    // Extended categories
+    'china-apps': 'Aplicaciones chinas',
+    'automotive': 'Automotriz',
+    'security--vpn': 'Seguridad y VPN',
+    'government--services': 'Gobierno y servicios',
+    'software--tools': 'Software y herramientas',
+    'stock-photos': 'Fotos de stock',
+    'utilities': 'Utilidades',
+    'books--reading': 'Libros y lectura',
+    'design--creative': 'Diseño y creatividad',
+    'dating--relationships': 'Citas y relaciones',
+    'real-estate': 'Bienes raíces',
+    'food--delivery': 'Comida y entrega',
+    'cloud--hosting': 'Nube y alojamiento',
+    'domain--dns': 'Dominio y DNS',
+    'file-storage--sharing': 'Almacenamiento y compartición de archivos',
+    'anime--manga': 'Anime y manga',
+    'forums--communities': 'Foros y comunidades',
+    'fashion--lifestyle': 'Moda y estilo de vida',
+    'qa--knowledge': 'Preguntas y conocimiento',
+    'maps--navigation': 'Mapas y navegación',
+    'cryptocurrency--blockchain': 'Criptomonedas y blockchain',
+    'other': 'Otros',
+    'contribute': 'Contribuir',
+    'privacy-policy': 'Política de privacidad',
+    'terms-of-service': 'Términos del servicio',
+    // Dialog components
+    'report-error': 'Reportar error',
+    'report-issue': 'Reportar un problema',
+    'report-issue-desc': '¿Encontraste un error o tienes comentarios sobre esta guía? Cuéntanos y lo corregiremos.',
+    'your-email-optional': 'Tu correo (opcional)',
+    'email-placeholder': 'tu@email.com',
+    'subject': 'Asunto',
+    'guide-url': 'URL de la guía',
+    'your-feedback': 'Tu comentario',
+    'feedback-placeholder': 'Describe el problema o proporciona tus comentarios...',
+    'cancel': 'Cancelar',
+    'submitting': 'Enviando...',
+    'submit-feedback-btn': 'Enviar comentarios',
+    'feedback-submitted': '¡Comentarios enviados correctamente!',
+    'feedback-submitted-desc': 'Gracias por tus comentarios. Los revisaremos cuidadosamente.',
+    'error': 'Error',
+    'feedback-error': 'No se pudieron enviar los comentarios. Inténtalo de nuevo.',
+    'feedback-for': 'Comentarios sobre',
+    'suggest-feature': 'Sugerir función',
+    'suggest-feature-desc': '¿Tienes una idea para mejorar el servicio? ¡Queremos escucharla!',
+    'feature-suggestion': 'Sugerencia de función',
+    'feature-placeholder': 'Describe tu sugerencia de función...',
+    'suggestion-placeholder': 'Describe tu sugerencia de función...',
+    'submit-suggestion': 'Enviar sugerencia',
+    'suggestion-submitted': '¡Sugerencia enviada correctamente!',
+    'suggestion-submitted-desc': 'Gracias por tu sugerencia. La revisaremos y la consideraremos para futuras mejoras.',
+    'suggestion-error': 'No se pudo enviar la sugerencia. Inténtalo de nuevo.',
+    'general-feedback': 'Comentarios generales',
+
+    // Feedback page
+    'feedback-page-title': 'Enviar comentarios y sugerencias',
+    'feedback-page-subtitle': 'Ayúdanos a mejorar informando guías desactualizadas o proponiendo nuevas funciones.',
+    'feedback-alert-desc': '¡Valoramos tus comentarios! Si encuentras información desactualizada o tienes sugerencias, háznoslo saber.',
+    'report-error-card-title': 'Reportar un error',
+    'report-error-card-desc': '¿Encontraste una guía desactualizada o un enlace roto?',
+    'report-error-card-help': 'Incluye el nombre del servicio y qué debe actualizarse. Revisamos todos los reportes y actualizamos las guías regularmente.',
+    'suggest-feature-card-title': 'Sugerir una función',
+    'suggest-feature-card-desc': '¿Tienes una idea para mejorar el sitio?',
+    'suggest-feature-card-help': 'Siempre buscamos mejorar. Comparte tus sugerencias para nuevas funciones o mejoras.',
+    'what-we-need': 'Qué necesitamos',
+    'feedback-need-service-name': 'Nombre del servicio y URL',
+    'feedback-need-incorrect': 'Qué está incorrecto o desactualizado',
+    'feedback-need-current': 'Información correcta actual (si se conoce)',
+    'feedback-need-screenshots': 'Capturas de pantalla (si aplica)',
+    'submit-new-guide': 'Enviar nueva guía',
+    'submit-guide-desc': '¿Falta una guía? Ayúdanos a añadirla.',
+    'website-name': 'Nombre del sitio web',
+    'website-url': 'URL del sitio web',
+    'deletion-url': 'URL de eliminación',
+    'difficulty-level': 'Nivel de dificultad',
+    'deletion-steps': 'Pasos de eliminación',
+    'additional-notes': 'Notas adicionales',
+    'submit-guide': 'Enviar guía',
+    'guide-submitted': '¡Guía enviada!',
+    'guide-submitted-desc': 'Gracias por contribuir. Lo revisaremos y lo añadiremos a la base de datos.',
+    'guide-error': 'No se pudo enviar la guía. Inténtalo de nuevo.',
+    'update-existing-guide': 'Actualizar guía existente',
+    'update-guide-desc': '¿La guía está desactualizada? Ayúdanos a actualizarla.',
+    'guide-to-update': 'Guía a actualizar',
+    'what-changed': 'Qué cambió',
+    'update-guide': 'Actualizar guía',
+    'update-submitted': '¡Actualización enviada!',
+    'update-submitted-desc': 'Gracias por ayudar a mantener actualizadas las guías.',
+    'update-error': 'No se pudo enviar la actualización. Inténtalo de nuevo.',
+    'contribute-subtitle': 'Ayúdanos a construir la base de datos más completa de guías de eliminación de cuentas.',
+    'contribute-intro': 'howtodelete.me es un esfuerzo de la comunidad. Aceptamos contribuciones de cualquiera que quiera mejorar la web.',
+    'improve-code-title': 'Mejorar el código',
+    'technical-contributions': 'Contribuciones técnicas',
+    'developers-contribute-desc': 'Los desarrolladores pueden contribuir al código, mejorar funciones o corregir errores.',
+    'contribution-guidelines': 'Guías de contribución',
+    'what-we-accept-title': 'Qué aceptamos',
+    'quality-standards-title': 'Estándares de calidad',
+    'accept-official-links': 'Enlaces oficiales de páginas de ayuda de las empresas',
+    'accept-verified-steps': 'Instrucciones verificadas paso a paso',
+    'accept-updates': 'Actualizaciones de guías cuando cambian los procesos',
+    'accept-difficulty-ratings': 'Puntuaciones de dificultad basadas en experiencia real',
+    'standard-official-sources': 'Todos los enlaces deben ser fuentes oficiales',
+    'standard-clear-accurate': 'Las instrucciones deben ser claras y precisas',
+    'standard-include-warnings': 'Incluye advertencias o notas relevantes',
+    'standard-test-process': 'Prueba el proceso antes de enviar',
+
+    // Site titles & descriptions (SEO/metadata)
+    'site-title': 'How to Delete - Guías completas para eliminar cuentas',
+    'site-description': 'Guías paso a paso para eliminar tus cuentas de sitios y servicios populares. Instrucciones claras, métodos verificados y soluciones centradas en la privacidad.',
+    'site-keywords': 'eliminar cuenta, borrar perfil, cerrar cuenta, desactivar, privacidad, protección de datos',
+    'guide-title-template': 'Cómo eliminar permanentemente tu cuenta de {name} (Guía 2025)',
+    'guide-description-template': 'Guía paso a paso para eliminar permanentemente tu cuenta de {name}.',
+    'guide-keywords-template': 'eliminar {name}, borrar cuenta de {name}, cerrar {name}, desactivar {name}, privacidad, eliminación de datos',
+    'category-title': 'Categorías - How to Delete',
+    'category-description': 'Explora guías de eliminación de cuentas por categoría. Redes sociales, correo electrónico y más.',
+    'popular-title': 'Populares - How to Delete',
+    'popular-description': 'Las guías de eliminación más solicitadas. Encuentra cómo borrar cuentas en los sitios y servicios más populares.',
+    'about-title': 'Acerca de - How to Delete',
+    'about-description': 'Conoce nuestra misión de hacer la eliminación de cuentas simple y transparente. Descubre cómo verificamos guías y protegemos la privacidad.',
+
+    // Home page
+    'home-hero-title': 'Recupera el control de tus cuentas online',
+    'home-hero-subtitle': 'Guías claras y verificadas para eliminar definitivamente cuentas en miles de sitios y apps — sin trucos, con actualizaciones regulares.',
+    'trust-verified-title': 'Fuentes verificadas',
+    'trust-verified-desc': 'Cada guía enlaza a páginas oficiales de ayuda',
+    'trust-updated-title': 'Siempre actualizadas',
+    'trust-updated-desc': 'Revisamos y actualizamos los pasos regularmente',
+    'trust-no-tricks-title': 'Sin trucos',
+    'trust-no-tricks-desc': 'Sin pop-ups, sin recopilación de datos, sin relleno',
+    'popular-subtitle': 'Las guías de eliminación más buscadas',
+    'category-delete-from': 'Eliminar cuentas de servicios de {category}',
+    'home-cta-title': '¿No encuentras lo que buscas?',
+    'home-cta-desc': 'Usa la búsqueda para encontrar guías de eliminación de más de 2.000 sitios y servicios.',
+
+    // About page content
+    'about-page-title': 'Acerca de howtodelete.me',
+    'about-intro': 'Tienes derecho a controlar tu presencia online y a irte de cualquier plataforma cuando quieras.',
+    'our-mission-title': 'Nuestra misión',
+    'our-mission-desc': 'howtodelete.me ofrece guías claras y verificadas para eliminar cuentas de miles de sitios y servicios. Te ayudamos a encontrar la información sin perder tiempo entre páginas de ayuda ni caer en patrones oscuros que te retienen.',
+    'why-built-title': 'Por qué lo construimos',
+    'why-built-desc': 'Muchas empresas dificultan deliberadamente borrar cuentas: esconden la opción, exigen múltiples pasos o fuerzan a contactar soporte. Proporcionamos enlaces directos e instrucciones claras para cada servicio.',
+    'how-rate-difficulty-title': 'Cómo valoramos la dificultad',
+    'data-sources-title': 'Fuentes de datos',
+    'data-sources-desc': 'Las guías se basan en documentación oficial, centros de ayuda y fuentes comunitarias verificadas. Priorizamos la precisión y actualizamos regularmente la base de datos según cambian los procesos.',
+
+    // Popular page
+    'popular-page-title': 'Guías populares',
+    'popular-page-subtitle-count': '{count} guías de eliminación de cuentas de servicios populares',
+
+    // Not found page
+    'not-found-title': 'Página no encontrada',
+    'not-found-desc': 'No pudimos encontrar la guía que buscabas. Prueba a buscar abajo o explora las categorías.',
+    'go-home': 'Ir al inicio',
+    'view-popular-guides': 'Ver guías populares',
+
+    // Footer
+    'footer-about-desc': 'Guías claras y verificadas para eliminar tus cuentas de sitios y servicios populares.',
+    'learn-more': 'Saber más →',
+    'resources': 'Recursos',
+    'all-categories': 'Todas las categorías',
+    'popular-guides': 'Guías populares',
+    'legal': 'Legal',
+    'disclaimer': 'Aviso legal',
+    'contact': 'Contacto',
+    'submit-feedback': 'Enviar comentarios',
+    'footer-tagline': 'Hacer que eliminar cuentas sea simple y transparente.',
+    'footer-disclaimer': 'Este sitio no está afiliado con los servicios mencionados. Todas las marcas pertenecen a sus respectivos propietarios.',
+    'breadcrumb-more': 'Más',
+    
+  },
+  fr: {
+    // Navigation
+    'navigation': 'Navigation',
+    'home': 'Accueil',
+    'categories': 'Catégories',
+    'popular': 'Populaire',
+    'about': 'À propos',
+    'search': 'Recherche',
+    'language': 'Langue',
+    'limited': 'Disponibilité limitée',
+    'simple-process': 'Processus simple',
+    'some-extra-steps': 'Quelques étapes supplémentaires',
+    'contact-support': 'Contacter le support',
+    'privacy-rights-only': 'Droits de confidentialité uniquement',
+    'cannot-be-deleted': 'Ne peut pas être supprimé',
+    'category': 'Catégorie',
+    'difficulty': 'Difficulté',
+    'easy': 'Facile',
+    'medium': 'Moyenne',
+    'hard': 'Difficile',
+    'impossible': 'Impossible',
+    'difficulty-config-not-found': 'Configuration de difficulté introuvable',
+    'feedback': 'Commentaires',
+    'social-media': 'Réseaux sociaux',
+    'e-commerce': 'E-commerce',
+    'gaming': 'Jeux',
+    'finance': 'Finance',
+    'productivity': 'Productivité',
+    'entertainment': 'Divertissement',
+    'communication': 'Communication',
+    'education': 'Éducation',
+    'health': 'Santé',
+    'travel': 'Voyage',
+    'shopping': 'Shopping',
+    'news': 'Actualités',
+    'developer': 'Développeur',
+    'business': 'Entreprise',
+    // Extended categories
+    'china-apps': 'Applications chinoises',
+    'automotive': 'Automobile',
+    'security--vpn': 'Sécurité et VPN',
+    'government--services': 'Gouvernement et services',
+    'software--tools': 'Logiciels et outils',
+    'stock-photos': 'Photos de stock',
+    'utilities': 'Utilitaires',
+    'books--reading': 'Livres et lecture',
+    'design--creative': 'Design et création',
+    'dating--relationships': 'Rencontres et relations',
+    'real-estate': 'Immobilier',
+    'food--delivery': 'Restauration et livraison',
+    'cloud--hosting': 'Cloud et hébergement',
+    'domain--dns': 'Domaine et DNS',
+    'file-storage--sharing': 'Stockage et partage de fichiers',
+    'anime--manga': 'Anime et manga',
+    'forums--communities': 'Forums et communautés',
+    'fashion--lifestyle': 'Mode et style de vie',
+    'qa--knowledge': 'Q&R et connaissances',
+    'maps--navigation': 'Cartes et navigation',
+    'cryptocurrency--blockchain': 'Cryptomonnaies et blockchain',
+    'other': 'Autre',
+    'contribute': 'Contribuer',
+    'privacy-policy': 'Politique de confidentialité',
+    'terms-of-service': 'Conditions d’utilisation',
+    // Dialog components
+    'report-error': 'Signaler une erreur',
+    'report-issue': 'Signaler un problème',
+    'report-issue-desc': 'Vous avez trouvé une erreur ou avez des commentaires sur ce guide ? Dites-le nous et nous corrigerons.',
+    'your-email-optional': 'Votre e-mail (optionnel)',
+    'email-placeholder': 'votre@email.com',
+    'subject': 'Sujet',
+    'guide-url': 'URL du guide',
+    'your-feedback': 'Votre commentaire',
+    'feedback-placeholder': 'Veuillez décrire le problème ou fournir vos commentaires...',
+    'cancel': 'Annuler',
+    'submitting': 'Envoi...',
+    'submit-feedback-btn': 'Envoyer le commentaire',
+    'feedback-submitted': 'Commentaire envoyé avec succès !',
+    'feedback-submitted-desc': 'Merci pour votre retour. Nous l’examinerons attentivement.',
+    'error': 'Erreur',
+    'feedback-error': 'Échec de l’envoi du commentaire. Veuillez réessayer.',
+    'feedback-for': 'Commentaires pour',
+    'suggest-feature': 'Suggérer une fonctionnalité',
+    'suggest-feature-desc': 'Vous avez une idée pour améliorer notre service ? Nous sommes preneurs !',
+    'feature-suggestion': 'Suggestion de fonctionnalité',
+    'feature-placeholder': 'Veuillez décrire votre suggestion de fonctionnalité...',
+    'suggestion-placeholder': 'Veuillez décrire votre suggestion de fonctionnalité...',
+    'submit-suggestion': 'Envoyer la suggestion',
+    'suggestion-submitted': 'Suggestion envoyée avec succès !',
+    'suggestion-submitted-desc': 'Merci pour votre suggestion. Nous l’examinerons pour les futures mises à jour.',
+    'suggestion-error': 'Échec de l’envoi de la suggestion. Veuillez réessayer.',
+    'general-feedback': 'Commentaire général',
+
+    // Feedback page
+    'feedback-page-title': 'Envoyer des commentaires et des suggestions',
+    'feedback-page-subtitle': 'Aidez-nous à améliorer en signalant les guides obsolètes ou en proposant de nouvelles fonctionnalités.',
+    'feedback-alert-desc': 'Vos retours sont précieux ! Si vous trouvez des informations obsolètes ou avez des suggestions, faites-le nous savoir.',
+    'report-error-card-title': 'Signaler une erreur',
+    'report-error-card-desc': 'Vous avez trouvé un guide obsolète ou un lien cassé ?',
+    'report-error-card-help': 'Veuillez inclure le nom du service et ce qui doit être mis à jour. Nous examinons tous les rapports et mettons régulièrement à jour les guides.',
+    'suggest-feature-card-title': 'Suggérer une fonctionnalité',
+    'suggest-feature-card-desc': 'Vous avez une idée pour améliorer le site ?',
+    'suggest-feature-card-help': 'Nous cherchons toujours à nous améliorer. Partagez vos suggestions de nouvelles fonctionnalités ou d’améliorations.',
+    'what-we-need': 'Ce dont nous avons besoin',
+    'feedback-need-service-name': 'Nom du service et URL',
+    'feedback-need-incorrect': 'Ce qui est incorrect ou obsolète',
+    'feedback-need-current': 'Informations correctes actuelles (si connues)',
+    'feedback-need-screenshots': 'Captures d’écran (le cas échéant)',
+    'submit-new-guide': 'Soumettre un nouveau guide',
+    'submit-guide-desc': 'Un guide manque ? Aidez-nous à l’ajouter.',
+    'website-name': 'Nom du site web',
+    'website-url': 'URL du site web',
+    'deletion-url': 'URL de suppression',
+    'difficulty-level': 'Niveau de difficulté',
+    'deletion-steps': 'Étapes de suppression',
+    'additional-notes': 'Remarques supplémentaires',
+    'submit-guide': 'Soumettre le guide',
+    'guide-submitted': 'Guide soumis !',
+    'guide-submitted-desc': 'Merci pour votre contribution. Nous le vérifierons et l’ajouterons à la base de données.',
+    'guide-error': 'Échec de la soumission du guide. Veuillez réessayer.',
+    'update-existing-guide': 'Mettre à jour un guide existant',
+    'update-guide-desc': 'Le guide est obsolète ? Aidez-nous à le mettre à jour.',
+    'guide-to-update': 'Guide à mettre à jour',
+    'what-changed': 'Ce qui a changé',
+    'update-guide': 'Mettre à jour le guide',
+    'update-submitted': 'Mise à jour envoyée !',
+    'update-submitted-desc': 'Merci d’aider à garder les guides à jour.',
+    'update-error': 'Échec de l’envoi de la mise à jour. Veuillez réessayer.',
+    'contribute-subtitle': 'Aidez-nous à construire la base de données la plus complète de guides de suppression de comptes.',
+    'contribute-intro': 'howtodelete.me est un effort communautaire. Nous accueillons les contributions de toute personne souhaitant améliorer le web.',
+    'improve-code-title': 'Améliorer le code',
+    'technical-contributions': 'Contributions techniques',
+    'developers-contribute-desc': 'Les développeurs peuvent contribuer au code, améliorer des fonctionnalités ou corriger des bugs.',
+    'contribution-guidelines': 'Directives de contribution',
+    'what-we-accept-title': 'Ce que nous acceptons',
+    'quality-standards-title': 'Normes de qualité',
+    'accept-official-links': 'Liens officiels provenant des pages d’aide des entreprises',
+    'accept-verified-steps': 'Instructions vérifiées étape par étape',
+    'accept-updates': 'Mises à jour des guides lorsque les processus changent',
+    'accept-difficulty-ratings': 'Évaluations de la difficulté basées sur l’expérience réelle',
+    'standard-official-sources': 'Tous les liens doivent provenir de sources officielles',
+    'standard-clear-accurate': 'Les instructions doivent être claires et précises',
+    'standard-include-warnings': 'Inclure les avertissements ou notes pertinents',
+    'standard-test-process': 'Testez le processus avant de soumettre',
+
+    // Site titles & descriptions (SEO/metadata)
+    'site-title': 'How to Delete - Guides complets pour supprimer des comptes',
+    'site-description': 'Guides étape par étape pour supprimer vos comptes sur les sites et services populaires. Instructions claires, méthodes vérifiées et solutions axées sur la confidentialité.',
+    'site-keywords': 'supprimer compte, supprimer profil, fermer compte, désactiver, confidentialité, protection des données',
+    'guide-title-template': 'Comment supprimer définitivement votre compte {name} (Guide 2025)',
+    'guide-description-template': 'Guide étape par étape pour supprimer définitivement votre compte {name}.',
+    'guide-keywords-template': 'supprimer {name}, supprimer le compte {name}, fermer {name}, désactiver {name}, confidentialité, suppression des données',
+    'category-title': 'Catégories - How to Delete',
+    'category-description': 'Parcourez les guides de suppression de comptes par catégorie. Réseaux sociaux, e-mail, etc.',
+    'popular-title': 'Populaire - How to Delete',
+    'popular-description': 'Les guides de suppression les plus demandés. Découvrez comment supprimer des comptes sur les sites et services les plus populaires.',
+    'about-title': 'À propos - How to Delete',
+    'about-description': 'Découvrez notre mission : rendre la suppression de comptes simple et transparente. Voyez comment nous vérifions les guides et protégeons la vie privée.',
+
+    // Home page
+    'home-hero-title': 'Reprenez le contrôle de vos comptes en ligne',
+    'home-hero-subtitle': 'Des guides clairs et vérifiés pour supprimer définitivement des comptes sur des milliers de sites et d’applications — sans astuces, mis à jour régulièrement.',
+    'trust-verified-title': 'Sources vérifiées',
+    'trust-verified-desc': 'Chaque guide renvoie aux pages d’aide officielles',
+    'trust-updated-title': 'Toujours à jour',
+    'trust-updated-desc': 'Vérifications régulières et étapes mises à jour',
+    'trust-no-tricks-title': 'Sans artifices',
+    'trust-no-tricks-desc': 'Pas de pop-ups, pas de collecte de données, pas de blabla',
+    'popular-subtitle': 'Les guides de suppression les plus recherchés',
+    'category-delete-from': 'Supprimer des comptes des services {category}',
+    'home-cta-title': 'Vous ne trouvez pas ?',
+    'home-cta-desc': 'Utilisez la recherche pour trouver des guides de suppression pour plus de 2 000 sites et services.',
+
+    // About page content
+    'about-page-title': 'À propos de howtodelete.me',
+    'about-intro': 'Vous avez le droit de contrôler votre présence en ligne et de quitter toute plateforme quand vous le souhaitez.',
+    'our-mission-title': 'Notre mission',
+    'our-mission-desc': 'howtodelete.me fournit des guides clairs et vérifiés pour supprimer des comptes sur des milliers de sites et services. Nous vous aidons à trouver rapidement les informations sans vous perdre dans l’aide ni subir des dark patterns.',
+    'why-built-title': 'Pourquoi ce site',
+    'why-built-desc': 'Beaucoup d’entreprises rendent la suppression de compte volontairement difficile : option cachée, étapes multiples, contact du support. Nous offrons des liens directs et des instructions claires.',
+    'how-rate-difficulty-title': 'Comment nous évaluons la difficulté',
+    'data-sources-title': 'Sources de données',
+    'data-sources-desc': 'Les guides s’appuient sur la documentation officielle, les centres d’aide et des sources communautaires vérifiées. Nous priorisons l’exactitude et mettons à jour régulièrement.',
+
+    // Popular page
+    'popular-page-title': 'Guides populaires',
+    'popular-page-subtitle-count': '{count} guides de suppression pour des services populaires',
+
+    // Not found page
+    'not-found-title': 'Page introuvable',
+    'not-found-desc': 'Nous n’avons pas trouvé la guide demandée. Essayez de chercher ci-dessous ou parcourez les catégories.',
+    'go-home': 'Retour à l’accueil',
+    'view-popular-guides': 'Voir les guides populaires',
+
+    // Footer
+    'footer-about-desc': 'Guides clairs et vérifiés pour supprimer vos comptes des sites et services populaires.',
+    'learn-more': 'En savoir plus →',
+    'resources': 'Ressources',
+    'all-categories': 'Toutes les catégories',
+    'popular-guides': 'Guides populaires',
+    'legal': 'Mentions légales',
+    'disclaimer': 'Avertissement',
+    'contact': 'Contact',
+    'submit-feedback': 'Envoyer un commentaire',
+    'footer-tagline': 'Rendre la suppression de comptes simple et transparente.',
+    'footer-disclaimer': 'Ce site n’est affilié à aucun des services mentionnés. Toutes les marques appartiennent à leurs propriétaires.',
+    'breadcrumb-more': 'Plus',
+    
+  },
+  de: {
+    // Navigation
+    'navigation': 'Navigation',
+    'home': 'Startseite',
+    'categories': 'Kategorien',
+    'popular': 'Beliebt',
+    'about': 'Über',
+    'search': 'Suche',
+    'language': 'Sprache',
+    'limited': 'Begrenzte Verfügbarkeit',
+    'simple-process': 'Einfacher Ablauf',
+    'some-extra-steps': 'Zusätzliche Schritte',
+    'contact-support': 'Support kontaktieren',
+    'privacy-rights-only': 'Nur Datenschutzrechte',
+    'cannot-be-deleted': 'Kann nicht gelöscht werden',
+    'category': 'Kategorie',
+    'difficulty': 'Schwierigkeit',
+    'easy': 'Einfach',
+    'medium': 'Mittel',
+    'hard': 'Schwer',
+    'impossible': 'Unmöglich',
+    'difficulty-config-not-found': 'Schwierigkeitskonfiguration nicht gefunden',
+    'feedback': 'Feedback',
+    'social-media': 'Soziale Medien',
+    'e-commerce': 'E-Commerce',
+    'gaming': 'Gaming',
+    'finance': 'Finanzen',
+    'productivity': 'Produktivität',
+    'entertainment': 'Unterhaltung',
+    'communication': 'Kommunikation',
+    'education': 'Bildung',
+    'health': 'Gesundheit',
+    'travel': 'Reisen',
+    'shopping': 'Einkaufen',
+    'news': 'Nachrichten',
+    'developer': 'Entwickler',
+    'business': 'Geschäft',
+    // Extended categories
+    'china-apps': 'China-Apps',
+    'automotive': 'Automobil',
+    'security--vpn': 'Sicherheit & VPN',
+    'government--services': 'Regierung & Dienste',
+    'software--tools': 'Software & Tools',
+    'stock-photos': 'Stockfotos',
+    'utilities': 'Dienstprogramme',
+    'books--reading': 'Bücher & Lesen',
+    'design--creative': 'Design & Kreativ',
+    'dating--relationships': 'Dating & Beziehungen',
+    'real-estate': 'Immobilien',
+    'food--delivery': 'Essen & Lieferung',
+    'cloud--hosting': 'Cloud & Hosting',
+    'domain--dns': 'Domain & DNS',
+    'file-storage--sharing': 'Dateispeicherung & -freigabe',
+    'anime--manga': 'Anime & Manga',
+    'forums--communities': 'Foren & Communities',
+    'fashion--lifestyle': 'Mode & Lifestyle',
+    'qa--knowledge': 'Q&A & Wissen',
+    'maps--navigation': 'Karten & Navigation',
+    'cryptocurrency--blockchain': 'Kryptowährungen & Blockchain',
+    'other': 'Andere',
+    'contribute': 'Beitragen',
+    'privacy-policy': 'Datenschutzerklärung',
+    'terms-of-service': 'Nutzungsbedingungen',
+    // Dialog components
+    'report-error': 'Fehler melden',
+    'report-issue': 'Problem melden',
+    'report-issue-desc': 'Einen Fehler gefunden oder Feedback zu dieser Anleitung? Teilen Sie es uns mit, wir beheben es.',
+    'your-email-optional': 'Ihre E-Mail (optional)',
+    'email-placeholder': 'deine@email.com',
+    'subject': 'Betreff',
+    'guide-url': 'Anleitungs-URL',
+    'your-feedback': 'Ihr Feedback',
+    'feedback-placeholder': 'Bitte beschreiben Sie das Problem oder geben Sie Ihr Feedback...',
+    'cancel': 'Abbrechen',
+    'submitting': 'Senden...',
+    'submit-feedback-btn': 'Feedback senden',
+    'feedback-submitted': 'Feedback erfolgreich gesendet!',
+    'feedback-submitted-desc': 'Vielen Dank für Ihr Feedback. Wir werden es sorgfältig prüfen.',
+    'error': 'Fehler',
+    'feedback-error': 'Feedback konnte nicht gesendet werden. Bitte erneut versuchen.',
+    'feedback-for': 'Feedback für',
+    'suggest-feature': 'Funktion vorschlagen',
+    'suggest-feature-desc': 'Haben Sie eine Idee zur Verbesserung unseres Dienstes? Wir freuen uns darauf!',
+    'feature-suggestion': 'Funktionsvorschlag',
+    'feature-placeholder': 'Bitte beschreiben Sie Ihren Funktionsvorschlag...',
+    'suggestion-placeholder': 'Bitte beschreiben Sie Ihren Funktionsvorschlag...',
+    'submit-suggestion': 'Vorschlag senden',
+    'suggestion-submitted': 'Vorschlag erfolgreich gesendet!',
+    'suggestion-submitted-desc': 'Vielen Dank für Ihren Vorschlag. Wir prüfen ihn für zukünftige Aktualisierungen.',
+    'suggestion-error': 'Vorschlag konnte nicht gesendet werden. Bitte erneut versuchen.',
+    'general-feedback': 'Allgemeines Feedback',
+
+    // Feedback page
+    'feedback-page-title': 'Feedback und Vorschläge senden',
+    'feedback-page-subtitle': 'Hilf uns, indem du veraltete Anleitungen meldest oder neue Funktionen vorschlägst.',
+    'feedback-alert-desc': 'Wir schätzen Ihr Feedback! Wenn Sie veraltete Informationen finden oder Vorschläge haben, teilen Sie es uns mit.',
+    'report-error-card-title': 'Fehler melden',
+    'report-error-card-desc': 'Veraltete Anleitung oder defekten Link gefunden?',
+    'report-error-card-help': 'Bitte gib den Servicenamen und das zu aktualisierende Detail an. Wir prüfen alle Meldungen und aktualisieren regelmäßig.',
+    'suggest-feature-card-title': 'Funktion vorschlagen',
+    'suggest-feature-card-desc': 'Hast du eine Idee, um die Seite zu verbessern?',
+    'suggest-feature-card-help': 'Wir möchten uns stets verbessern. Teile Vorschläge für neue oder bestehende Funktionen.',
+    'what-we-need': 'Was wir benötigen',
+    'feedback-need-service-name': 'Servicename und URL',
+    'feedback-need-incorrect': 'Was ist falsch oder veraltet',
+    'feedback-need-current': 'Aktuell korrekte Informationen (falls bekannt)',
+    'feedback-need-screenshots': 'Screenshots (falls zutreffend)',
+    'submit-new-guide': 'Neuen Leitfaden einreichen',
+    'submit-guide-desc': 'Fehlt ein Leitfaden? Hilf uns, ihn hinzuzufügen.',
+    'website-name': 'Website-Name',
+    'website-url': 'Website-URL',
+    'deletion-url': 'Lösch-URL',
+    'difficulty-level': 'Schwierigkeitsgrad',
+    'deletion-steps': 'Löschschritte',
+    'additional-notes': 'Zusätzliche Hinweise',
+    'submit-guide': 'Leitfaden einreichen',
+    'guide-submitted': 'Leitfaden eingereicht!',
+    'guide-submitted-desc': 'Danke für deinen Beitrag. Wir prüfen ihn und fügen ihn der Datenbank hinzu.',
+    'guide-error': 'Leitfaden konnte nicht eingereicht werden. Bitte erneut versuchen.',
+    'update-existing-guide': 'Bestehenden Leitfaden aktualisieren',
+    'update-guide-desc': 'Ist der Leitfaden veraltet? Hilf uns, ihn zu aktualisieren.',
+    'guide-to-update': 'Zu aktualisierender Leitfaden',
+    'what-changed': 'Was sich geändert hat',
+    'update-guide': 'Leitfaden aktualisieren',
+    'update-submitted': 'Aktualisierung eingereicht!',
+    'update-submitted-desc': 'Danke, dass du hilfst, die Leitfäden aktuell zu halten.',
+    'update-error': 'Aktualisierung konnte nicht gesendet werden. Bitte erneut versuchen.',
+    'contribute-subtitle': 'Hilf uns, die umfassendste Datenbank für Kontolöschungsleitfäden zu erstellen.',
+    'contribute-intro': 'howtodelete.me ist eine Gemeinschaftsinitiative. Wir freuen uns über Beiträge von allen, die das Internet benutzerfreundlicher machen wollen.',
+    'improve-code-title': 'Code verbessern',
+    'technical-contributions': 'Technische Beiträge',
+    'developers-contribute-desc': 'Entwickler können zum Code beitragen, Funktionen verbessern oder Fehler beheben.',
+    'contribution-guidelines': 'Beitragsrichtlinien',
+    'what-we-accept-title': 'Was wir akzeptieren',
+    'quality-standards-title': 'Qualitätsstandards',
+    'accept-official-links': 'Offizielle Löschlinks aus den Hilfe-Seiten der Unternehmen',
+    'accept-verified-steps': 'Verifizierte Schritt-für-Schritt-Anleitungen',
+    'accept-updates': 'Aktualisierungen bestehender Leitfäden bei Prozessänderungen',
+    'accept-difficulty-ratings': 'Schwierigkeitsbewertungen basierend auf tatsächlicher Erfahrung',
+    'standard-official-sources': 'Alle Links müssen offizielle Quellen sein',
+    'standard-clear-accurate': 'Anleitungen müssen klar und korrekt sein',
+    'standard-include-warnings': 'Relevante Warnungen oder Hinweise einschließen',
+    'standard-test-process': 'Prozess vor dem Einreichen testen',
+
+    // Site titles & descriptions (SEO/metadata)
+    'site-title': 'How to Delete – Umfassende Leitfäden zur Kontolöschung',
+    'site-description': 'Schritt-für-Schritt-Anleitungen zum Löschen Ihrer Konten bei beliebten Websites und Diensten. Klare Hinweise, verifizierte Methoden und datenschutzorientierte Lösungen.',
+    'site-keywords': 'Konto löschen, Profil entfernen, Konto schließen, deaktivieren, Datenschutz, Datensicherheit',
+    'guide-title-template': 'So löschen Sie Ihr {name}-Konto dauerhaft (Leitfaden 2025)',
+    'guide-description-template': 'Schritt-für-Schritt-Anleitung zum dauerhaften Löschen Ihres {name}-Kontos.',
+    'guide-keywords-template': '{name} löschen, {name}-Konto entfernen, {name} schließen, {name} deaktivieren, Datenschutz, Datenlöschung',
+    'category-title': 'Kategorien – How to Delete',
+    'category-description': 'Finden Sie Kontolöschungsleitfäden nach Kategorien. Soziale Netzwerke, E-Mail und mehr.',
+    'popular-title': 'Beliebt – How to Delete',
+    'popular-description': 'Die meistgefragten Löschleitfäden. Erfahren Sie, wie Sie Konten bei beliebten Websites und Diensten löschen.',
+    'about-title': 'Über – How to Delete',
+    'about-description': 'Erfahren Sie unsere Mission: Kontolöschung einfach und transparent. So verifizieren wir Leitfäden und schützen Ihre Privatsphäre.',
+
+    // Home page
+    'home-hero-title': 'Übernehmen Sie die Kontrolle über Ihre Online-Konten',
+    'home-hero-subtitle': 'Klare, verifizierte Leitfäden zum endgültigen Löschen von Konten bei tausenden Websites und Apps — ohne Tricks, regelmäßig aktualisiert.',
+    'trust-verified-title': 'Verifizierte Quellen',
+    'trust-verified-desc': 'Jeder Leitfaden verlinkt auf offizielle Hilfe-Seiten',
+    'trust-updated-title': 'Immer aktuell',
+    'trust-updated-desc': 'Regelmäßige Prüfungen und aktualisierte Schritte',
+    'trust-no-tricks-title': 'Keine Tricks',
+    'trust-no-tricks-desc': 'Keine Pop-ups, keine Datensammlung, kein Fülltext',
+    'popular-subtitle': 'Meistgesuchte Kontolöschungsleitfäden',
+    'category-delete-from': 'Konten aus {category}-Diensten löschen',
+    'home-cta-title': 'Nicht gefunden, was Sie suchen?',
+    'home-cta-desc': 'Nutzen Sie die Suche für über 2.000 Websites und Dienste.',
+
+    // About page content
+    'about-page-title': 'Über howtodelete.me',
+    'about-intro': 'Sie haben das Recht, Ihre Online-Präsenz zu kontrollieren und jede Plattform jederzeit zu verlassen.',
+    'our-mission-title': 'Unsere Mission',
+    'our-mission-desc': 'howtodelete.me bietet klare, verifizierte Anleitungen zum dauerhaften Löschen von Konten aus tausenden Websites und Diensten. Wir helfen Ihnen, schnell die richtigen Informationen zu finden — ohne Dark Patterns und endlose Hilfeseiten.',
+    'why-built-title': 'Warum dieses Projekt',
+    'why-built-desc': 'Viele Unternehmen erschweren das Löschen bewusst: Optionen versteckt, mehrere Schritte, Kontakt zum Support. Wir liefern direkte Links und klare Anweisungen.',
+    'how-rate-difficulty-title': 'So bewerten wir die Schwierigkeit',
+    'data-sources-title': 'Datenquellen',
+    'data-sources-desc': 'Leitfäden basieren auf offizieller Dokumentation, Help-Centern und verifizierten Community-Quellen. Genauigkeit hat Vorrang; wir aktualisieren regelmäßig.',
+
+    // Popular page
+    'popular-page-title': 'Beliebte Leitfäden',
+    'popular-page-subtitle-count': '{count} Leitfäden zur Kontolöschung bei beliebten Diensten',
+
+    // Not found page
+    'not-found-title': 'Seite nicht gefunden',
+    'not-found-desc': 'Wir konnten den gesuchten Leitfaden nicht finden. Suchen Sie unten oder stöbern Sie in den Kategorien.',
+    'go-home': 'Zur Startseite',
+    'view-popular-guides': 'Beliebte Leitfäden anzeigen',
+
+    // Footer
+    'footer-about-desc': 'Klare, verifizierte Leitfäden zum Löschen Ihrer Konten bei beliebten Websites und Diensten.',
+    'learn-more': 'Mehr erfahren →',
+    'resources': 'Ressourcen',
+    'all-categories': 'Alle Kategorien',
+    'popular-guides': 'Beliebte Leitfäden',
+    'legal': 'Rechtliches',
+    'disclaimer': 'Haftungsausschluss',
+    'contact': 'Kontakt',
+    'submit-feedback': 'Feedback senden',
+    'footer-tagline': 'Kontolöschung einfach und transparent.',
+    'footer-disclaimer': 'Diese Website ist nicht mit genannten Diensten verbunden. Alle Marken gehören ihren jeweiligen Inhabern.',
+    'breadcrumb-more': 'Mehr',
+    
+  },
+  it: {
+    // Navigation
+    'navigation': 'Navigazione',
+    'home': 'Home',
+    'categories': 'Categorie',
+    'popular': 'Popolari',
+    'about': 'Informazioni',
+    'search': 'Ricerca',
+    'language': 'Lingua',
+    'limited': 'Disponibilità limitata',
+    'simple-process': 'Processo semplice',
+    'some-extra-steps': 'Alcuni passaggi extra',
+    'contact-support': 'Contatta il supporto',
+    'privacy-rights-only': 'Solo diritti sulla privacy',
+    'cannot-be-deleted': 'Non può essere eliminato',
+    'category': 'Categoria',
+    'difficulty': 'Difficoltà',
+    'easy': 'Facile',
+    'medium': 'Media',
+    'hard': 'Difficile',
+    'impossible': 'Impossibile',
+    'difficulty-config-not-found': 'Configurazione della difficoltà non trovata',
+    'feedback': 'Feedback',
+    'social-media': 'Social media',
+    'e-commerce': 'E-commerce',
+    'gaming': 'Giochi',
+    'finance': 'Finanza',
+    'productivity': 'Produttività',
+    'entertainment': 'Intrattenimento',
+    'communication': 'Comunicazione',
+    'education': 'Istruzione',
+    'health': 'Salute',
+    'travel': 'Viaggi',
+    'shopping': 'Shopping',
+    'news': 'Notizie',
+    'developer': 'Sviluppatore',
+    'business': 'Business',
+    // Extended categories
+    'china-apps': 'App cinesi',
+    'automotive': 'Automobili',
+    'security--vpn': 'Sicurezza e VPN',
+    'government--services': 'Governo e servizi',
+    'software--tools': 'Software e strumenti',
+    'stock-photos': 'Foto stock',
+    'utilities': 'Utility',
+    'books--reading': 'Libri e lettura',
+    'design--creative': 'Design e creatività',
+    'dating--relationships': 'Incontri e relazioni',
+    'real-estate': 'Immobiliare',
+    'food--delivery': 'Cibo e consegna',
+    'cloud--hosting': 'Cloud e hosting',
+    'domain--dns': 'Dominio e DNS',
+    'file-storage--sharing': 'Archiviazione e condivisione file',
+    'anime--manga': 'Anime e manga',
+    'forums--communities': 'Forum e comunità',
+    'fashion--lifestyle': 'Moda e lifestyle',
+    'qa--knowledge': 'Q&A e conoscenza',
+    'maps--navigation': 'Mappe e navigazione',
+    'cryptocurrency--blockchain': 'Criptovalute e blockchain',
+    'other': 'Altro',
+    'contribute': 'Contribuire',
+    'privacy-policy': 'Informativa sulla privacy',
+    'terms-of-service': 'Termini di servizio',
+    // Dialog components
+    'report-error': 'Segnala errore',
+    'report-issue': 'Segnala un problema',
+    'report-issue-desc': 'Hai trovato un errore o hai feedback su questa guida? Facci sapere e lo correggeremo.',
+    'your-email-optional': 'La tua email (opzionale)',
+    'email-placeholder': 'tu@email.com',
+    'subject': 'Oggetto',
+    'guide-url': 'URL della guida',
+    'your-feedback': 'Il tuo feedback',
+    'feedback-placeholder': 'Descrivi il problema o fornisci i tuoi commenti...',
+    'cancel': 'Annulla',
+    'submitting': 'Invio...',
+    'submit-feedback-btn': 'Invia feedback',
+    'feedback-submitted': 'Feedback inviato con successo!',
+    'feedback-submitted-desc': 'Grazie per il tuo feedback. Lo esamineremo con attenzione.',
+    'error': 'Errore',
+    'feedback-error': 'Impossibile inviare il feedback. Riprova.',
+    'feedback-for': 'Feedback su',
+    'suggest-feature': 'Suggerisci funzionalità',
+    'suggest-feature-desc': 'Hai un’idea per migliorare il servizio? Dicci la tua!',
+    'feature-suggestion': 'Suggerimento di funzionalità',
+    'feature-placeholder': 'Descrivi il tuo suggerimento di funzionalità...',
+    'suggestion-placeholder': 'Descrivi il tuo suggerimento di funzionalità...',
+    'submit-suggestion': 'Invia suggerimento',
+    'suggestion-submitted': 'Suggerimento inviato con successo!',
+    'suggestion-submitted-desc': 'Grazie per il tuo suggerimento. Lo prenderemo in considerazione per futuri aggiornamenti.',
+    'suggestion-error': 'Impossibile inviare il suggerimento. Riprova.',
+    'general-feedback': 'Feedback generale',
+
+    // Feedback page
+    'feedback-page-title': 'Invia feedback e suggerimenti',
+    'feedback-page-subtitle': 'Aiutaci a migliorare segnalando guide obsolete o proponendo nuove funzionalità.',
+    'feedback-alert-desc': 'Apprezziamo i tuoi feedback! Se trovi informazioni obsolete o hai suggerimenti, faccelo sapere.',
+    'report-error-card-title': 'Segnala un errore',
+    'report-error-card-desc': 'Hai trovato una guida obsoleta o un link non funzionante?',
+    'report-error-card-help': 'Includi il nome del servizio e cosa deve essere aggiornato. Esaminiamo tutte le segnalazioni e aggiorniamo regolarmente le guide.',
+    'suggest-feature-card-title': 'Suggerisci una funzionalità',
+    'suggest-feature-card-desc': 'Hai un’idea per migliorare il sito?',
+    'suggest-feature-card-help': 'Cerchiamo sempre di migliorare. Condividi i tuoi suggerimenti per nuove funzionalità o miglioramenti.',
+    'what-we-need': 'Cosa ci serve',
+    'feedback-need-service-name': 'Nome del servizio e URL',
+    'feedback-need-incorrect': 'Cosa è errato o obsoleto',
+    'feedback-need-current': 'Informazioni corrette attuali (se note)',
+    'feedback-need-screenshots': 'Screenshot (se applicabile)',
+    'submit-new-guide': 'Invia nuova guida',
+    'submit-guide-desc': 'Manca una guida? Aiutaci ad aggiungerla.',
+    'website-name': 'Nome del sito web',
+    'website-url': 'URL del sito web',
+    'deletion-url': 'URL di eliminazione',
+    'difficulty-level': 'Livello di difficoltà',
+    'deletion-steps': 'Passaggi di eliminazione',
+    'additional-notes': 'Note aggiuntive',
+    'submit-guide': 'Invia guida',
+    'guide-submitted': 'Guida inviata!',
+    'guide-submitted-desc': 'Grazie per il contributo. Lo esamineremo e lo aggiungeremo al database.',
+    'guide-error': 'Impossibile inviare la guida. Riprova.',
+    'update-existing-guide': 'Aggiorna guida esistente',
+    'update-guide-desc': 'La guida è obsoleta? Aiutaci ad aggiornarla.',
+    'guide-to-update': 'Guida da aggiornare',
+    'what-changed': 'Cosa è cambiato',
+    'update-guide': 'Aggiorna guida',
+    'update-submitted': 'Aggiornamento inviato!',
+    'update-submitted-desc': 'Grazie per aiutare a mantenere aggiornate le guide.',
+    'update-error': 'Impossibile inviare l’aggiornamento. Riprova.',
+    'contribute-subtitle': 'Aiutaci a creare il database più completo di guide per l’eliminazione degli account.',
+    'contribute-intro': 'howtodelete.me è uno sforzo della comunità. Accogliamo i contributi di chiunque voglia rendere il web più user-friendly.',
+    'improve-code-title': 'Migliora il codice',
+    'technical-contributions': 'Contributi tecnici',
+    'developers-contribute-desc': 'Gli sviluppatori possono contribuire al codice, migliorare le funzionalità o correggere bug.',
+    'contribution-guidelines': 'Linee guida per i contributi',
+    'what-we-accept-title': 'Cosa accettiamo',
+    'quality-standards-title': 'Standard di qualità',
+    'accept-official-links': 'Link ufficiali di eliminazione dalle pagine di supporto delle aziende',
+    'accept-verified-steps': 'Istruzioni verificate passo dopo passo',
+    'accept-updates': 'Aggiornamenti alle guide esistenti quando i processi cambiano',
+    'accept-difficulty-ratings': 'Valutazioni della difficoltà basate su esperienza reale',
+    'standard-official-sources': 'Tutti i link devono essere fonti ufficiali',
+    'standard-clear-accurate': 'Le istruzioni devono essere chiare e accurate',
+    'standard-include-warnings': 'Includere avvertenze o note rilevanti',
+    'standard-test-process': 'Testa il processo prima di inviare',
+
+    // Site titles & descriptions (SEO/metadata)
+    'site-title': 'How to Delete - Guide complete per eliminare account',
+    'site-description': 'Guide passo-passo per eliminare i tuoi account da siti e servizi popolari. Istruzioni chiare, metodi verificati e soluzioni incentrate sulla privacy.',
+    'site-keywords': 'eliminare account, rimuovere profilo, chiudere account, disattivare, privacy, protezione dei dati',
+    'guide-title-template': 'Come eliminare definitivamente il tuo account {name} (Guida 2025)',
+    'guide-description-template': 'Guida passo-passo per eliminare definitivamente il tuo account {name}.',
+    'guide-keywords-template': 'eliminare {name}, rimuovere account {name}, chiudere {name}, disattivare {name}, privacy, eliminazione dati',
+    'category-title': 'Categorie - How to Delete',
+    'category-description': 'Trova guide di eliminazione account per categoria. Social, email e altro.',
+    'popular-title': 'Popolari - How to Delete',
+    'popular-description': 'Le guide di eliminazione più richieste. Scopri come cancellare account sui siti e servizi più popolari.',
+    'about-title': 'Informazioni - How to Delete',
+    'about-description': 'La nostra missione: rendere l’eliminazione degli account semplice e trasparente. Scopri come verifichiamo le guide e proteggiamo la privacy.',
+
+    // Home page
+    'home-hero-title': 'Riprendi il controllo dei tuoi account online',
+    'home-hero-subtitle': 'Guide chiare e verificate per eliminare definitivamente gli account su migliaia di siti e app — senza trucchi, con aggiornamenti regolari.',
+    'trust-verified-title': 'Fonti verificate',
+    'trust-verified-desc': 'Ogni guida rimanda alle pagine di aiuto ufficiali',
+    'trust-updated-title': 'Sempre aggiornate',
+    'trust-updated-desc': 'Controlli regolari e passaggi aggiornati',
+    'trust-no-tricks-title': 'Senza trucchi',
+    'trust-no-tricks-desc': 'Niente pop-up, nessuna raccolta dati, niente riempitivi',
+    'popular-subtitle': 'Le guide di eliminazione più cercate',
+    'category-delete-from': 'Elimina account dai servizi {category}',
+    'home-cta-title': 'Non trovi ciò che cerchi?',
+    'home-cta-desc': 'Usa la ricerca per trovare guide di eliminazione per oltre 2.000 siti e servizi.',
+
+    // About page content
+    'about-page-title': 'Informazioni su howtodelete.me',
+    'about-intro': 'Hai il diritto di controllare la tua presenza online e di lasciare qualsiasi piattaforma quando vuoi.',
+    'our-mission-title': 'La nostra missione',
+    'our-mission-desc': 'howtodelete.me offre guide chiare e verificate per eliminare gli account da migliaia di siti e servizi. Ti aiutiamo a trovare rapidamente le informazioni senza perderti nelle pagine di aiuto né incappare in dark pattern.',
+    'why-built-title': 'Perché lo abbiamo creato',
+    'why-built-desc': 'Molte aziende rendono volutamente difficile cancellare gli account: opzioni nascoste, più passaggi, contatto con il supporto. Forniamo link diretti e istruzioni chiare.',
+    'how-rate-difficulty-title': 'Come valutiamo la difficoltà',
+    'data-sources-title': 'Fonti dati',
+    'data-sources-desc': 'Le guide si basano su documentazione ufficiale, help center e fonti comunitarie verificate. Diamo priorità alla precisione e aggiorniamo regolarmente il database.',
+
+    // Popular page
+    'popular-page-title': 'Guide popolari',
+    'popular-page-subtitle-count': '{count} guide di eliminazione account per servizi popolari',
+
+    // Not found page
+    'not-found-title': 'Pagina non trovata',
+    'not-found-desc': 'Non abbiamo trovato la guida richiesta. Prova a cercare qui sotto o sfoglia le categorie.',
+    'go-home': 'Torna alla home',
+    'view-popular-guides': 'Vedi guide popolari',
+
+    // Footer
+    'footer-about-desc': 'Guide chiare e verificate per eliminare i tuoi account da siti e servizi popolari.',
+    'learn-more': 'Scopri di più →',
+    'resources': 'Risorse',
+    'all-categories': 'Tutte le categorie',
+    'popular-guides': 'Guide popolari',
+    'legal': 'Note legali',
+    'disclaimer': 'Disclaimer',
+    'contact': 'Contatti',
+    'submit-feedback': 'Invia feedback',
+    'footer-tagline': 'Rendere l’eliminazione degli account semplice e trasparente.',
+    'footer-disclaimer': 'Questo sito non è affiliato ai servizi menzionati. Tutti i marchi appartengono ai rispettivi proprietari.',
+    'breadcrumb-more': 'Altro',
+    
+  },
+  pt: {
+    // Navigation
+    'navigation': 'Navegação',
+    'home': 'Início',
+    'categories': 'Categorias',
+    'popular': 'Popular',
+    'about': 'Sobre',
+    'search': 'Buscar',
+    'language': 'Idioma',
+    'limited': 'Disponibilidade limitada',
+    'simple-process': 'Processo simples',
+    'some-extra-steps': 'Alguns passos extras',
+    'contact-support': 'Contatar suporte',
+    'privacy-rights-only': 'Apenas direitos de privacidade',
+    'cannot-be-deleted': 'Não pode ser excluído',
+    'category': 'Categoria',
+    'difficulty': 'Dificuldade',
+    'easy': 'Fácil',
+    'medium': 'Média',
+    'hard': 'Difícil',
+    'impossible': 'Impossível',
+    'difficulty-config-not-found': 'Configuração de dificuldade não encontrada',
+    'feedback': 'Feedback',
+    'social-media': 'Redes sociais',
+    'e-commerce': 'E-commerce',
+    'gaming': 'Jogos',
+    'finance': 'Finanças',
+    'productivity': 'Produtividade',
+    'entertainment': 'Entretenimento',
+    'communication': 'Comunicação',
+    'education': 'Educação',
+    'health': 'Saúde',
+    'travel': 'Viagem',
+    'shopping': 'Compras',
+    'news': 'Notícias',
+    'developer': 'Desenvolvedor',
+    'business': 'Negócios',
+    // Extended categories
+    'china-apps': 'Aplicativos chineses',
+    'automotive': 'Automotivo',
+    'security--vpn': 'Segurança e VPN',
+    'government--services': 'Governo e serviços',
+    'software--tools': 'Software e ferramentas',
+    'stock-photos': 'Fotos de banco de imagens',
+    'utilities': 'Utilitários',
+    'books--reading': 'Livros e leitura',
+    'design--creative': 'Design e criatividade',
+    'dating--relationships': 'Relacionamentos e namoro',
+    'real-estate': 'Imóveis',
+    'food--delivery': 'Comida e entrega',
+    'cloud--hosting': 'Cloud e hospedagem',
+    'domain--dns': 'Domínio e DNS',
+    'file-storage--sharing': 'Armazenamento e compartilhamento de arquivos',
+    'anime--manga': 'Anime e mangá',
+    'forums--communities': 'Fóruns e comunidades',
+    'fashion--lifestyle': 'Moda e estilo de vida',
+    'qa--knowledge': 'Perguntas e conhecimento',
+    'maps--navigation': 'Mapas e navegação',
+    'cryptocurrency--blockchain': 'Criptomoedas e blockchain',
+    'other': 'Outros',
+    'contribute': 'Contribuir',
+    'privacy-policy': 'Política de privacidade',
+    'terms-of-service': 'Termos de serviço',
+    // Dialog components
+    'report-error': 'Reportar erro',
+    'report-issue': 'Reportar problema',
+    'report-issue-desc': 'Encontrou um erro ou tem comentários sobre este guia? Conte-nos e corrigiremos.',
+    'your-email-optional': 'Seu e-mail (opcional)',
+    'email-placeholder': 'seu@email.com',
+    'subject': 'Assunto',
+    'guide-url': 'URL do guia',
+    'your-feedback': 'Seu feedback',
+    'feedback-placeholder': 'Descreva o problema ou forneça seus comentários...',
+    'cancel': 'Cancelar',
+    'submitting': 'Enviando...',
+    'submit-feedback-btn': 'Enviar feedback',
+    'feedback-submitted': 'Feedback enviado com sucesso!',
+    'feedback-submitted-desc': 'Obrigado pelo seu feedback. Vamos analisá-lo com atenção.',
+    'error': 'Erro',
+    'feedback-error': 'Falha ao enviar o feedback. Tente novamente.',
+    'feedback-for': 'Feedback sobre',
+    'suggest-feature': 'Sugerir recurso',
+    'suggest-feature-desc': 'Tem uma ideia para melhorar nosso serviço? Queremos ouvir!',
+    'feature-suggestion': 'Sugestão de recurso',
+    'feature-placeholder': 'Descreva sua sugestão de recurso...',
+    'suggestion-placeholder': 'Descreva sua sugestão de recurso...',
+    'submit-suggestion': 'Enviar sugestão',
+    'suggestion-submitted': 'Sugestão enviada com sucesso!',
+    'suggestion-submitted-desc': 'Obrigado pela sugestão. Vamos considerar em futuras atualizações.',
+    'suggestion-error': 'Falha ao enviar a sugestão. Tente novamente.',
+    'general-feedback': 'Feedback geral',
+
+    // Feedback page
+    'feedback-page-title': 'Enviar feedback e sugestões',
+    'feedback-page-subtitle': 'Ajude a melhorar reportando guias desatualizados ou sugerindo novos recursos.',
+    'feedback-alert-desc': 'Valorizamos seu feedback! Se encontrar informações desatualizadas ou tiver sugestões, avise-nos.',
+    'report-error-card-title': 'Reportar erro',
+    'report-error-card-desc': 'Encontrou uma guia desatualizada ou um link quebrado?',
+    'report-error-card-help': 'Inclua o nome do serviço e o que precisa ser atualizado. Revisamos todos os relatórios e atualizamos as guias regularmente.',
+    'suggest-feature-card-title': 'Sugerir recurso',
+    'suggest-feature-card-desc': 'Tem uma ideia para melhorar o site?',
+    'suggest-feature-card-help': 'Estamos sempre buscando melhorar. Compartilhe suas sugestões de novos recursos ou melhorias.',
+    'what-we-need': 'O que precisamos',
+    'feedback-need-service-name': 'Nome do serviço e URL',
+    'feedback-need-incorrect': 'O que está incorreto ou desatualizado',
+    'feedback-need-current': 'Informações corretas atuais (se conhecidas)',
+    'feedback-need-screenshots': 'Capturas de tela (se aplicável)',
+    'submit-new-guide': 'Enviar novo guia',
+    'submit-guide-desc': 'Está faltando um guia? Ajude-nos a adicioná-lo.',
+    'website-name': 'Nome do site',
+    'website-url': 'URL do site',
+    'deletion-url': 'URL de exclusão',
+    'difficulty-level': 'Nível de dificuldade',
+    'deletion-steps': 'Etapas de exclusão',
+    'additional-notes': 'Observações adicionais',
+    'submit-guide': 'Enviar guia',
+    'guide-submitted': 'Guia enviado!',
+    'guide-submitted-desc': 'Obrigado por contribuir. Vamos revisar e adicionar ao banco de dados.',
+    'guide-error': 'Falha ao enviar o guia. Tente novamente.',
+    'update-existing-guide': 'Atualizar guia existente',
+    'update-guide-desc': 'O guia está desatualizado? Ajude-nos a atualizá-lo.',
+    'guide-to-update': 'Guia a ser atualizado',
+    'what-changed': 'O que mudou',
+    'update-guide': 'Atualizar guia',
+    'update-submitted': 'Atualização enviada!',
+    'update-submitted-desc': 'Obrigado por ajudar a manter os guias atualizados.',
+    'update-error': 'Falha ao enviar a atualização. Tente novamente.',
+    'contribute-subtitle': 'Ajude-nos a construir o banco de dados mais completo de guias de exclusão de contas.',
+    'contribute-intro': 'howtodelete.me é um esforço da comunidade. Aceitamos contribuições de qualquer pessoa que queira tornar a web mais amigável.',
+    'improve-code-title': 'Melhorar o código',
+    'technical-contributions': 'Contribuições técnicas',
+    'developers-contribute-desc': 'Desenvolvedores podem contribuir com o código, melhorar recursos ou corrigir bugs.',
+    'contribution-guidelines': 'Diretrizes de contribuição',
+    'what-we-accept-title': 'O que aceitamos',
+    'quality-standards-title': 'Padrões de qualidade',
+    'accept-official-links': 'Links oficiais de exclusão das páginas de ajuda das empresas',
+    'accept-verified-steps': 'Instruções verificadas passo a passo',
+    'accept-updates': 'Atualizações de guias quando processos mudam',
+    'accept-difficulty-ratings': 'Avaliações de dificuldade baseadas em experiência real',
+    'standard-official-sources': 'Todos os links devem ser de fontes oficiais',
+    'standard-clear-accurate': 'As instruções devem ser claras e precisas',
+    'standard-include-warnings': 'Inclua avisos ou notas relevantes',
+    'standard-test-process': 'Teste o processo antes de enviar'
+  ,
+    // Site titles & descriptions (SEO/metadata)
+    'site-title': 'How to Delete - Guia completo para excluir contas',
+    'site-description': 'Passo a passo para excluir suas contas de sites e serviços populares. Instruções claras, métodos verificados e soluções com foco em privacidade.',
+    'site-keywords': 'excluir conta, remover perfil, encerrar conta, desativar, privacidade, proteção de dados',
+    'guide-title-template': 'Como excluir permanentemente sua conta {name} (Guia 2025)',
+    'guide-description-template': 'Guia passo a passo para excluir permanentemente sua conta {name}.',
+    'guide-keywords-template': 'excluir {name}, remover conta {name}, encerrar {name}, desativar {name}, privacidade, exclusão de dados',
+    'category-title': 'Categorias - How to Delete',
+    'category-description': 'Encontre guias de exclusão de contas por categoria. Redes sociais, e‑mail e mais.',
+    'popular-title': 'Populares - How to Delete',
+    'popular-description': 'Os guias de exclusão mais procurados. Veja como apagar contas nos sites e serviços mais populares.',
+    'about-title': 'Sobre - How to Delete',
+    'about-description': 'Nossa missão: tornar a exclusão de contas simples e transparente. Saiba como verificamos os guias e protegemos a privacidade.',
+
+    // Home page
+    'home-hero-title': 'Retome o controle dos seus contas online',
+    'home-hero-subtitle': 'Guias claros e verificados para excluir contas de milhares de sites e apps — sem truques, com atualizações regulares.',
+    'trust-verified-title': 'Fontes verificadas',
+    'trust-verified-desc': 'Todo guia aponta para páginas oficiais de ajuda',
+    'trust-updated-title': 'Sempre atualizado',
+    'trust-updated-desc': 'Revisões regulares e passos atualizados',
+    'trust-no-tricks-title': 'Sem truques',
+    'trust-no-tricks-desc': 'Sem pop‑ups, sem coleta de dados, sem enrolação',
+    'popular-subtitle': 'Os guias de exclusão mais buscados',
+    'category-delete-from': 'Excluir contas de serviços {category}',
+    'home-cta-title': 'Não achou o que procura?',
+    'home-cta-desc': 'Use a busca para encontrar guias de exclusão para mais de 2.000 sites e serviços.',
+
+    // About page content
+    'about-page-title': 'Sobre o howtodelete.me',
+    'about-intro': 'Você tem o direito de controlar sua presença online e sair de qualquer plataforma quando quiser.',
+    'our-mission-title': 'Nossa missão',
+    'our-mission-desc': 'O howtodelete.me oferece guias claros e verificados para excluir contas em milhares de sites e serviços. Ajudamos você a encontrar rápido o que precisa, sem se perder em páginas de ajuda ou cair em dark patterns.',
+    'why-built-title': 'Por que criamos',
+    'why-built-desc': 'Muitas empresas dificultam a exclusão de contas: opções escondidas, vários passos, contato com suporte. Nós fornecemos links diretos e instruções objetivas.',
+    'how-rate-difficulty-title': 'Como avaliamos a dificuldade',
+    'data-sources-title': 'Fontes de dados',
+    'data-sources-desc': 'Os guias se baseiam em documentação oficial, centros de ajuda e fontes comunitárias verificadas. Priorizamos a precisão e atualizamos o banco regularmente.',
+
+    // Popular page
+    'popular-page-title': 'Guias populares',
+    'popular-page-subtitle-count': '{count} guias de exclusão de contas para serviços populares',
+
+    // Not found page
+    'not-found-title': 'Página não encontrada',
+    'not-found-desc': 'Não encontramos o guia solicitado. Tente buscar abaixo ou navegar por categorias.',
+    'go-home': 'Ir para a página inicial',
+    'view-popular-guides': 'Ver guias populares',
+
+    // Footer
+    'footer-about-desc': 'Guias claros e verificados para excluir suas contas de sites e serviços populares.',
+    'learn-more': 'Saiba mais →',
+    'resources': 'Recursos',
+    'all-categories': 'Todas as categorias',
+    'popular-guides': 'Guias populares',
+    'legal': 'Legal',
+    'disclaimer': 'Aviso legal',
+    'contact': 'Contato',
+    'submit-feedback': 'Enviar feedback',
+    'footer-tagline': 'Tornar a exclusão de contas simples e transparente.',
+    'footer-disclaimer': 'Este site não tem afiliação com os serviços mencionados. Todas as marcas pertencem aos seus respectivos proprietários.',
+    'breadcrumb-more': 'Mais',
+    
+  },
+  ru: {
+    // Navigation
+    'navigation': 'Навигация',
+    'home': 'Главная',
+    'categories': 'Категории',
+    'popular': 'Популярное',
+    'about': 'О сайте',
+    'search': 'Поиск',
+    'language': 'Язык',
+    'limited': 'Ограниченная доступность',
+    'simple-process': 'Простой процесс',
+    'some-extra-steps': 'Некоторые дополнительные шаги',
+    'contact-support': 'Связаться с поддержкой',
+    'privacy-rights-only': 'Только права на конфиденциальность',
+    'cannot-be-deleted': 'Невозможно удалить',
+    'category': 'Категория',
+    'difficulty': 'Сложность',
+    'easy': 'Лёгкая',
+    'medium': 'Средняя',
+    'hard': 'Сложная',
+    'impossible': 'Невозможно',
+    'difficulty-config-not-found': 'Конфигурация сложности не найдена',
+    'feedback': 'Отзыв',
+    'social-media': 'Социальные сети',
+    'e-commerce': 'Электронная коммерция',
+    'gaming': 'Игры',
+    'finance': 'Финансы',
+    'productivity': 'Продуктивность',
+    'entertainment': 'Развлечения',
+    'communication': 'Связь',
+    'education': 'Образование',
+    'health': 'Здоровье',
+    'travel': 'Путешествия',
+    'shopping': 'Покупки',
+    'news': 'Новости',
+    'developer': 'Разработчик',
+    'business': 'Бизнес',
+    // Extended categories
+    'china-apps': 'Китайские приложения',
+    'automotive': 'Автомобили',
+    'security--vpn': 'Безопасность и VPN',
+    'government--services': 'Государство и услуги',
+    'software--tools': 'Программное обеспечение и инструменты',
+    'stock-photos': 'Стоковые фото',
+    'utilities': 'Утилиты',
+    'books--reading': 'Книги и чтение',
+    'design--creative': 'Дизайн и творчество',
+    'dating--relationships': 'Знакомства и отношения',
+    'real-estate': 'Недвижимость',
+    'food--delivery': 'Еда и доставка',
+    'cloud--hosting': 'Облако и хостинг',
+    'domain--dns': 'Домены и DNS',
+    'file-storage--sharing': 'Хранение и обмен файлами',
+    'anime--manga': 'Аниме и манга',
+    'forums--communities': 'Форумы и сообщества',
+    'fashion--lifestyle': 'Мода и образ жизни',
+    'qa--knowledge': 'Вопросы-ответы и знания',
+    'maps--navigation': 'Карты и навигация',
+    'cryptocurrency--blockchain': 'Криптовалюта и блокчейн',
+    'other': 'Другое',
+    'contribute': 'Внести вклад',
+    'privacy-policy': 'Политика конфиденциальности',
+    'terms-of-service': 'Условия обслуживания',
+    // Dialog components
+    'report-error': 'Сообщить об ошибке',
+    'report-issue': 'Сообщить о проблеме',
+    'report-issue-desc': 'Нашли ошибку или хотите оставить отзыв об этой инструкции? Сообщите нам, и мы исправим.',
+    'your-email-optional': 'Ваш email (необязательно)',
+    'email-placeholder': 'your@email.com',
+    'subject': 'Тема',
+    'guide-url': 'URL инструкции',
+    'your-feedback': 'Ваш отзыв',
+    'feedback-placeholder': 'Опишите проблему или оставьте свой отзыв...',
+    'cancel': 'Отмена',
+    'submitting': 'Отправка...',
+    'submit-feedback-btn': 'Отправить отзыв',
+    'feedback-submitted': 'Отзыв успешно отправлен!',
+    'feedback-submitted-desc': 'Спасибо за ваш отзыв. Мы внимательно его рассмотрим.',
+    'error': 'Ошибка',
+    'feedback-error': 'Не удалось отправить отзыв. Попробуйте снова.',
+    'feedback-for': 'Отзыв для',
+    'suggest-feature': 'Предложить функцию',
+    'suggest-feature-desc': 'Есть идея по улучшению сервиса? Нам интересно!',
+    'feature-suggestion': 'Предложение функции',
+    'feature-placeholder': 'Опишите ваше предложение функции...',
+    'suggestion-placeholder': 'Опишите ваше предложение функции...',
+    'submit-suggestion': 'Отправить предложение',
+    'suggestion-submitted': 'Предложение успешно отправлено!',
+    'suggestion-submitted-desc': 'Спасибо за предложение. Мы рассмотрим его для будущих обновлений.',
+    'suggestion-error': 'Не удалось отправить предложение. Попробуйте снова.',
+    'general-feedback': 'Общий отзыв',
+
+    // Feedback page
+    'feedback-page-title': 'Отправить отзыв и предложения',
+    'feedback-page-subtitle': 'Помогите нам улучшить сайт, сообщая о устаревших руководствах или предлагая новые функции.',
+    'feedback-alert-desc': 'Мы ценим ваш отзыв! Сообщайте, если найдёте устаревшую информацию или хотите предложить улучшения.',
+    'report-error-card-title': 'Сообщить об ошибке',
+    'report-error-card-desc': 'Нашли устаревшее руководство или неработающую ссылку?',
+    'report-error-card-help': 'Пожалуйста, укажите название сервиса и то, что нужно обновить. Мы рассматриваем все сообщения и регулярно обновляем руководства.',
+    'suggest-feature-card-title': 'Предложить функцию',
+    'suggest-feature-card-desc': 'Есть идея, как сделать сайт лучше?',
+    'suggest-feature-card-help': 'Мы всегда стремимся к улучшению. Поделитесь предложениями по новым или существующим функциям.',
+    'what-we-need': 'Что необходимо',
+    'feedback-need-service-name': 'Название сервиса и URL',
+    'feedback-need-incorrect': 'Что неверно или устарело',
+    'feedback-need-current': 'Актуальная правильная информация (если известна)',
+    'feedback-need-screenshots': 'Скриншоты (если применимо)',
+    'submit-new-guide': 'Отправить новое руководство',
+    'submit-guide-desc': 'Какого-то руководства не хватает? Помогите добавить его.',
+    'website-name': 'Название сайта',
+    'website-url': 'URL сайта',
+    'deletion-url': 'URL удаления',
+    'difficulty-level': 'Уровень сложности',
+    'deletion-steps': 'Шаги удаления',
+    'additional-notes': 'Дополнительные примечания',
+    'submit-guide': 'Отправить руководство',
+    'guide-submitted': 'Руководство отправлено!',
+    'guide-submitted-desc': 'Спасибо за вклад. Мы проверим и добавим в базу данных.',
+    'guide-error': 'Не удалось отправить руководство. Попробуйте снова.',
+    'update-existing-guide': 'Обновить существующее руководство',
+    'update-guide-desc': 'Руководство устарело? Помогите нам обновить его.',
+    'guide-to-update': 'Руководство для обновления',
+    'what-changed': 'Что изменилось',
+    'update-guide': 'Обновить руководство',
+    'update-submitted': 'Обновление отправлено!',
+    'update-submitted-desc': 'Спасибо за помощь в поддержании актуальности руководств.',
+    'update-error': 'Не удалось отправить обновление. Попробуйте снова.',
+    'contribute-subtitle': 'Помогите нам создать самую полную базу руководств по удалению аккаунтов.',
+    'contribute-intro': 'howtodelete.me — это усилие сообщества. Мы приветствуем вклад каждого, кто хочет сделать интернет более удобным.',
+    'improve-code-title': 'Улучшить код',
+    'technical-contributions': 'Технические вкладки',
+    'developers-contribute-desc': 'Разработчики могут вносить вклад в код, улучшать функции или исправлять ошибки.',
+    'contribution-guidelines': 'Руководство по внесению вкладов',
+    'what-we-accept-title': 'Что мы принимаем',
+    'quality-standards-title': 'Стандарты качества',
+    'accept-official-links': 'Официальные ссылки на удаление с страниц помощи компаний',
+    'accept-verified-steps': 'Проверенные пошаговые инструкции',
+    'accept-updates': 'Обновления существующих руководств при изменении процессов',
+    'accept-difficulty-ratings': 'Оценки сложности на основе реального опыта',
+    'standard-official-sources': 'Все ссылки должны вести на официальные источники',
+    'standard-clear-accurate': 'Инструкции должны быть ясными и точными',
+    'standard-include-warnings': 'Включать соответствующие предупреждения или примечания',
+    'standard-test-process': 'Протестируйте процесс перед отправкой'
+  },
+  tr: {
+    // Navigation
+    'navigation': 'Gezinme',
+    'home': 'Ana sayfa',
+    'categories': 'Kategoriler',
+    'popular': 'Popüler',
+    'about': 'Hakkında',
+    'search': 'Ara',
+    'language': 'Dil',
+    'limited': 'Sınırlı kullanılabilirlik',
+    'simple-process': 'Basit süreç',
+    'some-extra-steps': 'Bazı ek adımlar',
+    'contact-support': 'Destek ile iletişime geç',
+    'privacy-rights-only': 'Yalnızca gizlilik hakları',
+    'cannot-be-deleted': 'Silinemez',
+    'category': 'Kategori',
+    'difficulty': 'Zorluk',
+    'easy': 'Kolay',
+    'medium': 'Orta',
+    'hard': 'Zor',
+    'impossible': 'İmkansız',
+    'difficulty-config-not-found': 'Zorluk yapılandırması bulunamadı',
+    'feedback': 'Geri bildirim',
+    'social-media': 'Sosyal medya',
+    'e-commerce': 'E-ticaret',
+    'gaming': 'Oyun',
+    'finance': 'Finans',
+    'productivity': 'Üretkenlik',
+    'entertainment': 'Eğlence',
+    'communication': 'İletişim',
+    'education': 'Eğitim',
+    'health': 'Sağlık',
+    'travel': 'Seyahat',
+    'shopping': 'Alışveriş',
+    'news': 'Haber',
+    'developer': 'Geliştirici',
+    'business': 'İş',
+    // Extended categories
+    'china-apps': 'Çin uygulamaları',
+    'automotive': 'Otomotiv',
+    'security--vpn': 'Güvenlik ve VPN',
+    'government--services': 'Hükümet ve hizmetler',
+    'software--tools': 'Yazılım ve araçlar',
+    'stock-photos': 'Stok fotoğraflar',
+    'utilities': 'Yardımcı programlar',
+    'books--reading': 'Kitaplar ve okuma',
+    'design--creative': 'Tasarım ve yaratıcılık',
+    'dating--relationships': 'Flört ve ilişkiler',
+    'real-estate': 'Gayrimenkul',
+    'food--delivery': 'Yemek ve teslimat',
+    'cloud--hosting': 'Bulut ve barındırma',
+    'domain--dns': 'Alan adı ve DNS',
+    'file-storage--sharing': 'Dosya depolama ve paylaşma',
+    'anime--manga': 'Anime ve manga',
+    'forums--communities': 'Forumlar ve topluluklar',
+    'fashion--lifestyle': 'Moda ve yaşam tarzı',
+    'qa--knowledge': 'Soru-Cevap ve bilgi',
+    'maps--navigation': 'Haritalar ve gezinme',
+    'cryptocurrency--blockchain': 'Kripto para ve blok zinciri',
+    'other': 'Diğer',
+    'contribute': 'Katkıda bulun',
+    'privacy-policy': 'Gizlilik politikası',
+    'terms-of-service': 'Hizmet şartları',
+    // Dialog components
+    'report-error': 'Hata bildir',
+    'report-issue': 'Sorun bildir',
+    'report-issue-desc': 'Bu rehberde hata mı buldunuz ya da geri bildiriminiz mi var? Bize söyleyin, düzeltelim.',
+    'your-email-optional': 'E-posta adresiniz (opsiyonel)',
+    'email-placeholder': 'your@email.com',
+    'subject': 'Konu',
+    'guide-url': 'Rehber URL’si',
+    'your-feedback': 'Geri bildiriminiz',
+    'feedback-placeholder': 'Lütfen sorunu açıklayın veya geri bildiriminizi yazın...',
+    'cancel': 'İptal',
+    'submitting': 'Gönderiliyor...',
+    'submit-feedback-btn': 'Geri bildirim gönder',
+    'feedback-submitted': 'Geri bildirim başarıyla gönderildi!',
+    'feedback-submitted-desc': 'Geri bildiriminiz için teşekkürler. Dikkatle inceleyeceğiz.',
+    'error': 'Hata',
+    'feedback-error': 'Geri bildirim gönderilemedi. Lütfen tekrar deneyin.',
+    'feedback-for': 'Şunun için geri bildirim',
+    'suggest-feature': 'Özellik öner',
+    'suggest-feature-desc': 'Hizmetimizi geliştirmek için bir fikriniz var mı? Duymak isteriz!',
+    'feature-suggestion': 'Özellik önerisi',
+    'feature-placeholder': 'Lütfen özellik önerinizi açıklayın...',
+    'suggestion-placeholder': 'Lütfen özellik önerinizi açıklayın...',
+    'submit-suggestion': 'Öneri gönder',
+    'suggestion-submitted': 'Öneri başarıyla gönderildi!',
+    'suggestion-submitted-desc': 'Öneriniz için teşekkürler. Gelecek güncellemelerde değerlendireceğiz.',
+    'suggestion-error': 'Öneri gönderilemedi. Lütfen tekrar deneyin.',
+    'general-feedback': 'Genel geri bildirim',
+
+    // Feedback page
+    'feedback-page-title': 'Geri bildirim ve öneri gönder',
+    'feedback-page-subtitle': 'Eski rehberleri bildirerek veya yeni özellikler önererek geliştirmemize yardımcı olun.',
+    'feedback-alert-desc': 'Geri bildiriminiz değerlidir! Eski bilgiler bulursanız veya öneriniz varsa, lütfen bize bildirin.',
+    'report-error-card-title': 'Hata bildir',
+    'report-error-card-desc': 'Eski bir rehber veya bozuk bir bağlantı mı buldunuz?',
+    'report-error-card-help': 'Hizmet adını ve güncellenmesi gereken bilgiyi ekleyin. Tüm raporları inceler ve rehberleri düzenli olarak güncelleriz.',
+    'suggest-feature-card-title': 'Özellik öner',
+    'suggest-feature-card-desc': 'Siteyi daha iyi hale getirecek bir fikriniz var mı?',
+    'suggest-feature-card-help': 'Her zaman geliştirmeye çalışıyoruz. Yeni veya mevcut özellikler için önerilerinizi paylaşın.',
+    'what-we-need': 'Gerekli bilgiler',
+    'feedback-need-service-name': 'Hizmet adı ve URL',
+    'feedback-need-incorrect': 'Yanlış veya eski olan',
+    'feedback-need-current': 'Mevcut doğru bilgi (biliniyorsa)',
+    'feedback-need-screenshots': 'Ekran görüntüleri (varsa)',
+    'submit-new-guide': 'Yeni rehber gönder',
+    'submit-guide-desc': 'Bir rehber eksik mi? Eklememize yardımcı olun.',
+    'website-name': 'Web sitesi adı',
+    'website-url': 'Web sitesi URL’si',
+    'deletion-url': 'Silme URL’si',
+    'difficulty-level': 'Zorluk seviyesi',
+    'deletion-steps': 'Silme adımları',
+    'additional-notes': 'Ek notlar',
+    'submit-guide': 'Rehber gönder',
+    'guide-submitted': 'Rehber gönderildi!',
+    'guide-submitted-desc': 'Katkınız için teşekkürler. İnceleyip veritabanına ekleyeceğiz.',
+    'guide-error': 'Rehber gönderilemedi. Lütfen tekrar deneyin.',
+    'update-existing-guide': 'Mevcut rehberi güncelle',
+    'update-guide-desc': 'Rehber güncel değil mi? Güncellememize yardım edin.',
+    'guide-to-update': 'Güncellenecek rehber',
+    'what-changed': 'Ne değişti',
+    'update-guide': 'Rehberi güncelle',
+    'update-submitted': 'Güncelleme gönderildi!',
+    'update-submitted-desc': 'Rehberleri güncel tutmamıza yardımcı olduğunuz için teşekkürler.',
+    'update-error': 'Güncelleme gönderilemedi. Lütfen tekrar deneyin.',
+    'contribute-subtitle': 'Hesap silme rehberleri için en kapsamlı veritabanını oluşturmamıza yardımcı olun.',
+    'contribute-intro': 'howtodelete.me topluluk çalışmasıdır. İnterneti daha kullanıcı dostu yapmak isteyen herkesin katkısını memnuniyetle karşılıyoruz.',
+    'improve-code-title': 'Kodu geliştirin',
+    'technical-contributions': 'Teknik katkılar',
+    'developers-contribute-desc': 'Geliştiriciler kod tabanına katkıda bulunabilir, özellikleri iyileştirebilir veya hataları düzeltebilir.',
+    'contribution-guidelines': 'Katkı yönergeleri',
+    'what-we-accept-title': 'Kabul ettiklerimiz',
+    'quality-standards-title': 'Kalite standartları',
+    'accept-official-links': 'Şirket yardım sayfalarından resmi silme bağlantıları',
+    'accept-verified-steps': 'Doğrulanmış adım adım talimatlar',
+    'accept-updates': 'Süreçler değiştiğinde mevcut rehberlerin güncellenmesi',
+    'accept-difficulty-ratings': 'Gerçek deneyime dayalı zorluk derecelendirmeleri',
+    'standard-official-sources': 'Tüm bağlantılar resmi kaynaklara olmalı',
+    'standard-clear-accurate': 'Talimatlar açık ve doğru olmalı',
+    'standard-include-warnings': 'İlgili uyarı veya notları ekleyin',
+    'standard-test-process': 'Göndermeden önce süreci test edin',
+    'breadcrumb-more': 'Daha fazla',
+    
+  },
+  ja: {
+    // Navigation
+    'navigation': 'ナビゲーション',
+    'home': 'ホーム',
+    'categories': 'カテゴリ',
+    'popular': '人気',
+      'about': '概要',
+    'search': '検索',
+    'language': '言語',
+    'limited': '限定提供',
+    'simple-process': '簡単な手順',
+    'some-extra-steps': '追加の手順',
+    'contact-support': 'サポートに連絡',
+    'privacy-rights-only': 'プライバシー権のみ',
+    'cannot-be-deleted': '削除不可',
+    'category': 'カテゴリ',
+    'difficulty': '難易度',
+    'easy': '簡単',
+    'medium': '普通',
+    'hard': '難しい',
+    'impossible': '不可能',
+    'difficulty-config-not-found': '難易度設定が見つかりません',
+    'feedback': 'フィードバック',
+    'social-media': 'ソーシャルメディア',
+    'e-commerce': 'EC',
+    'gaming': 'ゲーム',
+    'finance': '金融',
+    'productivity': '生産性',
+    'entertainment': 'エンタメ',
+    'communication': 'コミュニケーション',
+    'education': '教育',
+    'health': '健康',
+    'travel': '旅行',
+    'shopping': 'ショッピング',
+    'news': 'ニュース',
+    'developer': '開発者',
+    'business': 'ビジネス',
+    // Extended categories
+    'china-apps': '中国アプリ',
+    'automotive': '自動車',
+    'security--vpn': 'セキュリティ・VPN',
+    'government--services': '政府・公共サービス',
+    'software--tools': 'ソフトウェア・ツール',
+    'stock-photos': 'ストックフォト',
+    'utilities': 'ユーティリティ',
+    'books--reading': '書籍・読書',
+    'design--creative': 'デザイン・クリエイティブ',
+    'dating--relationships': '出会い・関係',
+    'real-estate': '不動産',
+    'food--delivery': 'フード・配達',
+    'cloud--hosting': 'クラウド・ホスティング',
+    'domain--dns': 'ドメイン・DNS',
+    'file-storage--sharing': 'ファイル保存・共有',
+    'anime--manga': 'アニメ・マンガ',
+    'forums--communities': 'フォーラム・コミュニティ',
+    'fashion--lifestyle': 'ファッション・ライフスタイル',
+    'qa--knowledge': 'Q&A・ナレッジ',
+    'maps--navigation': '地図・ナビ',
+    'cryptocurrency--blockchain': '暗号資産・ブロックチェーン',
+    'other': 'その他',
+    'contribute': '貢献',
+    'privacy-policy': 'プライバシーポリシー',
+    'terms-of-service': '利用規約',
+    // Dialog components
+    'report-error': 'エラーを報告',
+    'report-issue': '問題を報告',
+    'report-issue-desc': 'このガイドに誤りやフィードバックがありますか？お知らせください。修正します。',
+    'your-email-optional': 'メールアドレス（任意）',
+    'email-placeholder': 'your@email.com',
+    'subject': '件名',
+    'guide-url': 'ガイドURL',
+    'your-feedback': 'フィードバック',
+    'feedback-placeholder': '問題の説明やご意見を入力してください...',
+    'cancel': 'キャンセル',
+    'submitting': '送信中...',
+    'submit-feedback-btn': 'フィードバックを送信',
+    'feedback-submitted': 'フィードバックが送信されました！',
+    'feedback-submitted-desc': 'ご意見ありがとうございます。慎重に確認いたします。',
+    'error': 'エラー',
+    'feedback-error': 'フィードバックの送信に失敗しました。もう一度お試しください。',
+    'feedback-for': '〜へのフィードバック',
+    'suggest-feature': '機能を提案',
+    'suggest-feature-desc': 'サービス改善のアイデアはありますか？ぜひお聞かせください！',
+    'feature-suggestion': '機能の提案',
+    'feature-placeholder': '機能提案の内容を入力してください...',
+    'suggestion-placeholder': '機能提案の内容を入力してください...',
+    'submit-suggestion': '提案を送信',
+    'suggestion-submitted': '提案が送信されました！',
+    'suggestion-submitted-desc': 'ご提案ありがとうございます。今後のアップデートで検討いたします。',
+    'suggestion-error': '提案の送信に失敗しました。もう一度お試しください。',
+    'general-feedback': '一般的なフィードバック',
+
+    // Feedback page
+    'feedback-page-title': 'フィードバックと提案を送信',
+    'feedback-page-subtitle': '古いガイドの報告や新機能の提案で改善にご協力ください。',
+    'feedback-alert-desc': 'フィードバックは大切です！古い情報や改善案があればお知らせください。',
+    'report-error-card-title': 'エラーを報告',
+    'report-error-card-desc': '古いガイドやリンク切れを見つけましたか？',
+    'report-error-card-help': 'サービス名と更新が必要な内容を含めてください。すべての報告を確認し、ガイドを定期的に更新します。',
+    'suggest-feature-card-title': '機能を提案',
+    'suggest-feature-card-desc': 'サイトをより良くするアイデアはありますか？',
+    'suggest-feature-card-help': '常に改善を目指しています。新機能や既存機能の改善提案を共有してください。',
+    'what-we-need': '必要な情報',
+    'feedback-need-service-name': 'サービス名とURL',
+    'feedback-need-incorrect': '誤っている点や古い情報',
+    'feedback-need-current': '現在の正しい情報（判明している場合）',
+    'feedback-need-screenshots': 'スクリーンショット（可能な場合）',
+    'submit-new-guide': '新しいガイドを提出',
+    'submit-guide-desc': 'ガイドが見当たりませんか？追加にご協力ください。',
+    'website-name': 'サイト名',
+    'website-url': 'サイトURL',
+    'deletion-url': '削除用URL',
+    'difficulty-level': '難易度',
+    'deletion-steps': '削除手順',
+    'additional-notes': '補足',
+    'submit-guide': 'ガイドを送信',
+    'guide-submitted': 'ガイドを送信しました！',
+    'guide-submitted-desc': 'ご協力ありがとうございます。確認後、データベースに追加します。',
+    'guide-error': 'ガイドの送信に失敗しました。もう一度お試しください。',
+    'update-existing-guide': '既存のガイドを更新',
+    'update-guide-desc': 'ガイドが古いですか？更新にご協力ください。',
+    'guide-to-update': '更新するガイド',
+    'what-changed': '変更点',
+    'update-guide': 'ガイドを更新',
+    'update-submitted': '更新を送信しました！',
+    'update-submitted-desc': 'ガイドを最新に保つご協力ありがとうございます。',
+    'update-error': '更新の送信に失敗しました。もう一度お試しください。',
+    'contribute-subtitle': '最も包括的なアカウント削除ガイドのデータベース作りにご協力ください。',
+    'contribute-intro': 'howtodelete.me はコミュニティの取り組みです。誰でも貢献でき、より使いやすいインターネット作りに参加できます。',
+    'improve-code-title': 'コードを改善',
+    'technical-contributions': '技術的な貢献',
+    'developers-contribute-desc': '開発者はコードベースに貢献し、機能改善やバグ修正ができます。',
+    'contribution-guidelines': '貢献ガイドライン',
+    'what-we-accept-title': '受け付ける貢献',
+    'quality-standards-title': '品質基準',
+    'accept-official-links': '企業のヘルプページの公式削除リンク',
+    'accept-verified-steps': '検証済みの手順説明',
+    'accept-updates': 'プロセス変更時の既存ガイド更新',
+    'accept-difficulty-ratings': '実体験に基づく難易度評価',
+    'standard-official-sources': 'すべてのリンクは公式情報であること',
+    'standard-clear-accurate': '説明は明確で正確であること',
+    'standard-include-warnings': '関連する注意事項や補足を含める',
+    'standard-test-process': '提出前に手順をテストする',
+
+    // Site titles & descriptions (SEO/metadata)
+    'site-title': 'How to Delete - アカウント削除の総合ガイド',
+    'site-description': '人気サイトやサービスのアカウントを削除するための手順を詳しく解説。明確な説明、検証済みの方法、プライバシー重視の解決策。',
+    'site-keywords': 'アカウント削除, プロフィール削除, アカウント閉鎖, 無効化, プライバシー, データ保護',
+    'guide-title-template': '{name} アカウントを完全に削除する方法（2025年ガイド）',
+    'guide-description-template': 'ステップバイステップで {name} アカウントを完全に削除します。',
+    'guide-keywords-template': '{name} を削除, {name} アカウントを削除, {name} を閉じる, {name} を無効化, プライバシー, データ削除',
+    'category-title': 'カテゴリ - How to Delete',
+    'category-description': 'カテゴリ別にアカウント削除ガイドを探せます。SNS、メールなど。',
+    'popular-title': '人気ガイド - How to Delete',
+    'popular-description': '最も求められている削除ガイド。人気サイトやサービスのアカウント削除方法をチェック。',
+    'about-title': '概要 - How to Delete',
+    'about-description': 'アカウント削除を簡単で透明にするという私たちの使命について。ガイドの検証方法やプライバシー保護も紹介。',
+
+    // Home page
+    'home-hero-title': 'オンラインアカウントを再び自分の手に',
+    'home-hero-subtitle': '数千のサイト/アプリでアカウントを完全に削除するための明確で検証済みのガイド — トリックなし、定期的に更新。',
+    'trust-verified-title': '検証済みソース',
+    'trust-verified-desc': 'すべてのガイドは公式ヘルプページへリンク',
+    'trust-updated-title': '常に最新',
+    'trust-updated-desc': '定期的な確認と手順の更新',
+    'trust-no-tricks-title': 'ごまかしなし',
+    'trust-no-tricks-desc': 'ポップアップなし、データ収集なし、無駄な情報なし',
+    'popular-subtitle': '最も検索されるアカウント削除ガイド',
+    'category-delete-from': '{category} サービスでのアカウント削除',
+    'home-cta-title': 'お探しのものが見つからない？',
+    'home-cta-desc': '検索を使って 2,000 以上のサイトとサービスの削除ガイドを見つけましょう。',
+
+    // About page content
+    'about-page-title': 'howtodelete.me について',
+    'about-intro': 'あなたにはオンラインでの存在を制御し、いつでもどんなプラットフォームでも離れる権利があります。',
+    'our-mission-title': '私たちの使命',
+    'our-mission-desc': 'howtodelete.me は数千のサイトやサービスでアカウントを完全に削除するための明確で検証済みの手順を提供します。ヘルプを探し回ったり、離脱を妨げるダークパターンに惑わされたりせず、必要な情報を簡単に見つけられるようにします。',
+    'why-built-title': '作った理由',
+    'why-built-desc': '多くの企業はアカウント削除を意図的に難しくしています。削除オプションを隠したり、複数の手順を要求したり、サポートへの連絡を強いたりします。私たちは各サービスに直接リンクと明確な指示を提供します。',
+    'how-rate-difficulty-title': '難易度の評価方法',
+    'data-sources-title': 'データソース',
+    'data-sources-desc': 'ガイドは公式ドキュメント、ヘルプセンター、検証済みのコミュニティ情報に基づいています。正確性を最優先し、手順の変更を反映して定期的に更新します。',
+
+    // Popular page
+    'popular-page-title': '人気ガイド',
+    'popular-page-subtitle-count': '{count} 件の人気サービスのアカウント削除ガイド',
+
+    // Not found page
+    'not-found-title': 'ページが見つかりません',
+    'not-found-desc': 'お探しのガイドは見つかりませんでした。下で検索するか、カテゴリを参照してください。',
+    'go-home': 'ホームへ',
+    'view-popular-guides': '人気ガイドを見る',
+
+    // Footer
+    'footer-about-desc': '人気サイトやサービスのアカウント削除ガイドを、明確かつ検証済みの形で提供します。',
+    'learn-more': '詳しく見る →',
+    'resources': 'リソース',
+    'all-categories': 'すべてのカテゴリ',
+    'popular-guides': '人気ガイド',
+    'legal': '法的情報',
+    'disclaimer': '免責事項',
+    'contact': 'お問い合わせ',
+    'submit-feedback': 'フィードバックを送信',
+    'footer-tagline': 'アカウント削除を簡単で透明に。',
+    'footer-disclaimer': '本サイトは記載のサービスと提携していません。商標は各権利者に帰属します。',
+    'breadcrumb-more': 'その他'
+  },
+  zh: {
+    // Navigation
+    'navigation': '导航',
+    'home': '首页',
+    'categories': '分类',
+    'popular': '热门',
+    'about': '关于',
+    'search': '搜索',
+    'language': '语言',
+    'limited': '有限可用',
+    'simple-process': '简单流程',
+    'some-extra-steps': '需要额外步骤',
+    'contact-support': '联系客服',
+    'privacy-rights-only': '仅隐私权限',
+    'cannot-be-deleted': '无法删除',
+    
+    // Search
+    'search-placeholder': '搜索网站或服务...',
+    'search-page-title': '搜索删除指南',
+    'search-page-subtitle': '搜索数千个网站和服务的账户删除指南',
+    'search-start-title': '开始搜索',
+    'search-start-desc': '输入网站名称、域名或服务名称来查找删除指南',
+    'search-tips-title': '搜索技巧：',
+    'search-tip-1': '• 尝试搜索网站名称（如 “Facebook”、“Google”）',
+    'search-tip-2': '• 使用域名（如 “facebook.com”）',
+    'search-tip-3': '• 按服务类型搜索（如 “社交媒体”、“邮箱”）',
+    'popular-searches-title': '热门搜索：',
+    'search-results-for': '“{query}” 的搜索结果',
+    'search-range': '显示第 {start}-{end} 条，共 {total} 条结果',
+    'search-no-results': '未找到与 “{query}” 相关的删除指南。请尝试其他关键词或{browseLink}。',
+    'browse-all-categories': '浏览全部分类',
+    
+    // Breadcrumb
+    'category': '分类',
+    'difficulty': '难度',
+    'easy': '简单',
+    'medium': '中等',
+    'hard': '困难',
+    'impossible': '不可能',
+    'deletion': '删除',
+    'guides': '指南',
+    'no-guides-in-category': '该分类暂无指南',
+    'no-guides-in-difficulty': '该难度暂无指南',
+    'difficulty-config-not-found': '难度配置未找到',
+    'difficulty-easy-desc': '简单流程——快速直接的删除，仅需几次点击即可完成。',
+    'difficulty-medium-desc': '需要额外步骤——删除过程需要一些额外的验证方式。',
+    'difficulty-hard-desc': '可能无法完全删除，需要联系客户服务——流程复杂，需要与支持团队沟通。',
+    'difficulty-limited-desc': '仅在具备隐私权的地区（GDPR、CCPA 等）提供账户删除。',
+    'difficulty-impossible-desc': '无法删除——这些账户无法从平台永久移除。',
+    'feedback': '反馈',
+    'social-media': '社交媒体',
+    'e-commerce': '电子商务',
+    'gaming': '游戏',
+    'finance': '金融',
+    'productivity': '生产力',
+    'entertainment': '娱乐',
+    'communication': '通讯',
+    'education': '教育',
+    'health': '健康',
+    'travel': '旅行',
+    'shopping': '购物',
+    'news': '新闻',
+    'developer': '开发者',
+    'business': '商业',
+    // Extended categories
+    'china-apps': '中国应用',
+    'automotive': '汽车',
+    'security--vpn': '安全与VPN',
+    'government--services': '政府与公共服务',
+    'software--tools': '软件与工具',
+    'stock-photos': '素材与图库',
+    'utilities': '实用工具',
+    'books--reading': '书籍与阅读',
+    'design--creative': '设计与创意',
+    'dating--relationships': '交友与关系',
+    'real-estate': '房产与地产',
+    'food--delivery': '美食与外卖',
+    'cloud--hosting': '云与托管',
+    'domain--dns': '域名与DNS',
+    'file-storage--sharing': '文件存储与分享',
+    'anime--manga': '动漫与漫画',
+    'forums--communities': '论坛与社区',
+    'fashion--lifestyle': '时尚与生活方式',
+    'qa--knowledge': '问答与知识',
+    'maps--navigation': '地图与导航',
+    'cryptocurrency--blockchain': '加密货币与区块链',
+    'other': '其他',
+    'contribute': '贡献',
+    'privacy-policy': '隐私政策',
+    'terms-of-service': '服务条款',
+    'breadcrumb-more': '更多',
+    
+    // Footer
+    'footer-about-desc': '为热门网站和服务提供清晰、经过验证的账户删除指南。',
+    'learn-more': '了解更多 →',
+    'resources': '资源',
+    'all-categories': '所有分类',
+    'popular-guides': '热门指南',
+    'legal': '法律',
+    'disclaimer': '免责声明',
+    'contact': '联系我们',
+    'submit-feedback': '提交反馈',
+    'footer-tagline': '让账户删除变得简单透明。',
+    'footer-disclaimer': '本网站与所提及的任何服务均无关联。所有商标均属其各自所有者。',
+    
+    // Dialog components
+    'report-error': '报告错误',
+    'report-issue': '报告问题',
+    'report-issue-desc': '发现错误或对此指南有反馈？请告诉我们，我们会修复它。',
+    'your-email-optional': '您的邮箱（可选）',
+    'email-placeholder': 'your@email.com',
+    'subject': '主题',
+    'guide-url': '指南链接',
+    'your-feedback': '您的反馈',
+    'feedback-placeholder': '请描述问题或提供您的反馈...',
+    'cancel': '取消',
+    'submitting': '提交中...',
+    'submit-feedback-btn': '提交反馈',
+    'feedback-submitted': '反馈提交成功！',
+    'feedback-submitted-desc': '感谢您的反馈。我们重视您的意见，会仔细审查。',
+    'error': '错误',
+     'feedback-error': '提交反馈失败。请重试。',
+     'feedback-for': '反馈关于',
+    'suggest-feature': '建议功能',
+    'suggest-feature-desc': '有改进我们服务的想法？我们很乐意听到！',
+    'feature-suggestion': '功能建议',
+    'feature-placeholder': '请描述您的功能建议...',
+    'suggestion-placeholder': '请描述您的功能建议...',
+    'submit-suggestion': '提交建议',
+    'suggestion-submitted': '建议提交成功！',
+    'suggestion-submitted-desc': '感谢您的建议。我们会审查并考虑在未来更新中采用。',
+    'suggestion-error': '提交建议失败。请重试。',
+    'general-feedback': '一般反馈',
+    'submit-new-guide': '提交新指南',
+    'submit-guide-desc': '知道如何删除我们没有指南的账户？帮助其他人提交它！',
+    'website-name': '网站名称',
+    'website-url': '网站链接',
+    'deletion-url': '删除链接',
+    'difficulty-level': '难度等级',
+    'deletion-steps': '删除步骤',
+    'additional-notes': '附加说明',
+    'submit-guide': '提交指南',
+    'guide-submitted': '指南提交成功！',
+    'guide-submitted-desc': '感谢您的贡献！我们会审查您的指南并添加到数据库中。',
+    'guide-error': '提交指南失败。请重试。',
+    'update-existing-guide': '更新现有指南',
+    'update-guide-desc': '在我们的指南中发现过时信息？帮助我们保持最新！',
+    'guide-to-update': '要更新的指南',
+    'what-changed': '发生了什么变化？',
+    'update-guide': '更新指南',
+    'update-submitted': '更新提交成功！',
+    'update-submitted-desc': '感谢您帮助我们保持指南最新！',
+    'update-error': '提交更新失败。请重试。',
+    
+    // Common UI
+    'view-all': '查看全部',
+    'guides-count': '{count} 个指南',
+    'no-guides-category': '该分类暂无指南',
+    'no-guides-difficulty': '该难度暂无可用指南',
+    'pagination-previous': '上一页',
+    'pagination-next': '下一页',
+    'pagination-aria-previous': '前往上一页',
+    'pagination-aria-next': '前往下一页',
+    'pagination-ellipsis': '更多页',
+    
+    
+    // Page titles and descriptions
+    'site-title': '如何删除 - 完整的账户删除指南',
+    'site-description': '热门网站和服务的逐步账户删除指南。清晰的说明、经过验证的方法和注重隐私的解决方案。',
+    'site-keywords': '删除账户, 移除资料, 关闭账户, 停用, 隐私, 数据保护',
+    'category-title': '分类 - 如何删除',
+    'category-description': '按分类浏览账户删除指南。查找删除社交媒体、邮件服务等账户的逐步说明。',
+    'popular-title': '热门指南 - 如何删除',
+    'popular-description': '最受欢迎的账户删除指南。了解如何删除最热门网站和服务的账户。',
+    'about-title': '关于 - 如何删除',
+    'about-description': '了解我们让账户删除变得简单透明的使命。了解我们如何验证指南并保护您的隐私。'
+    ,
+    
+    // Home page
+    'home-hero-title': '掌控你的在线账户',
+    'home-hero-subtitle': '清晰、经验证的指南，帮助你从数千个网站和应用永久删除账户——定期更新，无废话。',
+    'trust-verified-title': '来源可信',
+    'trust-verified-desc': '每个指南均链接到官方网站帮助页',
+    'trust-updated-title': '持续更新',
+    'trust-updated-desc': '我们会定期检查并刷新步骤',
+    'trust-no-tricks-title': '不玩套路',
+    'trust-no-tricks-desc': '无弹窗、无数据收集、无套路',
+    'popular-subtitle': '最常被搜索的账户删除指南',
+    'category-delete-from': '从{category}类服务中删除账户',
+    'home-cta-title': '没找到想要的内容？',
+    'home-cta-desc': '使用搜索查找超过 2,000 个网站和服务的删除指南。',
+
+    // About page
+    'about-page-title': '关于 howtodelete.me',
+    'about-intro': '我们相信你应当完全掌控自己的在线存在，并拥有随时离开任何平台的权利。',
+    'our-mission-title': '我们的使命',
+    'our-mission-desc': 'howtodelete.me 提供清晰、经验证的指南，帮助你从数千个网站和服务永久删除账户。无需在帮助页面中费力搜索或被“黑暗模式”干扰，我们让你轻松找到所需信息。',
+    'why-built-title': '我们为何创建这个网站',
+    'why-built-desc': '许多公司刻意让账户删除变得困难：隐藏删除选项、要求多个步骤、甚至强制联系支持。我们提供直接链接和清晰步骤，为每个服务扫清障碍。',
+    'how-rate-difficulty-title': '我们如何评定难度',
+    'data-sources-title': '数据来源',
+    'data-sources-desc': '我们的指南来自官方文档、帮助中心以及经过验证的社区来源。我们优先保证准确性，并定期更新数据库以反映删除流程的变化。',
+
+    // Popular page
+    'popular-page-title': '热门指南',
+    'popular-page-subtitle-count': '{count} 个热门服务账户删除指南',
+
+    // Not Found
+    'not-found-title': '页面未找到',
+    'not-found-desc': '未找到您要查看的指南。可在下方搜索或浏览分类。',
+    'go-home': '返回首页',
+    'view-popular-guides': '查看热门指南',
+
+    // 详情页（Guide page）
+    'guide-title-template': '如何永久删除你的 {name} 账户（2025 指南）',
+    'guide-description-template': '分步指南，帮助你永久删除 {name} 账户。',
+    'guide-keywords-template': '删除 {name}, 移除 {name} 账户, 关闭 {name}, 停用 {name}, 隐私, 数据删除',
+    'tldr-title': '⚡ 要点速览',
+    'tldr-can-delete': '{name} 账户可永久删除',
+    'tldr-cannot-delete': '{name} 账户不可删除',
+    'applicable-regions-title': '适用地区',
+    'applicable-regions-limited-title': 'GDPR/CCPA 保护地区',
+    'applicable-regions-limited-desc': '该删除方式主要适用于欧盟、英国、加州等拥有强隐私保护法规的地区用户。',
+    'applicable-regions-global-title': '全球适用',
+    'applicable-regions-global-desc': '该删除方式全球用户均可使用。',
+    'prerequisites-title': '准备事项',
+    'prereq-access-title': '账户访问',
+    'prereq-access-desc': '请确保能登录你的 {name} 账户',
+    'prereq-email-title': '邮箱访问',
+    'prereq-email-desc': '可能需要通过邮箱验证删除请求',
+    'prereq-verification-title': '额外验证',
+    'prereq-verification-desc': '可能需要身份证明或其它额外步骤',
+    'alert-impossible-desc': '该账户无法删除。该服务不提供账户删除功能。',
+    'alert-limited-desc': '仅在具备隐私权的地区（GDPR、CCPA 等）才可删除账户。',
+    'official-links-title': '官方删除链接',
+    'official-links-desc': '指向 {name} 的账户删除页面的直接链接',
+    'official-links-primary': '主删除页面：',
+    'official-links-email': '联系邮箱：',
+    'official-links-domains': '相关域名：',
+    'deletion-process-title': '🗑️ 删除流程',
+    'deletion-process-expected': '预期难度：',
+    'deletion-notes-title': '重要信息',
+    'quick-access-title': '快速跳转',
+    'quick-access-btn': '前往 {name} 删除页面',
+    'email-support-title': '通过邮箱联系支持',
+    'email-address-label': '邮箱地址：',
+    'email-suggested-label': '建议邮件内容：',
+    'email-suggested-subject': '主题：账户删除请求',
+    'email-subject': '账户删除请求',
+    'email-suggested-body': '尊敬的 {name} 支持团队：\n\n我希望永久删除与本邮箱关联的账户。请处理该请求并在完成后予以确认。\n\n账户信息：\n- 邮箱：[你的邮箱地址]\n- 用户名：[如适用]\n\n感谢你的帮助。\n\n此致\n[你的姓名]',
+    'email-send-btn': '立即发送邮件',
+    'jump-to-process': '跳至流程',
+    'general-steps-title': '通用步骤',
+    'general-step-1': '登录你的 {name} 账户',
+    'general-step-2': '进入账户设置或隐私设置',
+    'general-step-3': '找到账户删除或停用选项',
+    'general-step-4': '按照屏幕指引确认删除',
+    'general-step-note-medium': '提示：该服务可能需要额外的验证步骤',
+    'general-step-note-hard': '提示：需要联系客户支持才能完成删除流程',
+    'general-step-note-limited': '提示：仅在具备数据隐私法的地区才可能提供删除功能',
+    'deletion-timeline-title': '⏰ 删除时间线',
+    'timeline-immediate': '即时',
+    'timeline-grace': '7–30 天',
+    'timeline-removal': '30–90 天',
+    'timeline-immediate-desc': '通常会立即禁用账户访问',
+    'timeline-grace-desc': '在宽限期内你可以恢复账户',
+    'timeline-removal-desc': '从活动系统中完成数据删除',
+    'timeline-note': '注意：根据服务的隐私政策，部分数据可能因法律、安全或备份目的保留更久。',
+    'important-info-title': '重要信息',
+    'before-delete-title': '删除前：',
+    'before-download-data': '下载需要保留的数据',
+    'before-cancel-subs': '取消所有正在生效的订阅',
+    'before-remove-payment': '移除支付方式',
+    'before-inform-contacts': '必要时通知联系人',
+    'after-delete-title': '删除后：',
+    'after-grace-period': '部分服务在永久删除前有宽限期',
+    'after-data-retention': '你的数据可能因法律或备份目的而被保留',
+    'after-reuse-email': '可能无法再次使用同一邮箱或用户名',
+    'troubleshooting-title': '🔧 故障排除',
+    'troubleshoot-find-option': '找不到删除选项？',
+    'troubleshoot-find-option-desc': '尝试在设置菜单搜索“删除账户”“关闭账户”或“停用”。',
+    'troubleshoot-denied': '删除请求被拒？',
+    'troubleshoot-denied-desc': '请直接联系客户支持。在 GDPR 地区，你拥有法定删除权利。',
+    'troubleshoot-still-accessible': '删除后账户仍可访问？',
+    'troubleshoot-still-accessible-desc': '部分服务存在宽限期。等待 24–48 小时后再试。',
+    'need-help-title': '💬 需要帮助？',
+    'need-help-intro': '如果你在删除 {name} 账户时遇到问题，可参考以下资源：',
+    'need-help-contact-support': '直接联系 {name} 客服',
+    'need-help-help-center': '查看其帮助中心或常见问题',
+    'need-help-community': '查找社区论坛或用户指南',
+    'reco-category-title': '更多 {category} 指南',
+    'reco-category-desc': '{category} 分类下的其他服务',
+    'reco-difficulty-title': '更多 {label} 难度的指南',
+    'reco-difficulty-desc': '其他具有相似删除流程的服务',
+
+    // Feedback page
+    'feedback-page-title': '提交反馈与建议',
+    'feedback-page-subtitle': '通过报告过时指南或提出新功能建议来帮助我们改进。',
+    'feedback-alert-desc': '我们重视您的反馈！如发现过时信息或有改进建议，请告诉我们。',
+    'report-error-card-title': '报告错误',
+    'report-error-card-desc': '发现过时指南或失效链接？',
+    'report-error-card-help': '请包含服务名称以及需要更新的内容。我们会审查所有报告并定期更新指南。',
+    'suggest-feature-card-title': '建议功能',
+    'suggest-feature-card-desc': '有让网站更好的想法吗？',
+    'suggest-feature-card-help': '我们不断寻求改进。欢迎分享您对新功能或现有功能的建议。',
+    'what-we-need': '我们需要的信息',
+    'feedback-need-service-name': '服务名称和网址',
+    'feedback-need-incorrect': '不正确或过时的内容',
+    'feedback-need-current': '当前正确信息（如已知）',
+    'feedback-need-screenshots': '截图（如适用）'
+  ,
+    // Contribute page
+    'contribute-subtitle': '帮助我们构建最全面的账户删除指南数据库。',
+    'contribute-intro': 'howtodelete.me 是一个社区协作项目。我们欢迎任何人贡献，共同让互联网更加以用户为中心，让每个人都能掌控自己的数据。',
+    'improve-code-title': '改进代码',
+    'technical-contributions': '技术贡献',
+    'developers-contribute-desc': '开发者可以为代码库做出贡献、改进功能或修复问题。',
+    'contribution-guidelines': '贡献指南',
+    'what-we-accept-title': '我们接受的内容',
+    'quality-standards-title': '质量标准',
+    'accept-official-links': '来自公司帮助页面的官方删除链接',
+    'accept-verified-steps': '经过验证的逐步说明',
+    'accept-updates': '流程变化时对现有指南的更新',
+    'accept-difficulty-ratings': '基于实际体验的难度评级',
+    'standard-official-sources': '所有链接必须来自官方来源',
+    'standard-clear-accurate': '说明必须清晰准确',
+    'standard-include-warnings': '包含相关警告或注意事项',
+    'standard-test-process': '提交前请先验证流程'
+  }
+  ,
+  ko: {
+    // Navigation
+    'navigation': '탐색',
+    'home': '홈',
+    'categories': '카테고리',
+    'popular': '인기',
+    'about': '소개',
+    'search': '검색',
+    'language': '언어',
+    'limited': '제한됨',
+    'simple-process': '간단한 절차',
+    'some-extra-steps': '추가 단계 필요',
+    'contact-support': '고객지원 문의',
+    'privacy-rights-only': '개인정보 권한만',
+    'cannot-be-deleted': '삭제 불가',
+
+    // Search
+    'search-placeholder': '웹사이트 또는 서비스를 검색...',
+    'search-page-title': '삭제 가이드 검색',
+    'search-page-subtitle': '웹사이트와 서비스의 수천 개 계정 삭제 가이드를 검색하세요',
+    'search-start-title': '검색 시작',
+    'search-start-desc': '삭제 가이드를 찾으려면 웹사이트 이름, 도메인 또는 서비스 이름을 입력하세요',
+    'search-tips-title': '검색 팁:',
+    'search-tip-1': '• 웹사이트 이름으로 검색 (예: "Facebook", "Google")',
+    'search-tip-2': '• 도메인 사용 (예: "facebook.com")',
+    'search-tip-3': '• 서비스 유형으로 검색 (예: "소셜 미디어", "이메일")',
+    'popular-searches-title': '인기 검색:',
+    'search-results-for': '"{query}" 검색 결과',
+    'search-range': '{start}-{end} / 총 {total}개 결과',
+    'search-no-results': '"{query}"에 대한 삭제 가이드를 찾지 못했습니다. 다른 검색어를 시도하거나 {browseLink} 해주세요.',
+    'browse-all-categories': '모든 카테고리 보기',
+
+    // Breadcrumb
+    'category': '카테고리',
+    'difficulty': '난이도',
+    'easy': '쉬움',
+    'medium': '보통',
+    'hard': '어려움',
+    'impossible': '불가능',
+    'deletion': '삭제',
+    'guides': '가이드',
+    'no-guides-in-category': '이 카테고리에 사용 가능한 가이드가 없습니다',
+    'no-guides-in-difficulty': '이 난이도에서 사용 가능한 가이드가 없습니다',
+    'difficulty-config-not-found': '난이도 구성을 찾을 수 없습니다',
+    'difficulty-easy-desc': '간단한 과정 — 몇 번의 클릭만으로 빠르고 직접적인 삭제가 가능합니다.',
+    'difficulty-medium-desc': '추가 단계 필요 — 삭제 과정에 일부 추가 확인 절차가 필요합니다.',
+    'difficulty-hard-desc': '완전 삭제가 어렵고 고객센터에 문의 필요 — 지원팀과의 연락이 필요한 복잡한 과정입니다.',
+    'difficulty-limited-desc': '개인정보 보호권이 있는 지역(GDPR, CCPA 등)에서만 계정 삭제가 가능합니다.',
+    'difficulty-impossible-desc': '삭제할 수 없음 — 이러한 계정은 플랫폼에서 영구적으로 제거할 수 없습니다.',
+    'feedback': '피드백',
+    'social-media': '소셜 미디어',
+    'e-commerce': '전자 상거래',
+    'gaming': '게임',
+    'finance': '금융',
+    'productivity': '생산성',
+    'entertainment': '엔터테인먼트',
+    'communication': '커뮤니케이션',
+    'education': '교육',
+    'health': '건강',
+    'travel': '여행',
+    'shopping': '쇼핑',
+    'news': '뉴스',
+    'developer': '개발자',
+    'business': '비즈니스',
+    // Extended categories
+    'china-apps': '중국 앱',
+    'automotive': '자동차',
+    'security--vpn': '보안 및 VPN',
+    'government--services': '정부 및 서비스',
+    'software--tools': '소프트웨어 및 도구',
+    'stock-photos': '스톡 사진',
+    'utilities': '유틸리티',
+    'books--reading': '서적 및 독서',
+    'design--creative': '디자인 및 크리에이티브',
+    'dating--relationships': '연애 및 관계',
+    'real-estate': '부동산',
+    'food--delivery': '음식 및 배달',
+    'cloud--hosting': '클라우드 및 호스팅',
+    'domain--dns': '도메인 및 DNS',
+    'file-storage--sharing': '파일 저장 및 공유',
+    'anime--manga': '애니메이션 및 만화',
+    'forums--communities': '포럼 및 커뮤니티',
+    'fashion--lifestyle': '패션 및 라이프스타일',
+    'qa--knowledge': 'Q&A 및 지식',
+    'maps--navigation': '지도 및 내비게이션',
+    'cryptocurrency--blockchain': '암호화폐 및 블록체인',
+    'other': '기타',
+    'privacy-policy': '개인정보 처리방침',
+    'terms-of-service': '서비스 약관',
+
+    // Footer
+    'footer-about-desc': '인기 웹사이트와 서비스의 계정 삭제 가이드를 제공합니다.',
+    'learn-more': '더 알아보기 →',
+    'resources': '리소스',
+    'all-categories': '전체 카테고리',
+    'popular-guides': '인기 가이드',
+    'legal': '법률',
+    'disclaimer': '면책 조항',
+    'contact': '문의',
+    'submit-feedback': '피드백 제출',
+    'contribute': '기여하기',
+    'footer-tagline': '명확하고 검증된 계정 삭제 안내',
+    'footer-disclaimer': '제공된 정보는 참고용입니다. 최신 정보를 확인하세요.',
+
+    // Dialog components
+    'report-error': '오류 신고',
+    'report-issue': '문제 보고',
+    'report-issue-desc': '가이드 오류나 의견이 있나요? 알려주세요.',
+    'your-email-optional': '이메일 (선택사항)',
+    'email-placeholder': 'your@email.com',
+    'subject': '제목',
+    'guide-url': '가이드 URL',
+    'your-feedback': '피드백',
+    'feedback-placeholder': '문제 설명 또는 의견을 작성하세요...',
+    'cancel': '취소',
+    'submitting': '제출 중...',
+    'submit-feedback-btn': '피드백 제출',
+    'feedback-submitted': '피드백이 제출되었습니다!',
+    'feedback-submitted-desc': '소중한 의견 감사합니다. 검토 후 반영하겠습니다.',
+    'error': '오류',
+    'feedback-error': '피드백 제출에 실패했습니다. 다시 시도하세요.',
+    'feedback-for': '피드백 대상',
+    'suggest-feature': '기능 제안',
+    'suggest-feature-desc': '서비스 개선 아이디어가 있나요? 들려주세요!',
+    'feature-suggestion': '기능 제안',
+    'feature-placeholder': '기능 제안을 작성하세요...',
+    'suggestion-placeholder': '기능 제안을 작성하세요...',
+    'submit-suggestion': '제안 제출',
+    'suggestion-submitted': '제안이 제출되었습니다!',
+    'suggestion-submitted-desc': '제안 감사합니다. 향후 업데이트에 고려하겠습니다.',
+    'suggestion-error': '제안 제출에 실패했습니다. 다시 시도하세요.',
+    'general-feedback': '일반 피드백',
+    'submit-new-guide': '새 가이드 제출',
+    'submit-guide-desc': '없는 가이드를 알고 계신가요? 공유해 주세요!',
+    'website-name': '웹사이트 이름',
+    'website-url': '웹사이트 URL',
+    'deletion-url': '삭제 URL',
+    'difficulty-level': '난이도',
+    'deletion-steps': '삭제 단계',
+    'additional-notes': '추가 메모',
+    'submit-guide': '가이드 제출',
+    'guide-submitted': '가이드가 제출되었습니다!',
+    'guide-submitted-desc': '기여해 주셔서 감사합니다. 검토 후 데이터베이스에 추가하겠습니다.',
+    'guide-error': '가이드 제출 실패. 다시 시도하세요.',
+    'update-existing-guide': '기존 가이드 업데이트',
+    'update-guide-desc': '가이드가 오래되었나요? 최신 정보를 도와주세요!',
+    'guide-to-update': '업데이트할 가이드',
+    'what-changed': '변경 사항',
+    'update-guide': '가이드 업데이트',
+    'update-submitted': '업데이트가 제출되었습니다!',
+    'update-submitted-desc': '가이드를 최신으로 유지하는 데 도움 주셔서 감사합니다!',
+    'update-error': '업데이트 제출 실패. 다시 시도하세요.',
+    
+    // Common UI
+    'view-all': '전체 보기',
+    'guides-count': '{count}개 가이드',
+    'no-guides-category': '이 카테고리에 이용 가능한 가이드가 없습니다',
+    'no-guides-difficulty': '해당 난이도에 이용 가능한 가이드가 없습니다',
+    
+    
+    // Page titles and descriptions
+    'site-title': 'How to Delete - 계정 삭제 종합 가이드',
+    'site-description': '인기 웹사이트와 서비스의 계정 삭제를 단계별로 안내합니다. 명확한 설명, 검증된 방법, 프라이버시 중심의 해결책.',
+    'site-keywords': '계정 삭제, 프로필 제거, 계정 종료, 비활성화, 개인정보, 데이터 보호',
+    'guide-title-template': '{name} 계정을 영구 삭제하는 방법 (2025 가이드)',
+    'guide-description-template': '{name} 계정을 영구적으로 삭제하는 단계별 안내.',
+    'guide-keywords-template': '{name} 삭제, {name} 계정 제거, {name} 계정 종료, {name} 비활성화, 개인정보, 데이터 삭제',
+    'category-title': '카테고리 - How to Delete',
+    'category-description': '카테고리별로 계정 삭제 가이드를 찾아보세요. 소셜 미디어, 이메일 서비스 등 다양한 서비스의 계정 삭제 안내.',
+    'popular-title': '인기 가이드 - How to Delete',
+    'popular-description': '가장 많이 요청된 계정 삭제 가이드. 가장 인기 있는 웹사이트와 서비스의 계정 삭제 방법을 확인하세요.',
+    'about-title': '소개 - How to Delete',
+    'about-description': '계정 삭제를 간단하고 투명하게 만들기 위한 우리의 목표를 알아보세요. 가이드 검증 방식과 프라이버시 보호 방법도 확인하세요.'
+    ,
+    
+    // Home page
+    'home-hero-title': '온라인 계정을 다시 제어하세요',
+    'home-hero-subtitle': '수천 개 웹사이트와 앱에서 계정을 영구 삭제하는 명확하고 검증된 가이드 — 정기 업데이트, 군더더기 없음.',
+    'trust-verified-title': '검증된 출처',
+    'trust-verified-desc': '모든 가이드는 공식 도움말 페이지로 연결',
+    'trust-updated-title': '항상 업데이트',
+    'trust-updated-desc': '정기적으로 확인하고 단계 갱신',
+    'trust-no-tricks-title': '꼼수 없음',
+    'trust-no-tricks-desc': '팝업 없음, 데이터 수집 없음, 군더더기 없음',
+    'popular-subtitle': '가장 많이 검색된 계정 삭제 가이드',
+    'category-delete-from': '{category} 서비스에서 계정 삭제',
+    'home-cta-title': '원하는 것을 찾지 못했나요?',
+    'home-cta-desc': '검색을 사용해 2,000개 이상의 웹사이트와 서비스의 삭제 가이드를 찾으세요.',
+
+    // About page
+    'about-page-title': 'howtodelete.me 소개',
+    'about-intro': '여러분은 온라인 존재를 온전히 통제할 권리가 있으며, 언제든지 어떤 플랫폼이든 떠날 권리가 있습니다.',
+    'our-mission-title': '우리의 목표',
+    'our-mission-desc': 'howtodelete.me는 수천 개 웹사이트와 서비스에서 계정을 영구 삭제하는 명확하고 검증된 안내를 제공합니다. 도움말을 뒤지거나 플랫폼에 머물게 하는 다크 패턴에 시달리지 않고 필요한 정보를 쉽게 찾을 수 있도록 돕습니다.',
+    'why-built-title': '만든 이유',
+    'why-built-desc': '많은 기업이 계정 삭제를 의도적으로 어렵게 만듭니다. 삭제 옵션을 숨기거나 여러 단계를 요구하고, 지원팀에 문의하도록 강제하기도 합니다. 우리는 각 서비스에 대해 직접 링크와 명확한 지침을 제공해 혼란을 없앱니다.',
+    'how-rate-difficulty-title': '난이도 평가 기준',
+    'data-sources-title': '데이터 출처',
+    'data-sources-desc': '가이드는 공식 문서, 도움말 센터, 검증된 커뮤니티 출처를 기반으로 구성합니다. 정확성을 최우선으로 하며 삭제 절차 변경을 반영해 데이터베이스를 정기적으로 업데이트합니다.',
+
+    // Popular page
+    'popular-page-title': '인기 가이드',
+    'popular-page-subtitle-count': '{count}개 인기 서비스 계정 삭제 가이드',
+
+    // Not Found
+    'not-found-title': '페이지를 찾을 수 없습니다',
+    'not-found-desc': '찾고 계신 가이드를 찾지 못했습니다. 아래에서 검색하거나 카테고리를 둘러보세요.',
+    'go-home': '홈으로',
+    'view-popular-guides': '인기 가이드 보기',
+
+    // Feedback page
+    'feedback-page-title': '피드백 및 제안 제출',
+    'feedback-page-subtitle': '오래된 가이드를 신고하거나 새로운 기능을 제안하여 개선을 도와주세요.',
+    'feedback-alert-desc': '피드백은 소중합니다! 오래된 정보나 개선 제안이 있다면 알려주세요.',
+    'report-error-card-title': '오류 신고',
+    'report-error-card-desc': '오래된 가이드나 깨진 링크를 발견했나요?',
+    'report-error-card-help': '서비스 이름과 업데이트가 필요한 내용을 포함해 주세요. 모든 보고를 검토하고 정기적으로 가이드를 업데이트합니다.',
+    'suggest-feature-card-title': '기능 제안',
+    'suggest-feature-card-desc': '사이트를 더 좋게 만들 아이디어가 있나요?',
+    'suggest-feature-card-help': '항상 개선을 추구합니다. 새로운 기능이나 기존 기능 개선에 대한 제안을 공유해 주세요.',
+    'what-we-need': '필요한 정보',
+    'feedback-need-service-name': '서비스 이름과 URL',
+    'feedback-need-incorrect': '잘못되었거나 오래된 내용',
+    'feedback-need-current': '현재 올바른 정보(알고 있다면)',
+    'feedback-need-screenshots': '스크린샷(가능한 경우)'
+  ,
+    // Contribute page
+    'contribute-subtitle': '가장 포괄적인 계정 삭제 가이드 데이터베이스를 함께 만들어 주세요.',
+    'contribute-intro': 'howtodelete.me는 커뮤니티의 노력으로 만들어집니다. 누구나 기여할 수 있으며, 모두가 자신의 데이터를 스스로 통제할 수 있는 사용자 친화적인 인터넷을 함께 만들어 갑니다.',
+    'improve-code-title': '코드 개선',
+    'technical-contributions': '기술 기여',
+    'developers-contribute-desc': '개발자는 코드베이스에 기여하고, 기능을 개선하거나 버그를 수정할 수 있습니다.',
+    'contribution-guidelines': '기여 가이드라인',
+    'what-we-accept-title': '허용하는 기여',
+    'quality-standards-title': '품질 기준',
+    'accept-official-links': '회사 도움말 페이지의 공식 삭제 링크',
+    'accept-verified-steps': '검증된 단계별 설명',
+    'accept-updates': '프로세스 변경 시 기존 가이드 업데이트',
+    'accept-difficulty-ratings': '실제 경험을 기반으로 한 난이도 평가',
+    'standard-official-sources': '모든 링크는 공식 출처여야 합니다',
+    'standard-clear-accurate': '설명은 명확하고 정확해야 합니다',
+    'standard-include-warnings': '관련 경고 또는 참고 사항 포함',
+    'standard-test-process': '제출 전에 프로세스를 테스트하세요',
+    'breadcrumb-more': '더보기',
+    
+  }
+}
+
+export function useTranslations() {
+  const { currentLanguage } = useLanguage()
+  return (
+    key: keyof Translations,
+    replacements?: Record<string, string | number>
+  ) => {
+    const raw = translations[currentLanguage]?.[key] || translations.en[key]
+    if (!replacements) return raw
+    let result = raw
+    for (const [k, v] of Object.entries(replacements)) {
+      const placeholder = `{${k}}`
+      // Replace all occurrences of the placeholder
+      result = result.split(placeholder).join(String(v))
+    }
+    return result
+  }
+}
+
+// 服务端安全的翻译获取函数，不依赖 React Hook
+export function getTranslations(locale: SupportedLanguage) {
+  return (
+    key: keyof Translations,
+    replacements?: Record<string, string | number>
+  ) => {
+    const raw = translations[locale]?.[key] || translations.en[key]
+    if (!replacements) return raw
+    let result = raw
+    for (const [k, v] of Object.entries(replacements)) {
+      const placeholder = `{${k}}`
+      result = result.split(placeholder).join(String(v))
+    }
+    return result
+  }
+}
