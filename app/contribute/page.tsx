@@ -2,8 +2,8 @@ import { ContributePageContent } from "@/components/contribute-page-content"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contribute | howtodelete.me",
-  description: "Learn how to contribute to howtodelete.me.",
+  title: "Contribute Account Deletion Guides | howtodelete.me",
+  description: "Learn how to contribute account deletion guides to howtodelete.me.",
 }
 
 export default function ContributePage() {

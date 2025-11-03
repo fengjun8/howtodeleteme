@@ -1,9 +1,24 @@
 import type { Metadata } from "next"
 import { BreadcrumbNav } from "@/components/breadcrumb-nav"
+import { getTranslations } from "@/lib/utils/translations"
+import { isSupportedLanguage, type SupportedLanguage } from "@/lib/utils/i18n"
 
-export const metadata: Metadata = {
-  title: "Terms of Service | howtodelete.me",
-  description: "Terms of service for using howtodelete.me.",
+interface PageProps {
+  params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params
+  const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
+  const t = getTranslations(lang)
+
+  return {
+    title: `${t('terms-of-service')} | howtodelete.me`,
+    description: `${t('terms-of-service')} for using howtodelete.me.`,
+    alternates: {
+      canonical: `/${locale}/terms`,
+    },
+  }
 }
 
 export default function TermsPage() {

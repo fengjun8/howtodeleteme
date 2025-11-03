@@ -31,7 +31,7 @@ export async function generateMetadata({
   return {
     title: t('site-title'),
     description: t('site-description'),
-    keywords: "delete account, remove profile, close account, deactivate, privacy, data protection",
+    keywords: t('site-keywords'),
     authors: [{ name: "HowToDelete Team" }],
     creator: "HowToDelete",
     publisher: "HowToDelete",
@@ -40,7 +40,7 @@ export async function generateMetadata({
       address: false,
       telephone: false,
     },
-    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.guide'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'),
     alternates: {
       canonical: `/${locale}`,
       languages: Object.fromEntries(
@@ -82,6 +82,8 @@ export default async function LocaleLayout({
   return (
     <LanguageProvider initialLanguage={locale as SupportedLanguage}>
       {children}
+      {/* 在语言布局中渲染页脚，确保与路由语言一致，避免水合差异 */}
+      <SiteFooter />
     </LanguageProvider>
   );
 }

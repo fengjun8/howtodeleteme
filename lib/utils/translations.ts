@@ -77,6 +77,7 @@ export interface Translations {
   'disclaimer': string
   'contact': string
   'submit-feedback': string
+  'footer-copyright': string
   'footer-tagline': string
   'footer-disclaimer': string
   
@@ -289,6 +290,7 @@ export interface Translations {
   'feedback-need-screenshots': string
 
   // Contribute page
+  'contribute-page-title': string
   'contribute-subtitle': string
   'contribute-intro': string
   'improve-code-title': string
@@ -412,6 +414,7 @@ export const translations: {
     'disclaimer': 'Disclaimer',
     'contact': 'Contact',
     'submit-feedback': 'Submit Feedback',
+    'footer-copyright': '{year} howtodelete.me All rights reserved.',
     'footer-tagline': 'Making account deletion simple and transparent.',
     'footer-disclaimer': 'This website is not affiliated with any of the services mentioned. All trademarks belong to their respective owners.',
     
@@ -500,6 +503,7 @@ export const translations: {
     'trust-no-tricks-desc': 'No popups, no data collection, no nonsense',
     'popular-subtitle': 'Most searched account deletion guides',
     'category-delete-from': 'Delete accounts from {category} services',
+    'account-deletion-guides': 'Account Deletion Guides',
     'home-cta-title': "Can't find what you're looking for?",
     'home-cta-desc': 'Use our search to find deletion guides for over 2,000 websites and services.',
 
@@ -623,6 +627,7 @@ export const translations: {
   'feedback-need-screenshots': 'Screenshots (if applicable)'
   ,
   // Contribute page
+  'contribute-page-title': 'Contribute Account Deletion Guides',
   'contribute-subtitle': 'Help us build the most comprehensive database of account deletion guides.',
   'contribute-intro': 'howtodelete.me is a community effort. We welcome contributions from anyone who wants to help make the internet a more user-friendly place where people have control over their data.',
   'improve-code-title': 'Improve Code',
@@ -809,6 +814,7 @@ export const translations: {
     'trust-no-tricks-desc': 'Sin pop-ups, sin recopilación de datos, sin relleno',
     'popular-subtitle': 'Las guías de eliminación más buscadas',
     'category-delete-from': 'Eliminar cuentas de servicios de {category}',
+    'account-deletion-guides': 'Guías de eliminación de cuentas',
     'home-cta-title': '¿No encuentras lo que buscas?',
     'home-cta-desc': 'Usa la búsqueda para encontrar guías de eliminación de más de 2.000 sitios y servicios.',
 
@@ -843,6 +849,7 @@ export const translations: {
     'disclaimer': 'Aviso legal',
     'contact': 'Contacto',
     'submit-feedback': 'Enviar comentarios',
+    'footer-copyright': '©{year} howtodelete.me. Todos los derechos reservados.',
     'footer-tagline': 'Hacer que eliminar cuentas sea simple y transparente.',
     'footer-disclaimer': 'Este sitio no está afiliado con los servicios mencionados. Todas las marcas pertenecen a sus respectivos propietarios.',
     'breadcrumb-more': 'Más',
@@ -1017,6 +1024,7 @@ export const translations: {
     'trust-no-tricks-desc': 'Pas de pop-ups, pas de collecte de données, pas de blabla',
     'popular-subtitle': 'Les guides de suppression les plus recherchés',
     'category-delete-from': 'Supprimer des comptes des services {category}',
+    'account-deletion-guides': 'Guides de suppression de comptes',
     'home-cta-title': 'Vous ne trouvez pas ?',
     'home-cta-desc': 'Utilisez la recherche pour trouver des guides de suppression pour plus de 2 000 sites et services.',
 
@@ -1051,6 +1059,7 @@ export const translations: {
     'disclaimer': 'Avertissement',
     'contact': 'Contact',
     'submit-feedback': 'Envoyer un commentaire',
+    'footer-copyright': '©{year} howtodelete.me. Tous droits réservés.',
     'footer-tagline': 'Rendre la suppression de comptes simple et transparente.',
     'footer-disclaimer': 'Ce site n’est affilié à aucun des services mentionnés. Toutes les marques appartiennent à leurs propriétaires.',
     'breadcrumb-more': 'Plus',
@@ -1225,6 +1234,7 @@ export const translations: {
     'trust-no-tricks-desc': 'Keine Pop-ups, keine Datensammlung, kein Fülltext',
     'popular-subtitle': 'Meistgesuchte Kontolöschungsleitfäden',
     'category-delete-from': 'Konten aus {category}-Diensten löschen',
+    'account-deletion-guides': 'Kontolöschungsleitfäden',
     'home-cta-title': 'Nicht gefunden, was Sie suchen?',
     'home-cta-desc': 'Nutzen Sie die Suche für über 2.000 Websites und Dienste.',
 
@@ -1259,6 +1269,7 @@ export const translations: {
     'disclaimer': 'Haftungsausschluss',
     'contact': 'Kontakt',
     'submit-feedback': 'Feedback senden',
+    'footer-copyright': '©{year} howtodelete.me. Alle Rechte vorbehalten.',
     'footer-tagline': 'Kontolöschung einfach und transparent.',
     'footer-disclaimer': 'Diese Website ist nicht mit genannten Diensten verbunden. Alle Marken gehören ihren jeweiligen Inhabern.',
     'breadcrumb-more': 'Mehr',
@@ -1433,6 +1444,7 @@ export const translations: {
     'trust-no-tricks-desc': 'Niente pop-up, nessuna raccolta dati, niente riempitivi',
     'popular-subtitle': 'Le guide di eliminazione più cercate',
     'category-delete-from': 'Elimina account dai servizi {category}',
+    'account-deletion-guides': 'Guide per l’eliminazione degli account',
     'home-cta-title': 'Non trovi ciò che cerchi?',
     'home-cta-desc': 'Usa la ricerca per trovare guide di eliminazione per oltre 2.000 siti e servizi.',
 
@@ -1467,6 +1479,7 @@ export const translations: {
     'disclaimer': 'Disclaimer',
     'contact': 'Contatti',
     'submit-feedback': 'Invia feedback',
+    'footer-copyright': '©{year} howtodelete.me. Tutti i diritti riservati.',
     'footer-tagline': 'Rendere l’eliminazione degli account semplice e trasparente.',
     'footer-disclaimer': 'Questo sito non è affiliato ai servizi menzionati. Tutti i marchi appartengono ai rispettivi proprietari.',
     'breadcrumb-more': 'Altro',
@@ -1641,6 +1654,7 @@ export const translations: {
     'trust-no-tricks-desc': 'Sem pop‑ups, sem coleta de dados, sem enrolação',
     'popular-subtitle': 'Os guias de exclusão mais buscados',
     'category-delete-from': 'Excluir contas de serviços {category}',
+    'account-deletion-guides': 'Guias de exclusão de contas',
     'home-cta-title': 'Não achou o que procura?',
     'home-cta-desc': 'Use a busca para encontrar guias de exclusão para mais de 2.000 sites e serviços.',
 
@@ -1675,6 +1689,7 @@ export const translations: {
     'disclaimer': 'Aviso legal',
     'contact': 'Contato',
     'submit-feedback': 'Enviar feedback',
+    'footer-copyright': '©{year} howtodelete.me. Todos os direitos reservados.',
     'footer-tagline': 'Tornar a exclusão de contas simples e transparente.',
     'footer-disclaimer': 'Este site não tem afiliação com os serviços mencionados. Todas as marcas pertencem aos seus respectivos proprietários.',
     'breadcrumb-more': 'Mais',
@@ -1822,7 +1837,8 @@ export const translations: {
     'standard-official-sources': 'Все ссылки должны вести на официальные источники',
     'standard-clear-accurate': 'Инструкции должны быть ясными и точными',
     'standard-include-warnings': 'Включать соответствующие предупреждения или примечания',
-    'standard-test-process': 'Протестируйте процесс перед отправкой'
+    'standard-test-process': 'Протестируйте процесс перед отправкой',
+    'account-deletion-guides': 'Руководства по удалению аккаунтов'
   },
   tr: {
     // Navigation
@@ -1968,6 +1984,7 @@ export const translations: {
     'standard-include-warnings': 'İlgili uyarı veya notları ekleyin',
     'standard-test-process': 'Göndermeden önce süreci test edin',
     'breadcrumb-more': 'Daha fazla',
+    'account-deletion-guides': 'Hesap silme rehberleri',
     
   },
   ja: {
@@ -2139,6 +2156,7 @@ export const translations: {
     'trust-no-tricks-desc': 'ポップアップなし、データ収集なし、無駄な情報なし',
     'popular-subtitle': '最も検索されるアカウント削除ガイド',
     'category-delete-from': '{category} サービスでのアカウント削除',
+    'account-deletion-guides': 'アカウント削除ガイド',
     'home-cta-title': 'お探しのものが見つからない？',
     'home-cta-desc': '検索を使って 2,000 以上のサイトとサービスの削除ガイドを見つけましょう。',
 
@@ -2173,6 +2191,7 @@ export const translations: {
     'disclaimer': '免責事項',
     'contact': 'お問い合わせ',
     'submit-feedback': 'フィードバックを送信',
+    'footer-copyright': '©{year} howtodelete.me. 無断転載を禁じます。',
     'footer-tagline': 'アカウント削除を簡単で透明に。',
     'footer-disclaimer': '本サイトは記載のサービスと提携していません。商標は各権利者に帰属します。',
     'breadcrumb-more': 'その他'
@@ -2279,6 +2298,7 @@ export const translations: {
     'disclaimer': '免责声明',
     'contact': '联系我们',
     'submit-feedback': '提交反馈',
+    'footer-copyright': '©{year} howtodelete.me 版权所有。',
     'footer-tagline': '让账户删除变得简单透明。',
     'footer-disclaimer': '本网站与所提及的任何服务均无关联。所有商标均属其各自所有者。',
     
@@ -2366,6 +2386,7 @@ export const translations: {
     'trust-no-tricks-desc': '无弹窗、无数据收集、无套路',
     'popular-subtitle': '最常被搜索的账户删除指南',
     'category-delete-from': '从{category}类服务中删除账户',
+    'account-deletion-guides': '账户删除指南',
     'home-cta-title': '没找到想要的内容？',
     'home-cta-desc': '使用搜索查找超过 2,000 个网站和服务的删除指南。',
 
@@ -2489,6 +2510,7 @@ export const translations: {
     'feedback-need-screenshots': '截图（如适用）'
   ,
     // Contribute page
+    'contribute-page-title': '贡献删除指南',
     'contribute-subtitle': '帮助我们构建最全面的账户删除指南数据库。',
     'contribute-intro': 'howtodelete.me 是一个社区协作项目。我们欢迎任何人贡献，共同让互联网更加以用户为中心，让每个人都能掌控自己的数据。',
     'improve-code-title': '改进代码',
@@ -2608,6 +2630,7 @@ export const translations: {
     'contact': '문의',
     'submit-feedback': '피드백 제출',
     'contribute': '기여하기',
+    'footer-copyright': '©{year} howtodelete.me. 모든 권리 보유.',
     'footer-tagline': '명확하고 검증된 계정 삭제 안내',
     'footer-disclaimer': '제공된 정보는 참고용입니다. 최신 정보를 확인하세요.',
 
@@ -2751,6 +2774,7 @@ export const translations: {
     'standard-include-warnings': '관련 경고 또는 참고 사항 포함',
     'standard-test-process': '제출 전에 프로세스를 테스트하세요',
     'breadcrumb-more': '더보기',
+    'account-deletion-guides': '계정 삭제 가이드',
     
   }
 }
@@ -2761,13 +2785,29 @@ export function useTranslations() {
     key: keyof Translations,
     replacements?: Record<string, string | number>
   ) => {
-    const raw = translations[currentLanguage]?.[key] || translations.en[key]
-    if (!replacements) return raw
-    let result = raw
+    const raw = translations[currentLanguage]?.[key] ?? translations.en[key] ?? (key as string)
+    // 确保始终返回字符串，防止 undefined 导致的 split 错误
+    if (!replacements) return String(raw || '')
+    
+    let result = String(raw || '')
     for (const [k, v] of Object.entries(replacements)) {
       const placeholder = `{${k}}`
-      // Replace all occurrences of the placeholder
-      result = result.split(placeholder).join(String(v))
+      const value = String(v ?? '')
+      // 使用 indexOf + slice 的方式替换占位符，避免任何对 split 的依赖
+      let out = ''
+      let start = 0
+      // 保证 result 是字符串
+      const source = String(result)
+      while (true) {
+        const idx = source.indexOf(placeholder, start)
+        if (idx === -1) {
+          out += source.slice(start)
+          break
+        }
+        out += source.slice(start, idx) + value
+        start = idx + placeholder.length
+      }
+      result = out
     }
     return result
   }
@@ -2779,12 +2819,27 @@ export function getTranslations(locale: SupportedLanguage) {
     key: keyof Translations,
     replacements?: Record<string, string | number>
   ) => {
-    const raw = translations[locale]?.[key] || translations.en[key]
-    if (!replacements) return raw
-    let result = raw
+    const raw = translations[locale]?.[key] ?? translations.en[key] ?? (key as string)
+    // 确保始终返回字符串，防止 undefined 导致的 split 错误
+    if (!replacements) return String(raw || '')
+    
+    let result = String(raw || '')
     for (const [k, v] of Object.entries(replacements)) {
       const placeholder = `{${k}}`
-      result = result.split(placeholder).join(String(v))
+      const value = String(v ?? '')
+      let out = ''
+      let start = 0
+      const source = String(result)
+      while (true) {
+        const idx = source.indexOf(placeholder, start)
+        if (idx === -1) {
+          out += source.slice(start)
+          break
+        }
+        out += source.slice(start, idx) + value
+        start = idx + placeholder.length
+      }
+      result = out
     }
     return result
   }

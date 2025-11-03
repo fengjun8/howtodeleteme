@@ -44,15 +44,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'
+  const canonicalUrl = lang === 'en' ? `${baseUrl}/${slug}` : `${baseUrl}/${locale}/${slug}`
+
   return {
     title: `${t('guide-title-template', { name: guide.name })} | howtodelete.me`,
     description: `${t('guide-description-template', { name: guide.name })} ${guide.notes}`,
     keywords: t('guide-keywords-template', { name: guide.name }),
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: t('guide-title-template', { name: guide.name }),
       description: `${t('guide-description-template', { name: guide.name })} ${guide.notes}`,
       type: "article",
-      url: `https://howtodelete.me/${slug}`,
+      url: canonicalUrl,
     },
     twitter: {
       card: "summary",

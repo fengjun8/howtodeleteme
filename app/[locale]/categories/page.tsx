@@ -12,9 +12,27 @@ import type { SupportedLanguage } from "@/lib/utils/i18n"
 export async function generateMetadata({ params }: { params: Promise<{ locale: SupportedLanguage }> }): Promise<Metadata> {
   const { locale } = await params
   const t = getTranslations(locale)
+  
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'
+  const canonicalUrl = locale === 'en' ? `${baseUrl}/categories` : `${baseUrl}/${locale}/categories`
+  
   return {
     title: t("category-title"),
     description: t("category-description"),
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: t("category-title"),
+      description: t("category-description"),
+      url: canonicalUrl,
+      type: "website",
+    },
+    twitter: {
+      card: "summary",
+      title: t("category-title"),
+      description: t("category-description"),
+    },
   }
 }
 

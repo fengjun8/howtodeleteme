@@ -11,7 +11,11 @@ import { getSearchSuggestions } from "@/lib/data/guides"
 import { useTranslations } from "@/lib/utils/translations"
 import { useLocalizedLinks } from "@/hooks/use-localized-links"
 
-export function SearchBar() {
+type SearchBarProps = {
+  variant?: 'light' | 'dark'
+}
+
+export function SearchBar({ variant = 'light' }: SearchBarProps) {
   const [query, setQuery] = useState("")
   const [suggestions, setSuggestions] = useState<string[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
@@ -122,7 +126,11 @@ export function SearchBar() {
               setShowSuggestions(true)
             }
           }}
-          className="pl-10 pr-10 h-12 text-base text-white placeholder:text-gray-300"
+          className={`pl-10 pr-10 h-12 text-base ${
+            variant === 'dark'
+              ? 'text-white placeholder:text-gray-300'
+              : 'text-foreground placeholder:text-gray-500'
+          }`}
           autoComplete="off"
         />
         {query && (

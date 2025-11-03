@@ -39,6 +39,35 @@ export function generateGuideStructuredData(guide: ProcessedGuide) {
       value: "0",
     },
     totalTime: getDurationByDifficulty(guide.difficulty),
+    tool: [
+      {
+        "@type": "HowToTool",
+        name: "Web Browser",
+      },
+      {
+        "@type": "HowToTool", 
+        name: "Internet Connection",
+      },
+    ],
+    supply: [
+      {
+        "@type": "HowToSupply",
+        name: "Account Credentials",
+      },
+    ],
+    author: {
+      "@type": "Organization",
+      name: "HowToDelete",
+      url: "https://howtodelete.me",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "HowToDelete",
+      url: "https://howtodelete.me",
+    },
+    datePublished: new Date().toISOString(),
+    dateModified: new Date().toISOString(),
+    inLanguage: "en",
   }
 }
 
@@ -59,27 +88,118 @@ export function generateWebsiteStructuredData() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "howtodelete.me",
-    description: "Step-by-step guides to permanently delete your online accounts",
+    name: "HowToDelete",
+    alternateName: "How to Delete",
     url: "https://howtodelete.me",
+    description: "Comprehensive guides for deleting accounts from popular websites and services. Clear instructions, verified methods, and privacy-focused solutions.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://howtodelete.me/search?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
+    publisher: {
+      "@type": "Organization",
+      name: "HowToDelete",
+      url: "https://howtodelete.me",
+    },
+    inLanguage: ["en", "zh", "es", "fr", "de", "it", "pt", "ru", "tr", "ja", "ko"],
+  }
+}
+
+export function generateOrganizationStructuredData() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "HowToDelete",
+    url: "https://howtodelete.me",
+    logo: "https://howtodelete.me/placeholder-logo.svg",
+    description: "We help users take control of their online presence by providing clear, verified guides for deleting accounts from popular websites and services.",
+    foundingDate: "2024",
+    knowsAbout: [
+      "Account Deletion",
+      "Privacy Rights",
+      "Data Protection",
+      "Digital Privacy",
+      "Online Account Management",
+    ],
+    areaServed: "Worldwide",
+    serviceType: "Educational Content",
+  }
+}
+
+export function generateFAQStructuredData(faqs: Array<{ question: string; answer: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  }
+}
+
+export function generateCollectionPageStructuredData(
+  name: string,
+  description: string,
+  url: string,
+  items: ProcessedGuide[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    description,
+    url,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: items.length,
+      itemListElement: items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "HowTo",
+          name: `How to Delete ${item.name} Account`,
+          url: item.url,
+          description: item.notes,
+        },
+      })),
+    },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://howtodelete.me",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name,
+          item: url,
+        },
+      ],
+    },
   }
 }
 
 function getDurationByDifficulty(difficulty: string): string {
-  switch (difficulty) {
+  switch (difficulty?.toLowerCase()) {
     case "easy":
-      return "PT5M" // 5 minutes
+      return "PT5M"
     case "medium":
-      return "PT15M" // 15 minutes
+      return "PT15M"
     case "hard":
-      return "PT30M" // 30 minutes
+      return "PT30M"
+    case "limited-availability":
+      return "PT60M"
     case "impossible":
-      return "PT1H" // 1 hour or more
+      return "PT0M"
     default:
       return "PT10M"
   }

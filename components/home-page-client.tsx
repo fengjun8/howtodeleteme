@@ -29,6 +29,11 @@ export function HomePageClient({
   const [popularGuides, setPopularGuides] = useState<ProcessedGuide[]>(initialPopularGuides)
   const [allGuides, setAllGuides] = useState<ProcessedGuide[]>(initialAllGuides)
 
+  // 分类名称转翻译键（保持与其他页面一致）
+  const getCategoryTranslationKey = (category: string): string => {
+    return category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "")
+  }
+
   // 当语言改变时重新获取数据
   useEffect(() => {
     const localizedPopularGuides = getPopularGuides(20, currentLanguage)
@@ -70,7 +75,7 @@ export function HomePageClient({
                 {t('home-hero-subtitle')}
               </p>
               <div className="flex justify-center pt-4">
-                <SearchBar />
+                <SearchBar variant="dark" />
               </div>
             </div>
 
@@ -127,9 +132,9 @@ export function HomePageClient({
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="text-2xl font-bold tracking-tight">{category}</h2>
+                  <h2 className="text-2xl font-bold tracking-tight">{t(getCategoryTranslationKey(category) as any) || category}</h2>
                   <p className="text-muted-foreground text-sm mt-1">
-                    {t('category-delete-from').replace('{category}', t(category.toLowerCase() as any) || category.toLowerCase())}
+                    {t('category-delete-from').replace('{category}', t(getCategoryTranslationKey(category) as any) || category)}
                   </p>
                 </div>
                 <Button variant="outline" size="sm" asChild>
@@ -159,7 +164,7 @@ export function HomePageClient({
                 {t('home-cta-desc')}
               </p>
               <div className="flex justify-center pt-4">
-                <SearchBar />
+                <SearchBar variant="dark" />
               </div>
             </div>
           </div>

@@ -5,9 +5,11 @@ import { BreadcrumbNav } from "@/components/breadcrumb-nav"
 import Link from "next/link"
 import { Home } from "lucide-react"
 import type { Metadata } from "next"
+import { isSupportedLanguage, type SupportedLanguage } from "@/lib/utils/i18n"
+import { getTranslations } from "@/lib/utils/translations"
 
 interface PageProps {
-  params: Promise<{ difficulty: string }>
+  params: Promise<{ difficulty: string; locale: string }>
 }
 
 export async function generateStaticParams() {
@@ -44,16 +46,47 @@ const difficultyConfig = {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { difficulty } = await params
+  const { difficulty, locale } = await params
+  const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
+  const t = getTranslations(lang)
   const config = difficultyConfig[difficulty as keyof typeof difficultyConfig]
 
   if (!config) {
     return { title: "Difficulty Not Found" }
   }
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'
+  const canonicalUrl = lang === 'en' ? `${baseUrl}/difficulty/${difficulty}` : `${baseUrl}/${locale}/difficulty/${difficulty}`
+
+  // 使用本地化标签与描述
+  const localizedLabel = t(difficulty as keyof import("@/lib/utils/translations").Translations)
+  const descKeyMap: Record<string, keyof import("@/lib/utils/translations").Translations> = {
+    easy: 'difficulty-easy-desc',
+    medium: 'difficulty-medium-desc',
+    hard: 'difficulty-hard-desc',
+    'limited-availability': 'difficulty-limited-desc',
+    impossible: 'difficulty-impossible-desc',
+  }
+  const localizedDesc = t(descKeyMap[difficulty] || 'difficulty-config-not-found')
+
   return {
-    title: `${config.label} Account Deletions | howtodelete.me`,
-    description: `${config.description} Browse all ${difficulty} difficulty account deletion guides.`,
+    title: `${localizedLabel} - ${t('site-title')} | howtodelete.me`,
+    description: localizedDesc,
+    keywords: t('site-keywords'),
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${localizedLabel} - ${t('site-title')}`,
+      description: localizedDesc,
+      url: canonicalUrl,
+      type: "website",
+    },
+    twitter: {
+      card: "summary",
+      title: `${localizedLabel} - ${t('site-title')}`,
+      description: localizedDesc,
+    },
   }
 }
 

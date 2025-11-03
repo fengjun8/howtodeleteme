@@ -1,9 +1,15 @@
 import { Metadata } from "next"
 import { SearchPageClient } from "@/components/search-page-client"
+import { getTranslations } from "@/lib/utils/translations"
+
+const t = getTranslations('en')
 
 export const metadata: Metadata = {
-  title: "搜索删除指南 | howtodelete.me",
-  description: "搜索数千个网站和服务的账户删除指南。",
+  title: `${t('search')} | howtodelete.me`,
+  description: t('search-page-subtitle'),
+  alternates: {
+    canonical: "/search",
+  },
 }
 
 export default function SearchPage() {

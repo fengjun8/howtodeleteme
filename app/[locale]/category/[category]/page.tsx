@@ -2,9 +2,11 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getAllCategories, getGuidesByCategory } from "@/lib/data/guides"
 import { CategoryPageClient } from "@/components/category-page-client"
+import { isSupportedLanguage, type SupportedLanguage } from "@/lib/utils/i18n"
+import { getTranslations } from "@/lib/utils/translations"
 
 interface PageProps {
-  params: Promise<{ category: string }>
+  params: Promise<{ category: string; locale: string }>
 }
 
 export async function generateStaticParams() {
@@ -15,7 +17,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { category } = await params
+  const { category, locale } = await params
+  const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
+  const t = getTranslations(lang)
   
   // 反向转换slug到分类名称
   const categories = getAllCategories()
@@ -23,10 +27,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const categoryName = categories.find(cat => 
     cat.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "") === normalizeSlug(category)
   ) || category.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())
+  const slugKey = normalizeSlug(category)
+  const localizedCategoryName = t(slugKey as any) || categoryName
+  
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'
+  const canonicalUrl = lang === 'en' ? `${baseUrl}/category/${category}` : `${baseUrl}/${locale}/category/${category}`
   
   return {
-    title: `${categoryName} - Account Deletion Guides`,
-    description: `View all account deletion guides in the ${categoryName} category`,
+    title: `${localizedCategoryName} ${t('account-deletion-guides')} | howtodelete.me`,
+    description: `${t('category')}: ${localizedCategoryName} — ${t('site-description')}`,
+    keywords: `${t('site-keywords')}, ${localizedCategoryName}`,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${localizedCategoryName} ${t('account-deletion-guides')} | howtodelete.me`,
+      description: `${t('category')}: ${localizedCategoryName} — ${t('site-description')}`,
+      url: canonicalUrl,
+      type: "website",
+    },
+    twitter: {
+      card: "summary",
+      title: `${localizedCategoryName} ${t('account-deletion-guides')} | howtodelete.me`,
+      description: `${t('category')}: ${localizedCategoryName} — ${t('site-description')}`,
+    },
   }
 }
 

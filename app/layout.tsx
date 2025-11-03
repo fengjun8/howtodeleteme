@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+// SiteFooter 改由各语言布局渲染，避免水合阶段语言不一致
 import { LanguageProvider } from "@/contexts/language-context";
 import { DEFAULT_LANGUAGE, SupportedLanguage, SUPPORTED_LANGUAGES, getTranslations } from "@/lib/utils/i18n";
 import { headers } from "next/headers";
 import { FloatingButtons } from "@/components/floating-buttons";
+import { GoogleAnalytics, GoogleAdsense } from "@/components/analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,7 +40,7 @@ export async function generateMetadata(): Promise<Metadata> {
       address: false,
       telephone: false,
     },
-    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.guide'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'),
     alternates: {
       canonical: "/",
       languages: Object.fromEntries(
@@ -71,12 +72,15 @@ export default async function RootLayout({
   
   return (
     <html lang={currentLanguage}>
+      <head>
+        <GoogleAnalytics />
+        <GoogleAdsense />
+      </head>
       <body className={inter.className}>
         <LanguageProvider initialLanguage={currentLanguage}>
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
             <main className="flex-1">{children}</main>
-            <SiteFooter />
             <FloatingButtons />
           </div>
         </LanguageProvider>

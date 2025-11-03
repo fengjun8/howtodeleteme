@@ -15,7 +15,7 @@ export function ContributePageContent() {
       <div className="py-8 max-w-[1280px] mx-auto px-4">
         <div className="space-y-6">
           <div className="space-y-2">
-            <h1 className="text-4xl font-bold tracking-tight">{t('contribute')}</h1>
+            <h1 className="text-4xl font-bold tracking-tight">{t('contribute-page-title')}</h1>
             <p className="text-lg text-muted-foreground">
               {t('contribute-subtitle')}
             </p>

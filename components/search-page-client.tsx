@@ -159,25 +159,6 @@ export function SearchPageClient() {
 
         {!query ? (
           <div className="space-y-8">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4">
-                <Search className="h-8 w-8 text-muted-foreground" />
-              </div>
-              <h2 className="text-xl font-semibold mb-2">{t('search-start-title')}</h2>
-              <p className="text-muted-foreground mb-6">
-                {t('search-start-desc')}
-              </p>
-            </div>
-
-            <div className="bg-muted/30 rounded-lg p-6">
-              <h3 className="font-semibold mb-3">{t('search-tips-title')}</h3>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>{t('search-tip-1')}</li>
-                <li>{t('search-tip-2')}</li>
-                <li>{t('search-tip-3')}</li>
-              </ul>
-            </div>
-
             <div>
               <h3 className="font-semibold mb-3">{t('popular-searches-title')}</h3>
               <div className="flex flex-wrap gap-2">
@@ -185,12 +166,21 @@ export function SearchPageClient() {
                   <Link
                     key={term}
                     href={localizedLink(`/search?q=${encodeURIComponent(term)}`)}
-                    className="px-3 py-1 bg-muted hover:bg-muted/80 rounded-full text-sm transition-colors"
+                    className="px-3 py-1 rounded-full text-sm transition-colors bg-black text-white hover:bg-black/80 border border-black"
                   >
                     {term}
                   </Link>
                 ))}
               </div>
+            </div>
+
+            <div className="bg-green-50 border border-green-600 rounded-lg p-6">
+              <h3 className="font-semibold mb-3">{t('search-tips-title')}</h3>
+              <ul className="text-sm text-green-800 space-y-1">
+                <li>{t('search-tip-1')}</li>
+                <li>{t('search-tip-2')}</li>
+                <li>{t('search-tip-3')}</li>
+              </ul>
             </div>
           </div>
         ) : results.length > 0 ? (

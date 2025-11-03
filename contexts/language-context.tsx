@@ -27,9 +27,15 @@ export function LanguageProvider({ children, initialLanguage }: LanguageProvider
 
   // 从路径中检测当前语言
   useEffect(() => {
+    // 如果服务端已提供 initialLanguage，则不在客户端根据路径再次覆盖，避免水合不匹配
+    if (initialLanguage) {
+      setIsLoading(false)
+      return
+    }
+
     const pathSegments = pathname.split('/').filter(Boolean)
     let detectedLanguage = DEFAULT_LANGUAGE
-    
+
     if (pathSegments.length > 0 && pathSegments[0].length === 2) {
       const possibleLang = pathSegments[0]
       const supportedLang = SUPPORTED_LANGUAGES.find(lang => lang.code === possibleLang)
@@ -37,10 +43,10 @@ export function LanguageProvider({ children, initialLanguage }: LanguageProvider
         detectedLanguage = supportedLang.code
       }
     }
-    
+
     setCurrentLanguage(detectedLanguage)
     setIsLoading(false)
-  }, [pathname])
+  }, [pathname, initialLanguage])
 
   // 也处理初始语言设置
   useEffect(() => {

@@ -170,7 +170,13 @@ export function isSupportedLanguage(locale: string): locale is SupportedLanguage
 export function getBrowserLanguage(): SupportedLanguage {
   if (typeof window === 'undefined') return DEFAULT_LANGUAGE
   
-  const browserLang = navigator.language.split('-')[0]
+  // 确保 navigator 和 navigator.language 存在，并且是字符串
+  const navigatorLanguage = typeof navigator !== 'undefined' && navigator.language
+  if (!navigatorLanguage || typeof navigatorLanguage !== 'string') {
+    return DEFAULT_LANGUAGE
+  }
+  
+  const browserLang = navigatorLanguage.split('-')[0]
   return isSupportedLanguage(browserLang) ? browserLang : DEFAULT_LANGUAGE
 }
 

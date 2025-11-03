@@ -7,6 +7,7 @@ import { useTranslations } from "@/lib/utils/translations"
 export function SiteFooter() {
   const { localizedLink } = useLocalizedLinks()
   const t = useTranslations()
+  const year = new Date().getFullYear()
   return (
     <footer className="border-t border-zinc-800 bg-black text-white">
       <div className="mx-auto max-w-[1280px] px-4 py-8 md:py-12">
@@ -74,7 +75,30 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-8 border-t border-zinc-800 pt-8 text-center text-sm text-zinc-400">
-          <p>{t('footer-tagline')}</p>
+          <p>
+            {(() => {
+              const siteName = 'howtodelete.me'
+              const homeHref = localizedLink("/")
+              const copyright = String(t('footer-copyright', { year }))
+              const tagline = t('footer-tagline')
+              // 统一输出：始终在年份前加版权符号，并将域名替换为超链接
+              // 同时移除翻译文本中可能已出现的年份与域名，避免重复
+              const yearStr = String(year)
+              let remaining = copyright
+              // 去除可能存在的 "©2025" 或 "2025"
+              remaining = remaining.replace(`©${yearStr}`, '')
+              remaining = remaining.replace(yearStr, '')
+              // 去除站点名本身（后续使用链接替代）
+              remaining = remaining.replace(siteName, '').trim()
+
+              return (
+                <>
+                  ©{year} <Link href={homeHref} className="text-zinc-300 hover:text-red-500">{siteName}</Link>
+                  {remaining ? ` ${remaining}` : ''} {tagline}
+                </>
+              )
+            })()}
+          </p>
           <p className="mt-2">{t('footer-disclaimer')}</p>
         </div>
       </div>
