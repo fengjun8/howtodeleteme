@@ -37,17 +37,20 @@ export async function generateMetadata({
     },
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'),
     alternates: {
-      canonical: `/${locale}`,
+      canonical: (process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me') + (validLocale === 'en' ? '/' : `/${validLocale}`),
       languages: Object.fromEntries(
-        SUPPORTED_LANGUAGES.map(lang => [lang.code, `/${lang.code}`])
+        SUPPORTED_LANGUAGES.map(lang => [
+          lang.code,
+          (process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me') + (lang.code === 'en' ? '/' : `/${lang.code}`)
+        ])
       ),
     },
     openGraph: {
       title: t('site-title'),
       description: t('site-description'),
-      url: `/${locale}`,
+      url: (process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me') + (validLocale === 'en' ? '/' : `/${validLocale}`),
       siteName: "HowToDelete",
-      locale: locale,
+      locale: validLocale,
       type: "website",
     },
     twitter: {

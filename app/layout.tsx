@@ -42,15 +42,18 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'),
     alternates: {
-      canonical: "/",
+      canonical: (process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me') + '/',
       languages: Object.fromEntries(
-        SUPPORTED_LANGUAGES.map(lang => [lang.code, lang.code === 'en' ? '/' : `/${lang.code}`])
+        SUPPORTED_LANGUAGES.map(lang => [
+          lang.code,
+          (process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me') + (lang.code === 'en' ? '/' : `/${lang.code}`)
+        ])
       ),
     },
     openGraph: {
       title: t('site-title'),
       description: t('site-description'),
-      url: "/",
+      url: (process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me') + '/',
       siteName: "HowToDelete",
       locale: currentLanguage,
       type: "website",
