@@ -4,29 +4,15 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 // SiteFooter 改由各语言布局渲染，避免水合阶段语言不一致
 import { LanguageProvider } from "@/contexts/language-context";
-import { DEFAULT_LANGUAGE, SupportedLanguage, SUPPORTED_LANGUAGES, getTranslations } from "@/lib/utils/i18n";
-import { headers } from "next/headers";
+import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES, getTranslations } from "@/lib/utils/i18n";
 import { FloatingButtons } from "@/components/floating-buttons";
 import { GoogleAnalytics, GoogleAdsense } from "@/components/analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// 从请求中获取当前语言
-async function getCurrentLanguage(): Promise<SupportedLanguage> {
-  const headersList = await headers();
-  const currentLanguage = headersList.get('x-current-language');
-  
-  if (currentLanguage && SUPPORTED_LANGUAGES.some(lang => lang.code === currentLanguage)) {
-    return currentLanguage as SupportedLanguage;
-  }
-  
-  return DEFAULT_LANGUAGE;
-}
-
 // 生成元数据 - 使用当前语言的翻译
 export async function generateMetadata(): Promise<Metadata> {
-  const currentLanguage = await getCurrentLanguage();
-  const t = getTranslations(currentLanguage);
+  const t = getTranslations(DEFAULT_LANGUAGE);
 
   return {
     title: t('site-title'),
@@ -55,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: t('site-description'),
       url: (process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me') + '/',
       siteName: "HowToDelete",
-      locale: currentLanguage,
+      locale: DEFAULT_LANGUAGE,
       type: "website",
     },
     twitter: {
@@ -66,21 +52,19 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const currentLanguage = await getCurrentLanguage();
-  
   return (
-    <html lang={currentLanguage}>
+    <html lang={DEFAULT_LANGUAGE}>
       <head>
         <GoogleAnalytics />
         <GoogleAdsense />
       </head>
       <body className={inter.className}>
-        <LanguageProvider initialLanguage={currentLanguage}>
+        <LanguageProvider initialLanguage={DEFAULT_LANGUAGE}>
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
             <main className="flex-1">{children}</main>
