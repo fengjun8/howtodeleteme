@@ -4,6 +4,8 @@ import type { Metadata } from "next"
 import { getTranslations } from "@/lib/utils/translations"
 import { isSupportedLanguage, type SupportedLanguage } from "@/lib/utils/i18n"
 
+export const dynamic = 'force-dynamic'
+
 interface PageProps {
   params: Promise<{ locale: string }>
 }

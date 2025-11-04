@@ -6,6 +6,8 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import type { Metadata } from "next"
 
+// 使用SSR按需生成（不配置 revalidate）
+
 export const metadata: Metadata = {
   title: "All Categories | howtodelete.me",
   description:
@@ -20,8 +22,26 @@ export default function CategoriesPage() {
     slug: category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, ""),
   }))
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'
+  const jsonLdCollection = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "All Categories",
+    url: `${baseUrl}/categories`,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: categoriesWithCounts.map((category, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: category.name,
+        url: `${baseUrl}/category/${category.slug}`,
+      })),
+    },
+  }
+
   return (
     <div className="max-w-[1280px] mx-auto">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdCollection) }} />
       <BreadcrumbNav customItems={[{ label: "Categories" }]} />
       <div className="px-4 pb-8">
         <div className="space-y-6">

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getGuideBySlug, processGuides } from "@/lib/data/guides"
+import { getGuideBySlug, processGuides, getPopularGuides } from "@/lib/data/guides"
 import { SUPPORTED_LANGUAGES } from "@/lib/utils/i18n"
 import { getLocalizedDifficulty, isSupportedLanguage, type SupportedLanguage } from "@/lib/utils/i18n"
 import { getTranslations } from "@/lib/utils/translations"
@@ -18,17 +18,19 @@ interface PageProps {
   params: Promise<{ locale: string; slug: string }>
 }
 
-export async function generateStaticParams() {
-  const guides = processGuides()
-  const locales = SUPPORTED_LANGUAGES.map(lang => lang.code)
+// 启用按需静态再生（ISR）：详情页缓存并在过期后后台再生成
+// 详情页不导出 revalidate，热门页通过静态枚举预生成，其他页按需SSR生成
 
-  const params = [] as { locale: string; slug: string }[]
+// 仅预生成热门指南详情页（所有支持语言），其它详情页按需生成
+export async function generateStaticParams() {
+  const locales = SUPPORTED_LANGUAGES.map(l => l.code)
+  const params: { locale: string; slug: string }[] = []
   for (const locale of locales) {
-    for (const guide of guides) {
+    const popularGuides = getPopularGuides(undefined, locale as any)
+    for (const guide of popularGuides) {
       params.push({ locale, slug: guide.slug })
     }
   }
-
   return params
 }
 
@@ -119,6 +121,8 @@ export default async function GuidePage({ params }: PageProps) {
   if (!guide) {
     notFound()
   }
+
+  // 热门指南已在构建期预生成；其它详情页按需生成并通过 ISR 缓存
 
   // Get all guides for recommendations (use locale for localized notes/difficulty label)
   const allGuides = processGuides(lang)

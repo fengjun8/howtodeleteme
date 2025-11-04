@@ -3,16 +3,13 @@ import { notFound } from "next/navigation"
 import { getAllCategories, getGuidesByCategory } from "@/lib/data/guides"
 import { CategoryPageClient } from "@/components/category-page-client"
 
+export const dynamic = 'force-dynamic'
+
 interface PageProps {
   params: Promise<{ category: string }>
 }
 
-export async function generateStaticParams() {
-  const categories = getAllCategories()
-  return categories.map((category) => ({
-    category: category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, ""),
-  }))
-}
+// 取消静态枚举，改为按需SSR渲染，避免构建期大量页面生成
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { category } = await params

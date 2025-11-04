@@ -5,16 +5,13 @@ import { CategoryPageClient } from "@/components/category-page-client"
 import { isSupportedLanguage, type SupportedLanguage } from "@/lib/utils/i18n"
 import { getTranslations } from "@/lib/utils/translations"
 
+export const dynamic = 'force-dynamic'
+
 interface PageProps {
   params: Promise<{ category: string; locale: string }>
 }
 
-export async function generateStaticParams() {
-  const categories = getAllCategories()
-  return categories.map((category) => ({
-    category: category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, ""),
-  }))
-}
+// 取消静态枚举，改为按需SSR渲染，避免构建期大量页面生成
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { category, locale } = await params

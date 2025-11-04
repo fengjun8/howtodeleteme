@@ -8,6 +8,8 @@ import type { Metadata } from "next"
 import { getTranslations } from "@/lib/utils/translations"
 import type { SupportedLanguage } from "@/lib/utils/i18n"
 
+// 使用SSR按需生成（不配置 revalidate）
+
 // 按语言本地化页面标题与描述
 export async function generateMetadata({ params }: { params: Promise<{ locale: SupportedLanguage }> }): Promise<Metadata> {
   const { locale } = await params
@@ -56,8 +58,28 @@ export default async function CategoriesPage({ params }: PageProps) {
     return category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "")
   }
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'
+  const localizedBase = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`
+  const jsonLdCollection = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: t("all-categories"),
+    url: `${localizedBase}/categories`,
+    inLanguage: locale,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: categoriesWithCounts.map((category, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: t(getCategoryTranslationKey(category.name) as any) || category.name,
+        url: `${localizedBase}/category/${category.slug}`,
+      })),
+    },
+  }
+
   return (
     <div className="max-w-[1280px] mx-auto">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdCollection) }} />
       <BreadcrumbNav customItems={[{ label: t("categories") }]} />
       <div className="px-4 pb-8">
         <div className="space-y-6">

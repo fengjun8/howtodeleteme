@@ -6,11 +6,27 @@ import { HomePageClient } from "@/components/home-page-client"
 import Link from "next/link"
 import { ArrowRight, Shield, CheckCircle, Clock } from "lucide-react"
 
+// 使用SSR按需生成（不配置 revalidate）
+
 export default function HomePage() {
   // 使用默认语言获取初始数据
   const popularGuides = getPopularGuides(20, 'en')
   const allGuides = processGuides('en')
   const categories = getAllCategories()
+
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "howtodelete.me",
+    url: baseUrl,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${baseUrl}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+    inLanguage: "en",
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -45,6 +61,7 @@ export default function HomePage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <HomePageClient 
         initialPopularGuides={popularGuides}

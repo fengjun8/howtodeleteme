@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static exports for better performance
-  output: "standalone",
+  // Default output (disable standalone to avoid Windows symlink issues)
+  // Tip: enable in CI/Linux if you need standalone bundle
 
   // Optimize images
   images: {
@@ -93,10 +93,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
 
-  // ESLint configuration
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // Remove deprecated eslint config (Next.js 16 no longer supports in next.config)
 }
 
 export default nextConfig

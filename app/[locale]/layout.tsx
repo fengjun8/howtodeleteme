@@ -9,12 +9,7 @@ import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// 生成静态参数
-export async function generateStaticParams() {
-  return SUPPORTED_LANGUAGES.map((lang) => ({
-    locale: lang.code,
-  }));
-}
+// 已改为SSR与ISR策略，不再在布局层枚举静态参数，避免不兼容的段配置导出
 
 // 生成元数据
 export async function generateMetadata({
