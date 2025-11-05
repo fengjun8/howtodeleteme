@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "@/components/site-header";
 // SiteFooter 改由各语言布局渲染，避免水合阶段语言不一致
 import { LanguageProvider } from "@/contexts/language-context";
 import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES, getTranslations } from "@/lib/utils/i18n";
@@ -66,7 +65,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <LanguageProvider initialLanguage={DEFAULT_LANGUAGE}>
           <div className="relative flex min-h-screen flex-col">
-            <SiteHeader />
             <main className="flex-1">{children}</main>
             <FloatingButtons />
           </div>

@@ -79,6 +79,7 @@ export default async function LocaleLayout({
 
   return (
     <LanguageProvider initialLanguage={locale as SupportedLanguage}>
+      <SiteHeader />
       {children}
       {/* 在语言布局中渲染页脚，确保与路由语言一致，避免水合差异 */}
       <SiteFooter />

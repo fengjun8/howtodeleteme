@@ -119,5 +119,12 @@ function formatSegmentLabel(segment: string, t: (key: string) => string): string
     "impossible": t('impossible')
   }
   
+  // Handle guide detail slugs like: delete-<service>-account
+  const match = segment.match(/^delete-(.+)-account$/i)
+  if (match) {
+    const service = match[1].replace(/-/g, ' ')
+    return `${t('delete-word')} ${service} ${t('account-word')}`
+  }
+  
   return labelMap[segment] || decodeURIComponent(segment).replace(/-/g, " ")
 }
