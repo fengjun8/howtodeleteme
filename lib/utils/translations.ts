@@ -482,8 +482,8 @@ export const translations: {
     
     // Page titles and descriptions
     'site-title': 'How to Delete - Complete Guides for Account Deletion',
-    'site-description': 'Step-by-step guides for deleting your accounts from popular websites and services. Clear instructions, verified methods, and privacy-focused solutions.',
-    'site-keywords': 'delete account, remove profile, close account, deactivate, privacy, data protection',
+    'site-description': 'Step-by-step guides for deleting your accounts from popular websites and services. Clear instructions, verified methods, and privacy-focused solutions.Take back control of your data with howtodelete.me.',
+    'site-keywords': 'delete account, how to delete account, remove profile, close account, delete facebook, delete instagram, delete amazon account, deactivate, privacy, data protection',
     'category-title': 'Categories - How to Delete',
     'category-description': 'Browse account deletion guides by category. Find step-by-step instructions for deleting accounts from social media, email services, and more.',
     'popular-title': 'Popular Guides - How to Delete',

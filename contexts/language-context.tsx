@@ -25,14 +25,8 @@ export function LanguageProvider({ children, initialLanguage }: LanguageProvider
   )
   const [isLoading, setIsLoading] = useState(true)
 
-  // 从路径中检测当前语言
+  // 从路径中检测当前语言；即使存在 initialLanguage，也与实际路径保持一致
   useEffect(() => {
-    // 如果服务端已提供 initialLanguage，则不在客户端根据路径再次覆盖，避免水合不匹配
-    if (initialLanguage) {
-      setIsLoading(false)
-      return
-    }
-
     const pathSegments = pathname.split('/').filter(Boolean)
     let detectedLanguage = DEFAULT_LANGUAGE
 
@@ -44,16 +38,20 @@ export function LanguageProvider({ children, initialLanguage }: LanguageProvider
       }
     }
 
+    // 如果服务端提供的初始语言与当前路径不一致，则以路径为准，避免刷新后语言回落到英文
+    if (initialLanguage) {
+      if (initialLanguage !== detectedLanguage) {
+        setCurrentLanguage(detectedLanguage)
+      }
+      setIsLoading(false)
+      return
+    }
+
     setCurrentLanguage(detectedLanguage)
     setIsLoading(false)
   }, [pathname, initialLanguage])
 
-  // 也处理初始语言设置
-  useEffect(() => {
-    if (initialLanguage) {
-      setCurrentLanguage(initialLanguage)
-    }
-  }, [initialLanguage])
+  // 初始语言已在上面的路径检测中处理，避免重复覆盖导致语言回退
 
   const setLanguage = (language: SupportedLanguage) => {
     // 拆分路径，只有在首段是受支持的语言代码时才移除它

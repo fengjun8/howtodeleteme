@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params
   const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
   const t = getTranslations(lang)
-  const popularGuides = getPopularGuides()
+  const popularGuides = getPopularGuides(undefined, lang)
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'
   const canonicalUrl = lang === 'en' ? `${baseUrl}/popular` : `${baseUrl}/${locale}/popular`
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function PopularPage({ params }: PageProps) {
   const { locale } = await params
   const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
-  const popularGuides = getPopularGuides()
+  const popularGuides = getPopularGuides(undefined, lang)
 
   return <PopularPageClient locale={lang} popularGuides={popularGuides} />
 }
