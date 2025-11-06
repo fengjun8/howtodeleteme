@@ -3,9 +3,10 @@ import type { SupportedLanguage } from "@/lib/utils/i18n"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://howtodelete.me"
 
-function encodeCategorySlug(category: string) {
-  return encodeURIComponent(category.toLowerCase().replace(/\s+/g, "-"))
-}
+ function encodeCategorySlug(category: string) {
+   // 与分类页、路由保持一致：空格转"-"，去掉"&"，不做额外URL编码
+   return category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "")
+ }
 
 export function buildLocaleSitemapXML(locale: SupportedLanguage) {
   // 使用英文作为数据源来生成 slug 与列表，保持与现有路由一致
