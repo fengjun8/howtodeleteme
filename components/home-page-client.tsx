@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { SearchBar } from "@/components/search-bar"
 import { GuideCard } from "@/components/guide-card"
 import { Button } from "@/components/ui/button"
@@ -14,68 +14,32 @@ import type { SupportedLanguage } from "@/lib/utils/i18n"
 
 interface HomePageClientProps {
   initialPopularGuides: ProcessedGuide[]
-  initialAllGuides: ProcessedGuide[]
   categories: string[]
+  initialCategorizedGuides: Record<string, ProcessedGuide[]>
   initialLanguage: SupportedLanguage
 }
 
 export function HomePageClient({ 
   initialPopularGuides, 
-  initialAllGuides, 
   categories,
-  initialLanguage,
+  initialCategorizedGuides,
 }: HomePageClientProps) {
-  const { currentLanguage } = useLanguage()
   const { localizedLink } = useLocalizedLinks()
   const t = useTranslations()
-  const [popularGuides, setPopularGuides] = useState<ProcessedGuide[]>(initialPopularGuides)
-  const [allGuides, setAllGuides] = useState<ProcessedGuide[]>(initialAllGuides)
+  const [popularGuides] = useState<ProcessedGuide[]>(initialPopularGuides)
+  const [categorizedGuides] = useState<Record<string, ProcessedGuide[]>>(initialCategorizedGuides)
 
   // 分类名称转翻译键（保持与其他页面一致）
   const getCategoryTranslationKey = (category: string): string => {
     return category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "")
   }
 
-  // 当语言改变时重新获取数据
-  useEffect(() => {
-    if (currentLanguage === initialLanguage) return
-    let cancelled = false
-
-    const loadGuides = async () => {
-      const { getPopularGuides, processGuides } = await import("@/lib/data/guides")
-      if (cancelled) return
-      const localizedPopularGuides = getPopularGuides(20, currentLanguage)
-      const localizedAllGuides = processGuides(currentLanguage)
-      setPopularGuides(localizedPopularGuides)
-      setAllGuides(localizedAllGuides)
-    }
-
-    loadGuides()
-
-    return () => {
-      cancelled = true
-    }
-  }, [currentLanguage, initialLanguage])
-
   // Sort categories to put "Other" at the end
-  const sortedCategories = categories.sort((a, b) => {
+  const sortedCategories = categories.slice().sort((a, b) => {
     if (a === "Other") return 1
     if (b === "Other") return -1
     return 0
   })
-
-  // Get guides from each category with different limits
-  const categorizedGuides = sortedCategories.reduce(
-    (acc, category) => {
-      const limit = 4
-      const guides = allGuides.filter((g) => g.category === category).slice(0, limit)
-      if (guides.length > 0) {
-        acc[category] = guides
-      }
-      return acc
-    },
-    {} as Record<string, ProcessedGuide[]>,
-  )
 
   return (
     <div className="flex flex-col">

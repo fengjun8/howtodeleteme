@@ -27,9 +27,9 @@ export function SearchBar({ variant = 'light' }: SearchBarProps) {
 
   // Get suggestions when query changes
   useEffect(() => {
-    if (query.length >= 2) {
-      let isActive = true
+    let isActive = true
 
+    if (query.length >= 2) {
       const loadSuggestions = async () => {
         const { getSearchSuggestions } = await import("@/lib/data/guides")
         if (!isActive) return
@@ -45,6 +45,7 @@ export function SearchBar({ variant = 'light' }: SearchBarProps) {
       setShowSuggestions(false)
       setSelectedIndex(-1)
     }
+
     return () => {
       isActive = false
     }

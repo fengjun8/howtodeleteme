@@ -218,8 +218,6 @@ const POPULAR_SITES = new Set([
 let processedGuidesCache: ProcessedGuide[] | null = null
 
 export function processGuides(language: SupportedLanguage = 'en'): ProcessedGuide[] {
-  console.log("[v0] Processing guides, total count:", guidesData.length, "for language:", language)
-
   // Return cached version if available and language is English (default)
   if (processedGuidesCache && language === 'en') {
     return processedGuidesCache
@@ -281,8 +279,6 @@ export function processGuides(language: SupportedLanguage = 'en'): ProcessedGuid
   if (language === 'en') {
     processedGuidesCache = normalizedGuides
   }
-
-  console.log("[v0] Processed guides count:", normalizedGuides.length, "for language:", language)
   return normalizedGuides
 }
 

@@ -12,6 +12,16 @@ export default async function HomePage({ params }: PageProps) {
   const popularGuides = getPopularGuides(20, validLocale)
   const allGuides = processGuides(validLocale)
   const categories = getAllCategories()
+  const categorizedGuides = categories.reduce(
+    (acc, category) => {
+      const guides = allGuides.filter((g) => g.category === category).slice(0, 4)
+      if (guides.length > 0) {
+        acc[category] = guides
+      }
+      return acc
+    },
+    {} as Record<string, typeof allGuides>,
+  )
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'
   const localizedBase = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`
@@ -65,8 +75,8 @@ export default async function HomePage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <HomePageClient 
         initialPopularGuides={popularGuides}
-        initialAllGuides={allGuides}
         categories={categories}
+        initialCategorizedGuides={categorizedGuides}
         initialLanguage={validLocale}
       />
     </>

@@ -1,11 +1,6 @@
 import { onCLS, onINP, onFCP, onLCP, onTTFB } from 'web-vitals'
 
 function sendToAnalytics(metric: any) {
-  // In production, you would send this to your analytics service
-  if (process.env.NODE_ENV === 'development') {
-    console.log('Web Vital:', metric)
-  }
-  
   // Send to Google Analytics 4
   if (typeof window !== 'undefined' && (window as any).gtag) {
     (window as any).gtag('event', metric.name, {

@@ -187,13 +187,9 @@ export function getBrowserLanguage(): SupportedLanguage {
 export function getSavedLanguage(): SupportedLanguage {
   if (typeof window === 'undefined') return DEFAULT_LANGUAGE
   
-  try {
-    const saved = localStorage.getItem('preferred-language')
-    if (saved && isSupportedLanguage(saved)) {
-      return saved
-    }
-  } catch (error) {
-    console.warn('Failed to get saved language:', error)
+  const saved = localStorage.getItem('preferred-language')
+  if (saved && isSupportedLanguage(saved)) {
+    return saved
   }
   
   return getBrowserLanguage()
@@ -206,11 +202,7 @@ export function getSavedLanguage(): SupportedLanguage {
 export function saveLanguage(locale: SupportedLanguage): void {
   if (typeof window === 'undefined') return
   
-  try {
-    localStorage.setItem('preferred-language', locale)
-  } catch (error) {
-    console.warn('Failed to save language:', error)
-  }
+  localStorage.setItem('preferred-language', locale)
 }
 
 // 统一导出翻译工具，供组件从 i18n 引入
