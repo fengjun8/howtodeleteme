@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { SearchBar } from "@/components/search-bar"
 import { GuideCard } from "@/components/guide-card"
 import { Button } from "@/components/ui/button"
-import { processGuides, getPopularGuides, getAllCategories } from "@/lib/data/guides"
 import { ProcessedGuide } from "@/lib/types"
 import { useLanguage } from "@/contexts/language-context"
 import { useLocalizedLinks } from "@/hooks/use-localized-links"
@@ -40,10 +39,22 @@ export function HomePageClient({
   // 当语言改变时重新获取数据
   useEffect(() => {
     if (currentLanguage === initialLanguage) return
-    const localizedPopularGuides = getPopularGuides(20, currentLanguage)
-    const localizedAllGuides = processGuides(currentLanguage)
-    setPopularGuides(localizedPopularGuides)
-    setAllGuides(localizedAllGuides)
+    let cancelled = false
+
+    const loadGuides = async () => {
+      const { getPopularGuides, processGuides } = await import("@/lib/data/guides")
+      if (cancelled) return
+      const localizedPopularGuides = getPopularGuides(20, currentLanguage)
+      const localizedAllGuides = processGuides(currentLanguage)
+      setPopularGuides(localizedPopularGuides)
+      setAllGuides(localizedAllGuides)
+    }
+
+    loadGuides()
+
+    return () => {
+      cancelled = true
+    }
   }, [currentLanguage, initialLanguage])
 
   // Sort categories to put "Other" at the end

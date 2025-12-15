@@ -93,8 +93,14 @@ export function SiteFooter() {
 
               return (
                 <>
-                  ©{year} <Link href={homeHref} className="text-zinc-300 hover:text-red-500">{siteName}</Link>
-                  {remaining ? ` ${remaining}` : ''} {tagline}
+                  ©{year}{" "}
+                  <Link
+                    href={homeHref}
+                    className="text-white font-semibold underline underline-offset-2 hover:text-red-400"
+                  >
+                    {siteName}
+                  </Link>
+                  {remaining ? ` ${remaining}` : ""} {tagline}
                 </>
               )
             })()}

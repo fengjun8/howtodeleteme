@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation"
 import { Search, X } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { getSearchSuggestions } from "@/lib/data/guides"
 import { useTranslations } from "@/lib/utils/translations"
 import { useLocalizedLinks } from "@/hooks/use-localized-links"
 
@@ -29,14 +28,25 @@ export function SearchBar({ variant = 'light' }: SearchBarProps) {
   // Get suggestions when query changes
   useEffect(() => {
     if (query.length >= 2) {
-      const newSuggestions = getSearchSuggestions(query)
-      setSuggestions(newSuggestions)
-      setShowSuggestions(newSuggestions.length > 0)
-      setSelectedIndex(-1)
+      let isActive = true
+
+      const loadSuggestions = async () => {
+        const { getSearchSuggestions } = await import("@/lib/data/guides")
+        if (!isActive) return
+        const newSuggestions = getSearchSuggestions(query)
+        setSuggestions(newSuggestions)
+        setShowSuggestions(newSuggestions.length > 0)
+        setSelectedIndex(-1)
+      }
+
+      loadSuggestions()
     } else {
       setSuggestions([])
       setShowSuggestions(false)
       setSelectedIndex(-1)
+    }
+    return () => {
+      isActive = false
     }
   }, [query])
 
