@@ -5,21 +5,19 @@ export async function POST(request: NextRequest) {
   try {
     const { email, subject, message } = await request.json()
 
-    // Create transporter using QQ email
     const transporter = nodemailer.createTransport({
       host: 'smtp.qq.com',
       port: 465,
       secure: true,
       auth: {
-        user: '875001151@qq.com',
-        pass: 'gzwehopvofrsbebe'
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       }
     })
 
-    // Email content
     const mailOptions = {
-      from: '875001151@qq.com',
-      to: '875001151@qq.com',
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
       subject: subject,
       html: `
         <h2>New Feature Suggestion</h2>

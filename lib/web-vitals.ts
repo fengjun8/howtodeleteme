@@ -1,4 +1,4 @@
-import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals'
+import { onCLS, onINP, onFCP, onLCP, onTTFB } from 'web-vitals'
 
 function sendToAnalytics(metric: any) {
   // In production, you would send this to your analytics service
@@ -19,11 +19,11 @@ function sendToAnalytics(metric: any) {
 }
 
 export function reportWebVitals() {
-  getCLS(sendToAnalytics)
-  getFID(sendToAnalytics)
-  getFCP(sendToAnalytics)
-  getLCP(sendToAnalytics)
-  getTTFB(sendToAnalytics)
+  onCLS(sendToAnalytics)
+  onINP(sendToAnalytics)
+  onFCP(sendToAnalytics)
+  onLCP(sendToAnalytics)
+  onTTFB(sendToAnalytics)
 }
 
 export function initWebVitals() {

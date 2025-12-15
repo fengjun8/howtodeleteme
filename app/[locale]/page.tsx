@@ -1,10 +1,6 @@
-import { SearchBar } from "@/components/search-bar"
-import { GuideCard } from "@/components/guide-card"
-import { Button } from "@/components/ui/button"
 import { processGuides, getPopularGuides, getAllCategories } from "@/lib/data/guides"
 import { HomePageClient } from "@/components/home-page-client"
-import Link from "next/link"
-import { ArrowRight, Shield, CheckCircle, Clock } from "lucide-react"
+import { isSupportedLanguage, type SupportedLanguage, DEFAULT_LANGUAGE } from "@/lib/utils/i18n"
 
 // 使用SSR按需生成（不配置 revalidate）
 
@@ -12,9 +8,9 @@ interface PageProps { params: Promise<{ locale: string }> }
 
 export default async function HomePage({ params }: PageProps) {
   const { locale } = await params
-  // 使用默认语言获取初始数据
-  const popularGuides = getPopularGuides(20, 'en')
-  const allGuides = processGuides('en')
+  const validLocale: SupportedLanguage = isSupportedLanguage(locale) ? locale : DEFAULT_LANGUAGE
+  const popularGuides = getPopularGuides(20, validLocale)
+  const allGuides = processGuides(validLocale)
   const categories = getAllCategories()
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://howtodelete.me'
@@ -29,7 +25,7 @@ export default async function HomePage({ params }: PageProps) {
       target: `${localizedBase}/search?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
-    inLanguage: locale,
+    inLanguage: validLocale,
   }
 
   const jsonLd = {
@@ -71,6 +67,7 @@ export default async function HomePage({ params }: PageProps) {
         initialPopularGuides={popularGuides}
         initialAllGuides={allGuides}
         categories={categories}
+        initialLanguage={validLocale}
       />
     </>
   )

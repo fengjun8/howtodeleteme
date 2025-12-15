@@ -11,17 +11,20 @@ import { useLocalizedLinks } from "@/hooks/use-localized-links"
 import Link from "next/link"
 import { ArrowRight, Shield, CheckCircle, Clock } from "lucide-react"
 import { useTranslations } from "@/lib/utils/translations"
+import type { SupportedLanguage } from "@/lib/utils/i18n"
 
 interface HomePageClientProps {
   initialPopularGuides: ProcessedGuide[]
   initialAllGuides: ProcessedGuide[]
   categories: string[]
+  initialLanguage: SupportedLanguage
 }
 
 export function HomePageClient({ 
   initialPopularGuides, 
   initialAllGuides, 
-  categories 
+  categories,
+  initialLanguage,
 }: HomePageClientProps) {
   const { currentLanguage } = useLanguage()
   const { localizedLink } = useLocalizedLinks()
@@ -36,11 +39,12 @@ export function HomePageClient({
 
   // 当语言改变时重新获取数据
   useEffect(() => {
+    if (currentLanguage === initialLanguage) return
     const localizedPopularGuides = getPopularGuides(20, currentLanguage)
     const localizedAllGuides = processGuides(currentLanguage)
     setPopularGuides(localizedPopularGuides)
     setAllGuides(localizedAllGuides)
-  }, [currentLanguage])
+  }, [currentLanguage, initialLanguage])
 
   // Sort categories to put "Other" at the end
   const sortedCategories = categories.sort((a, b) => {
@@ -52,7 +56,7 @@ export function HomePageClient({
   // Get guides from each category with different limits
   const categorizedGuides = sortedCategories.reduce(
     (acc, category) => {
-      const limit = 8 // All categories show 8 cards (popular is handled separately)
+      const limit = 4
       const guides = allGuides.filter((g) => g.category === category).slice(0, limit)
       if (guides.length > 0) {
         acc[category] = guides
@@ -83,17 +87,17 @@ export function HomePageClient({
             <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-3">
               <div className="flex flex-col items-center gap-2 text-center">
                 <Shield className="h-8 w-8 text-blue-400" />
-                <h3 className="font-semibold text-white">{t('trust-verified-title')}</h3>
+                <h2 className="text-lg font-semibold text-white">{t('trust-verified-title')}</h2>
                 <p className="text-sm text-blue-200">{t('trust-verified-desc')}</p>
               </div>
               <div className="flex flex-col items-center gap-2 text-center">
                 <Clock className="h-8 w-8 text-blue-400" />
-                <h3 className="font-semibold text-white">{t('trust-updated-title')}</h3>
+                <h2 className="text-lg font-semibold text-white">{t('trust-updated-title')}</h2>
                 <p className="text-sm text-blue-200">{t('trust-updated-desc')}</p>
               </div>
               <div className="flex flex-col items-center gap-2 text-center">
                 <CheckCircle className="h-8 w-8 text-blue-400" />
-                <h3 className="font-semibold text-white">{t('trust-no-tricks-title')}</h3>
+                <h2 className="text-lg font-semibold text-white">{t('trust-no-tricks-title')}</h2>
                 <p className="text-sm text-blue-200">{t('trust-no-tricks-desc')}</p>
               </div>
             </div>

@@ -15,13 +15,13 @@ import {
 } from "@/components/ui/pagination"
 import { getTranslations } from "@/lib/utils/translations"
 import type { SupportedLanguage } from "@/lib/utils/i18n"
-import type { Guide } from "@/lib/types"
+import type { ProcessedGuide } from "@/lib/types"
 
 const ITEMS_PER_PAGE = 40
 
 interface PopularPageClientProps {
   locale: SupportedLanguage
-  popularGuides: Guide[]
+  popularGuides: ProcessedGuide[]
 }
 
 export function PopularPageClient({ locale, popularGuides }: PopularPageClientProps) {

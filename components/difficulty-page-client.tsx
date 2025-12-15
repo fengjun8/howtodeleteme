@@ -7,7 +7,7 @@ import { Pagination, PaginationContent, PaginationItem, PaginationLink, Paginati
 import { ProcessedGuide } from "@/lib/types"
 import { CheckCircle, Clock, AlertTriangle, Shield, Ban } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
-import { getGuidesByDifficulty, getLocalizedDifficulty } from "@/lib/data/guides"
+import { getGuidesByDifficulty } from "@/lib/data/guides"
 import { useTranslations } from "@/lib/utils/translations"
 
 interface DifficultyPageClientProps {

@@ -1,10 +1,6 @@
-import { SearchBar } from "@/components/search-bar"
-import { GuideCard } from "@/components/guide-card"
-import { Button } from "@/components/ui/button"
 import { processGuides, getPopularGuides, getAllCategories } from "@/lib/data/guides"
 import { HomePageClient } from "@/components/home-page-client"
-import Link from "next/link"
-import { ArrowRight, Shield, CheckCircle, Clock } from "lucide-react"
+import { DEFAULT_LANGUAGE } from "@/lib/utils/i18n"
 
 // 使用SSR按需生成（不配置 revalidate）
 
@@ -67,6 +63,7 @@ export default function HomePage() {
         initialPopularGuides={popularGuides}
         initialAllGuides={allGuides}
         categories={categories}
+        initialLanguage={DEFAULT_LANGUAGE}
       />
     </>
   )

@@ -41,6 +41,7 @@ export function LanguageSwitcher() {
           variant="ghost" 
           size="sm" 
           className="gap-2 text-white hover:text-red-500 hover:bg-black/50"
+          aria-label="Change language"
         >
           <Globe className="h-4 w-4" />
           <span className="hidden md:inline">{displayCode}</span>

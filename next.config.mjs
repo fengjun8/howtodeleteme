@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   // Default output (disable standalone to avoid Windows symlink issues)
   // Tip: enable in CI/Linux if you need standalone bundle
@@ -93,7 +92,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
 
-  // Remove deprecated eslint config (Next.js 16 no longer supports in next.config)
+  productionBrowserSourceMaps: true,
 }
 
 export default nextConfig

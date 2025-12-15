@@ -5,21 +5,19 @@ export async function POST(request: NextRequest) {
   try {
     const { email, subject, message, url } = await request.json()
 
-    // 创建邮件传输器
     const transporter = nodemailer.createTransport({
       host: 'smtp.qq.com',
-      port: 465,
-      secure: true, // 使用SSL
+      port: 587,
+      secure: false,
       auth: {
-        user: '875001151@qq.com',
-        pass: 'gzwehopvofrsbebe'
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       }
     })
 
-    // 邮件内容
     const mailOptions = {
-      from: '875001151@qq.com',
-      to: '875001151@qq.com',
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
       subject: subject,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
