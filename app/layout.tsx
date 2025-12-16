@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-// SiteFooter 改由各语言布局渲染，避免水合阶段语言不一致
 import { LanguageProvider } from "@/contexts/language-context";
 import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES, getTranslations } from "@/lib/utils/i18n";
 import { FloatingButtons } from "@/components/floating-buttons";
 import { GoogleAnalytics, GoogleAdsense } from "@/components/analytics";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -68,6 +68,7 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
             <FloatingButtons />
           </div>
+          <Toaster />
         </LanguageProvider>
       </body>
     </html>

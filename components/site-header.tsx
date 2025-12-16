@@ -20,13 +20,15 @@ import {
 } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { LanguageSwitcher } from "@/components/language-switcher"
-import { getAllCategories } from "@/lib/data/guides"
 import { useLocalizedLinks } from "@/hooks/use-localized-links"
 import { useLanguage } from "@/contexts/language-context"
 import { useTranslations } from "@/lib/utils/translations"
 
-export function SiteHeader() {
-  const categories = getAllCategories()
+interface SiteHeaderProps {
+  categories: string[]
+}
+
+export function SiteHeader({ categories }: SiteHeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { localizedLink } = useLocalizedLinks()
   const t = useTranslations()

@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { LanguageProvider } from "@/contexts/language-context";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, SupportedLanguage, getTranslations } from "@/lib/utils/i18n";
+import { getAllCategories } from "@/lib/data/guides";
 import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -77,9 +78,11 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  const categories = getAllCategories();
+
   return (
     <LanguageProvider initialLanguage={locale as SupportedLanguage}>
-      <SiteHeader />
+      <SiteHeader categories={categories} />
       {children}
       {/* 在语言布局中渲染页脚，确保与路由语言一致，避免水合差异 */}
       <SiteFooter />
