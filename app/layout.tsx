@@ -77,6 +77,9 @@ export default function RootLayout({
         <LanguageProvider initialLanguage={DEFAULT_LANGUAGE}>
           <div className="relative flex min-h-screen flex-col">
             <main className="flex-1">{children}</main>
+            <div className="max-w-[1280px] mx-auto w-full px-4 pb-8">
+              <div id="ezoic-pub-ad-placeholder-103"></div>
+            </div>
             <FloatingButtons />
           </div>
           <Toaster />
