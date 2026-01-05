@@ -186,9 +186,7 @@ export default async function GuidePage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <BreadcrumbNav />
       <div className="py-8 max-w-[1280px] mx-auto px-4">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px]">
-          <div>
-            {/* Header */}
+        {/* Header */}
             <div className="space-y-6 mb-8">
               <div className="flex items-start justify-between gap-4">
                 <h1 className="text-4xl font-bold tracking-tight text-balance">
@@ -344,17 +342,10 @@ export default async function GuidePage({ params }: PageProps) {
             )}
 
             <GuideLongContent
-              guide={guide as ProcessedGuide}
-              sameCategoryGuides={sameCategoryGuides as ProcessedGuide[]}
-              sameDifficultyGuides={sameDifficultyGuides as ProcessedGuide[]}
-            />
-          </div>
-          <aside className="hidden lg:block">
-            <div className="sticky top-24">
-              <div id="ezoic-pub-ad-placeholder-104"></div>
-            </div>
-          </aside>
-        </div>
+            guide={guide as ProcessedGuide}
+            sameCategoryGuides={sameCategoryGuides as ProcessedGuide[]}
+            sameDifficultyGuides={sameDifficultyGuides as ProcessedGuide[]}
+          />
       </div>
     </>
   )
