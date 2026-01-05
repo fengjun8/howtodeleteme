@@ -59,6 +59,7 @@ export default function RootLayout({
   return (
     <html lang={DEFAULT_LANGUAGE}>
       <head>
+        <meta name="monetag" content="181f1d750ef2b3024bf35f97d39fd632" />
         <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
         <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
         <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
