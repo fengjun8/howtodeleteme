@@ -11,6 +11,8 @@ import type { SupportedLanguage } from "@/lib/utils/i18n"
 // 使用SSR按需生成（不配置 revalidate）
 
 // 按语言本地化页面标题与描述
+import { getLanguageAlternates } from "@/lib/utils/seo"
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: SupportedLanguage }> }): Promise<Metadata> {
   const { locale } = await params
   const t = getTranslations(locale)
@@ -23,6 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: S
     description: t("category-description"),
     alternates: {
       canonical: canonicalUrl,
+      languages: getLanguageAlternates('categories'),
     },
     openGraph: {
       title: t("category-title"),

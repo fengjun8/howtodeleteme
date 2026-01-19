@@ -35,6 +35,8 @@ export async function generateStaticParams() {
   return params
 }
 
+import { getLanguageAlternates } from "@/lib/utils/seo"
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale, slug } = await params
   const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
@@ -56,6 +58,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     keywords: t('guide-keywords-template', { name: guide.name }),
     alternates: {
       canonical: canonicalUrl,
+      languages: getLanguageAlternates(slug),
     },
     openGraph: {
       title: t('guide-title-template', { name: guide.name }),
@@ -290,8 +293,8 @@ export default async function GuidePage({ params }: PageProps) {
             <Card className="mb-6 bg-amber-50 border-amber-200">
               <CardHeader className="pb-3">
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Info className="h-5 w-5 text-amber-600" />
-                  {t('prerequisites-title')}
+                  <Info className="h-5 w-5 text-amber-600 flex-shrink-0" />
+                  <span className="min-w-0 flex-1">{t('prerequisites-title')}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>

@@ -7,6 +7,8 @@ interface PageProps {
   params: Promise<{ locale: string }>
 }
 
+import { getLanguageAlternates } from "@/lib/utils/seo"
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params
   const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
@@ -20,6 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: t('about-description'),
     alternates: {
       canonical: canonicalUrl,
+      languages: getLanguageAlternates('about'),
     },
     openGraph: {
       title: t('about-title'),

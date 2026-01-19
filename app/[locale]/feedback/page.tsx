@@ -7,6 +7,8 @@ interface PageProps {
   params: Promise<{ locale: string }>
 }
 
+import { getLanguageAlternates } from "@/lib/utils/seo"
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params
   const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
@@ -20,6 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: `${t('feedback-subtitle')} - Submit feedback or report issues with our guides.`,
     alternates: {
       canonical: canonicalUrl,
+      languages: getLanguageAlternates('feedback'),
     },
     openGraph: {
       title: `${t('feedback')} | howtodelete.me`,

@@ -59,9 +59,9 @@ export const GuideCard = memo(function GuideCard({ guide }: GuideCardProps) {
       <Card className={`h-[220px] flex flex-col transition-all hover:shadow-lg ${config.cardClassName}`}>
         <CardHeader className="pb-3 flex-shrink-0">
           <div className="flex items-start justify-between gap-2">
-            <CardTitle className="text-lg font-semibold leading-tight flex items-center gap-2">
-              {guide.name}
-              {guide.popular && <Star className="h-4 w-4 fill-amber-400 text-amber-400" />}
+            <CardTitle className="text-lg font-semibold leading-tight flex items-start gap-2 min-w-0">
+              <span className="line-clamp-2 break-words">{guide.name}</span>
+              {guide.popular && <Star className="h-4 w-4 fill-amber-400 text-amber-400 flex-shrink-0 mt-1" />}
             </CardTitle>
             <Badge className={`text-xs font-medium flex-shrink-0 ${config.badgeClassName}`}>
               {localizedDifficultyLabel}

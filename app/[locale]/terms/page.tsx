@@ -7,6 +7,8 @@ interface PageProps {
   params: Promise<{ locale: string }>
 }
 
+import { getLanguageAlternates } from "@/lib/utils/seo"
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params
   const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
@@ -17,6 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: `${t('terms-of-service')} for using howtodelete.me.`,
     alternates: {
       canonical: `/${locale}/terms`,
+      languages: getLanguageAlternates('terms'),
     },
   }
 }

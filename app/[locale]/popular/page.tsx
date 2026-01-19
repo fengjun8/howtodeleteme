@@ -10,6 +10,8 @@ interface PageProps {
   params: Promise<{ locale: string }>
 }
 
+import { getLanguageAlternates } from "@/lib/utils/seo"
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params
   const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
@@ -24,6 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: t('popular-page-subtitle-count', { count: popularGuides.length }),
     alternates: {
       canonical: canonicalUrl,
+      languages: getLanguageAlternates('popular'),
     },
     openGraph: {
       title: t('popular-title'),

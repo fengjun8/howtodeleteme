@@ -13,6 +13,8 @@ interface PageProps {
 
 // 取消静态枚举，改为按需SSR渲染，避免构建期大量页面生成
 
+import { getLanguageAlternates } from "@/lib/utils/seo"
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { category, locale } = await params
   const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
@@ -36,6 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     keywords: `${t('site-keywords')}, ${localizedCategoryName}`,
     alternates: {
       canonical: canonicalUrl,
+      languages: getLanguageAlternates(`category/${category}`),
     },
     openGraph: {
       title: `${localizedCategoryName} ${t('account-deletion-guides')} | howtodelete.me`,

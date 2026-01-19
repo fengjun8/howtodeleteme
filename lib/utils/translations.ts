@@ -534,7 +534,7 @@ export const translations: {
     'guide-title-template': 'How to Permanently Delete Your {name} Account (2025 Guide)',
     'guide-description-template': 'Step-by-step guide to permanently delete your {name} account.',
     'guide-keywords-template': 'delete {name}, remove {name} account, close {name}, deactivate {name}, privacy, data removal',
-    'tldr-title': '⚡ TL;DR (Quick Summary)',
+    'tldr-title': 'TL;DR (Quick Summary)',
     'tldr-can-delete': '{name} accounts can be permanently deleted',
     'tldr-cannot-delete': '{name} accounts cannot be deleted',
     'applicable-regions-title': 'Applicable Regions',
@@ -556,7 +556,7 @@ export const translations: {
     'official-links-primary': 'Primary Deletion Page:',
     'official-links-email': 'Contact Email:',
     'official-links-domains': 'Related Domains:',
-    'deletion-process-title': '🗑️ Deletion Process',
+    'deletion-process-title': 'Deletion Process',
     'deletion-process-expected': 'Expected difficulty:',
     'deletion-notes-title': 'Important Information',
     'quick-access-title': 'Quick Access',
@@ -577,7 +577,7 @@ export const translations: {
     'general-step-note-medium': 'Note: This service may require some additional verification steps',
     'general-step-note-hard': 'Note: You will need to contact customer support to complete the deletion process',
     'general-step-note-limited': 'Note: Deletion may only be available if you reside in a region with data privacy laws',
-    'deletion-timeline-title': '⏰ Deletion Timeline',
+    'deletion-timeline-title': 'Deletion Timeline',
     'timeline-immediate': 'Immediate',
     'timeline-grace': '7-30 days',
     'timeline-removal': '30-90 days',
@@ -595,14 +595,14 @@ export const translations: {
     'after-grace-period': 'Some services have a grace period before permanent deletion',
     'after-data-retention': 'Your data may be retained for legal or backup purposes',
     'after-reuse-email': 'You may not be able to reuse the same email or username',
-    'troubleshooting-title': '🔧 Troubleshooting',
+    'troubleshooting-title': 'Troubleshooting',
     'troubleshoot-find-option': "Can't find the deletion option?",
     'troubleshoot-find-option-desc': "Try searching for 'delete account', 'close account', or 'deactivate' in settings.",
     'troubleshoot-denied': 'Deletion request denied?',
     'troubleshoot-denied-desc': 'Contact customer support directly. In GDPR regions, you have a legal right to data erasure.',
     'troubleshoot-still-accessible': 'Account still accessible after deletion?',
     'troubleshoot-still-accessible-desc': 'Some services have a grace period. Wait 24–48 hours and try again.',
-    'need-help-title': '💬 Need Help?',
+    'need-help-title': 'Need Help?',
     'need-help-intro': "If you're having trouble deleting your {name} account, here are some additional resources:",
     'need-help-contact-support': 'Contact {name} customer support directly',
     'need-help-help-center': 'Check their help center or FAQ section',
@@ -2459,7 +2459,7 @@ export const translations: {
     'account-word': 'アカウント',
 
     // Guide detail page (TL;DR)
-    'tldr-title': '⚡ 要点まとめ',
+    'tldr-title': '要点まとめ',
     'tldr-cannot-delete': '{name} アカウントは現時点で削除できません。',
     'tldr-can-delete': '{name} アカウントは削除可能です。',
     'jump-to-process': '削除手順へ',
@@ -2492,7 +2492,7 @@ export const translations: {
     'official-links-domains': '関連ドメイン',
 
     // Deletion process
-    'deletion-process-title': '🗑️ 削除手順',
+    'deletion-process-title': '削除手順',
     'deletion-process-expected': '想定される難易度：',
     'deletion-notes-title': '注意事項',
     'quick-access-title': 'クイックアクセス',
@@ -2518,7 +2518,7 @@ export const translations: {
     'general-step-note-limited': 'この手順は一部のユーザーにのみ提供されます。',
 
     // Timeline
-    'deletion-timeline-title': '⏰ 削除タイムライン',
+    'deletion-timeline-title': '削除タイムライン',
     'timeline-immediate': '即時処理',
     'timeline-immediate-desc': '削除の開始後、すぐに処理が始まります。',
     'timeline-grace': '猶予期間',
@@ -2540,7 +2540,7 @@ export const translations: {
     'after-reuse-email': '同じメールで再登録できる場合があります。',
 
     // Troubleshooting
-    'troubleshooting-title': '🔧 トラブルシューティング',
+    'troubleshooting-title': 'トラブルシューティング',
     'troubleshoot-find-option': '削除オプションが見つからない',
     'troubleshoot-find-option-desc': 'ヘルプセンターで「削除」や「アカウントを閉じる」を検索してください。',
     'troubleshoot-denied': '削除リクエストが拒否された',
@@ -2549,7 +2549,7 @@ export const translations: {
     'troubleshoot-still-accessible-desc': '猶予期間やキャッシュの可能性があります。時間をおいて再確認してください。',
 
     // Need help
-    'need-help-title': '💬 困っていますか？',
+    'need-help-title': '困っていますか？',
     'need-help-intro': '{name} の削除で問題がありますか？以下を試してください。',
     'need-help-contact-support': '{name} のサポートへ連絡する',
     'need-help-help-center': 'ヘルプセンターで削除手順を検索する',
@@ -2782,7 +2782,7 @@ export const translations: {
     'guide-title-template': '如何永久删除你的 {name} 账户（2025 指南）',
     'guide-description-template': '分步指南，帮助你永久删除 {name} 账户。',
     'guide-keywords-template': '删除 {name}, 移除 {name} 账户, 关闭 {name}, 停用 {name}, 隐私, 数据删除',
-    'tldr-title': '⚡ 要点速览',
+    'tldr-title': '要点速览',
     'tldr-can-delete': '{name} 账户可永久删除',
     'tldr-cannot-delete': '{name} 账户不可删除',
     'applicable-regions-title': '适用地区',
@@ -2804,7 +2804,7 @@ export const translations: {
     'official-links-primary': '主删除页面：',
     'official-links-email': '联系邮箱：',
     'official-links-domains': '相关域名：',
-    'deletion-process-title': '🗑️ 删除流程',
+    'deletion-process-title': '删除流程',
     'deletion-process-expected': '预期难度：',
     'deletion-notes-title': '重要信息',
     'quick-access-title': '快速跳转',
@@ -2825,7 +2825,7 @@ export const translations: {
     'general-step-note-medium': '提示：该服务可能需要额外的验证步骤',
     'general-step-note-hard': '提示：需要联系客户支持才能完成删除流程',
     'general-step-note-limited': '提示：仅在具备数据隐私法的地区才可能提供删除功能',
-    'deletion-timeline-title': '⏰ 删除时间线',
+    'deletion-timeline-title': '删除时间线',
     'timeline-immediate': '即时',
     'timeline-grace': '7–30 天',
     'timeline-removal': '30–90 天',
@@ -2843,14 +2843,14 @@ export const translations: {
     'after-grace-period': '部分服务在永久删除前有宽限期',
     'after-data-retention': '你的数据可能因法律或备份目的而被保留',
     'after-reuse-email': '可能无法再次使用同一邮箱或用户名',
-    'troubleshooting-title': '🔧 故障排除',
+    'troubleshooting-title': '故障排除',
     'troubleshoot-find-option': '找不到删除选项？',
     'troubleshoot-find-option-desc': '尝试在设置菜单搜索“删除账户”“关闭账户”或“停用”。',
     'troubleshoot-denied': '删除请求被拒？',
     'troubleshoot-denied-desc': '请直接联系客户支持。在 GDPR 地区，你拥有法定删除权利。',
     'troubleshoot-still-accessible': '删除后账户仍可访问？',
     'troubleshoot-still-accessible-desc': '部分服务存在宽限期。等待 24–48 小时后再试。',
-    'need-help-title': '💬 需要帮助？',
+    'need-help-title': '需要帮助？',
     'need-help-intro': '如果你在删除 {name} 账户时遇到问题，可参考以下资源：',
     'need-help-contact-support': '直接联系 {name} 客服',
     'need-help-help-center': '查看其帮助中心或常见问题',
@@ -3146,7 +3146,7 @@ export const translations: {
     'account-deletion-guides': '계정 삭제 가이드',
     
     // Guide detail page (TL;DR)
-    'tldr-title': '⚡ 한눈에 보기',
+    'tldr-title': '한눈에 보기',
     'tldr-cannot-delete': '{name} 계정은 현재 삭제할 수 없습니다.',
     'tldr-can-delete': '{name} 계정은 삭제 가능합니다.',
     'jump-to-process': '삭제 절차로 이동',
@@ -3179,7 +3179,7 @@ export const translations: {
     'official-links-domains': '관련 도메인',
 
     // Deletion process
-    'deletion-process-title': '🗑️ 삭제 절차',
+    'deletion-process-title': '삭제 절차',
     'deletion-process-expected': '예상 난이도: ',
     'deletion-notes-title': '주의 사항',
     'quick-access-title': '바로가기',
@@ -3205,7 +3205,7 @@ export const translations: {
     'general-step-note-limited': '이 절차는 일부 사용자에게만 제공됩니다.',
 
     // Timeline
-    'deletion-timeline-title': '⏰ 삭제 타임라인',
+    'deletion-timeline-title': '삭제 타임라인',
     'timeline-immediate': '즉시 처리',
     'timeline-immediate-desc': '삭제 시작 후 바로 처리가 진행됩니다.',
     'timeline-grace': '유예 기간',
@@ -3227,7 +3227,7 @@ export const translations: {
     'after-reuse-email': '같은 이메일로 재가입이 가능할 수 있습니다.',
 
     // Troubleshooting
-    'troubleshooting-title': '🔧 문제 해결',
+    'troubleshooting-title': '문제 해결',
     'troubleshoot-find-option': '삭제 옵션을 찾을 수 없음',
     'troubleshoot-find-option-desc': "도움말 센터에서 '삭제', '계정 닫기'를 검색해 보세요.",
     'troubleshoot-denied': '삭제 요청이 거부됨',
@@ -3236,7 +3236,7 @@ export const translations: {
     'troubleshoot-still-accessible-desc': '유예 기간이나 캐시일 수 있습니다. 시간이 지난 후 다시 확인하세요.',
 
     // Need help
-    'need-help-title': '💬 도움이 필요하신가요?',
+    'need-help-title': '도움이 필요하신가요?',
     'need-help-intro': '{name} 삭제에 문제가 있나요? 아래를 시도해 보세요.',
     'need-help-contact-support': '{name} 지원팀에 문의',
     'need-help-help-center': '도움말 센터에서 삭제 절차 검색',

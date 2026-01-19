@@ -45,6 +45,8 @@ const difficultyConfig = {
   },
 }
 
+import { getLanguageAlternates } from "@/lib/utils/seo"
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { difficulty, locale } = await params
   const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
@@ -75,6 +77,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     keywords: t('site-keywords'),
     alternates: {
       canonical: canonicalUrl,
+      languages: getLanguageAlternates(`difficulty/${difficulty}`),
     },
     openGraph: {
       title: `${localizedLabel} - ${t('site-title')}`,
