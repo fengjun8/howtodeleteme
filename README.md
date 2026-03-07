@@ -1,16 +1,3 @@
-下面是一版**更容易获得 GitHub Star 的 README（SaaS Starter 版本）**。
-思路是把项目从「内容站」升级为 **Privacy Tool Directory Starter（隐私工具目录模板）**，让开发者可以直接用来做：
-
-* 删除账号目录站
-* 隐私工具目录
-* SaaS 工具导航
-* AI 工具导航
-* 工具型 SEO 站
-
-这样 **Star 概率会明显提高**。
-
----
-
 # Privacy Directory Starter
 
 A modern **SEO-optimized directory starter template** for building privacy tools, SaaS directories, or account deletion guides.
