@@ -59,23 +59,6 @@ export default function RootLayout({
   return (
     <html lang={DEFAULT_LANGUAGE}>
       <head>
-        <meta name="monetag" content="181f1d750ef2b3024bf35f97d39fd632" />
-        <script src="https://quge5.com/88/tag.min.js" data-zone="199192" async data-cfasync="false"></script>
-        {process.env.NEXT_PUBLIC_ENABLE_EZOIC === 'true' && (
-          <>
-            <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
-            <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
-            <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.ezstandalone = window.ezstandalone || {};
-                  ezstandalone.cmd = ezstandalone.cmd || [];
-                `,
-              }}
-            />
-          </>
-        )}
         <GoogleAnalytics />
         <GoogleAdsense />
       </head>
@@ -83,11 +66,6 @@ export default function RootLayout({
         <LanguageProvider initialLanguage={DEFAULT_LANGUAGE}>
           <div className="relative flex min-h-screen flex-col">
             <main className="flex-1">{children}</main>
-            <div className="max-w-[1280px] mx-auto w-full px-4 pb-8">
-              {process.env.NEXT_PUBLIC_ENABLE_EZOIC === 'true' && (
-                <div id="ezoic-pub-ad-placeholder-103"></div>
-              )}
-            </div>
             <FloatingButtons />
           </div>
           <Toaster />
