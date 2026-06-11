@@ -1,3 +1,7 @@
+if (!process.env.BASELINE_BROWSER_MAPPING_IGNORE_OLD_DATA) {
+  process.env.BASELINE_BROWSER_MAPPING_IGNORE_OLD_DATA = "1"
+}
+
 const nextConfig = {
   // Default output (disable standalone to avoid Windows symlink issues)
   // Tip: enable in CI/Linux if you need standalone bundle

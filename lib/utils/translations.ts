@@ -415,6 +415,7 @@ export const translations: {
     'legal': 'Legal',
     'disclaimer': 'Disclaimer',
     'contact': 'Contact',
+    'contact-us': 'Contact Us',
     'submit-feedback': 'Submit Feedback',
     'footer-copyright': '{year} howtodelete.me All rights reserved.',
     'footer-tagline': 'Making account deletion simple and transparent.',

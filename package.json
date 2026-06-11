@@ -1,12 +1,13 @@
 {
   "name": "howtodeleteme",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@9.15.4",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start -p 3004"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -73,6 +74,7 @@
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8.49.0",
     "@typescript-eslint/parser": "^8.49.0",
+    "baseline-browser-mapping": "^2.10.35",
     "eslint": "^9.39.2",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",

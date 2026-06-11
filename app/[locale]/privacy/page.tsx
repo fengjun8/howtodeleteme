@@ -31,58 +31,41 @@ export default function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold mb-3">Data We Don't Collect</h2>
+                <h2 className="text-2xl font-bold mb-3">Cookies and Tracking Technologies</h2>
                 <p className="text-muted-foreground mb-4">
-                  We respect your privacy by design.
+                  We use cookies and similar tracking technologies to track the activity on our Service and hold certain information.
                 </p>
-                <p className="text-muted-foreground mb-3">We do not:</p>
-                <ul className="list-none space-y-2 text-muted-foreground mb-4">
-                  <li>❌ Require user accounts or registration</li>
-                  <li>❌ Collect names, email addresses, or other personal identifiers</li>
-                  <li>❌ Use tracking cookies or advertising pixels</li>
-                  <li>❌ Sell, rent, or share any personal data</li>
-                  <li>❌ Track users across websites</li>
-                </ul>
                 <p className="text-muted-foreground mb-4">
-                  You can browse our entire website anonymously.
+                  Cookies are files with small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device.
                 </p>
-                <p className="text-muted-foreground">
-                  We also do not embed third-party trackers (e.g., Google Analytics, Facebook Pixel) that can identify you.
+                <p className="text-muted-foreground mb-4">
+                  You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold mb-3">Technical Information We May Process</h2>
+                <h2 className="text-2xl font-bold mb-3">Google AdSense and Third-Party Advertising</h2>
                 <p className="text-muted-foreground mb-4">
-                  Like most websites, our servers automatically receive minimal technical information to ensure site security and performance.
+                  We use Google AdSense to serve ads on our website. Google, as a third-party vendor, uses cookies to serve ads on our site.
                 </p>
-                <p className="text-muted-foreground mb-3">This may include:</p>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground mb-4">
-                  <li>IP address (anonymized and temporarily logged for security)</li>
-                  <li>Browser type and version</li>
-                  <li>Operating system</li>
-                  <li>Referring URL</li>
-                  <li>Date and time of access</li>
-                  <li>Page load performance data</li>
-                </ul>
                 <p className="text-muted-foreground mb-4">
-                  This information is used solely for system administration and abuse prevention, and is retained only as long as necessary for those legitimate purposes.
+                  Google's use of advertising cookies enables it and its partners to serve ads to our users based on their visit to our site or other sites on the Internet.
                 </p>
-                <p className="text-muted-foreground">
-                  We never use this information to personally identify visitors.
+                <p className="text-muted-foreground mb-4">
+                  Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>. Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">www.aboutads.info</a>.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold mb-3">Cookies and Local Storage</h2>
+                <h2 className="text-2xl font-bold mb-3">Google Analytics</h2>
                 <p className="text-muted-foreground mb-4">
-                  We currently use only essential cookies (if any) required for multilingual functionality and page rendering.
+                  We use Google Analytics to monitor and analyze the use of our website. Google Analytics is a web analytics service offered by Google that tracks and reports website traffic.
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  We do not use analytics cookies, advertising cookies, or any form of user profiling.
+                  Google uses the data collected to track and monitor the use of our Service. This data is shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network.
                 </p>
-                <p className="text-muted-foreground">
-                  You can disable cookies entirely in your browser settings and still access all features of this website.
+                <p className="text-muted-foreground mb-4">
+                  You can opt-out of having made your activity on the Service available to Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Google Analytics opt-out browser add-on</a>.
                 </p>
               </section>
 

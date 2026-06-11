@@ -61,6 +61,11 @@ export function SiteFooter() {
             <h3 className="text-sm font-semibold text-white">{t('contact')}</h3>
             <ul className="space-y-2 text-sm">
               <li>
+                <Link href={localizedLink("/contact")} className="text-zinc-400 hover:text-red-500 transition-colors">
+                  {t('contact-us')}
+                </Link>
+              </li>
+              <li>
                 <Link href={localizedLink("/feedback")} className="text-zinc-400 hover:text-red-500 transition-colors">
                   {t('submit-feedback')}
                 </Link>

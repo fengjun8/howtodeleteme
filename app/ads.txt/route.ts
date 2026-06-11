@@ -1,4 +1,3 @@
-export const runtime = 'edge'
 export const revalidate = 3600
 
 const ADS_TXT_URL = 'https://srv.adstxtmanager.com/19390/howtodelete.me'
@@ -32,4 +31,3 @@ export async function GET() {
     })
   }
 }
-
