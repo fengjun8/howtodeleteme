@@ -3,6 +3,7 @@ import { PopularPageClient } from "@/components/popular-page-client"
 import type { Metadata } from "next"
 import { getTranslations } from "@/lib/utils/translations"
 import { isSupportedLanguage, type SupportedLanguage } from "@/lib/utils/i18n"
+import { Banner728Ad } from "@/components/ads"
 
 export const dynamic = 'force-dynamic'
 
@@ -47,5 +48,11 @@ export default async function PopularPage({ params }: PageProps) {
   const lang = isSupportedLanguage(locale) ? (locale as SupportedLanguage) : 'en'
   const popularGuides = getPopularGuides(undefined, lang)
 
-  return <PopularPageClient locale={lang} popularGuides={popularGuides} />
+  return (
+    <>
+      <PopularPageClient locale={lang} popularGuides={popularGuides} />
+      {/* 728 Banner Ad before footer - Popular page */}
+      <Banner728Ad />
+    </>
+  )
 }

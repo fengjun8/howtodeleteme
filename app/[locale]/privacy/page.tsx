@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { BreadcrumbNav } from "@/components/breadcrumb-nav"
+import { Banner728Ad } from "@/components/ads"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | howtodelete.me",
@@ -203,6 +204,8 @@ export default function PrivacyPage() {
           </div>
         </div>
       </div>
+      {/* 728 Banner Ad before footer - Privacy page */}
+      <Banner728Ad />
     </>
   )
 }

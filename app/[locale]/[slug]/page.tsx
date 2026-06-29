@@ -10,6 +10,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { BreadcrumbNav } from "@/components/breadcrumb-nav"
 import { ShareButton } from "@/components/share-button"
 import { FeedbackDialog } from "@/components/feedback-dialog"
+import { NativeBannerAd, Banner728Ad } from "@/components/ads"
 import { AlertTriangle, CheckCircle, Clock, Shield, Ban, Globe, Info, Trash2 } from "lucide-react"
 import type { Metadata } from "next"
 import dynamic from "next/dynamic"
@@ -188,6 +189,10 @@ export default async function GuidePage({ params }: PageProps) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <BreadcrumbNav />
+      <div className="max-w-[1280px] mx-auto px-4">
+        {/* Native Banner Ad below breadcrumbs */}
+        <NativeBannerAd />
+      </div>
       <div className="py-8 max-w-[1280px] mx-auto px-4">
         {/* Header */}
             <div className="space-y-6 mb-8">

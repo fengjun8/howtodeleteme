@@ -9,6 +9,7 @@ import { ProcessedGuide } from "@/lib/types"
 import { useLanguage } from "@/contexts/language-context"
 import { getGuidesByCategory } from "@/lib/data/guides"
 import { useTranslations } from "@/lib/utils/translations"
+import { NativeBannerAd, Banner728Ad } from "@/components/ads"
 
 interface CategoryPageClientProps {
   guides: ProcessedGuide[]
@@ -130,6 +131,10 @@ export function CategoryPageClient({ guides: initialGuides, categoryName }: Cate
           { label: t(getCategoryTranslationKey(categoryName) as any) || categoryName }
         ]}
       />
+      <div className="max-w-[1280px] mx-auto px-4">
+        {/* Native Banner Ad below breadcrumbs */}
+        <NativeBannerAd />
+      </div>
       <div className="max-w-[1280px] mx-auto px-4 py-8">
       <div className="flex items-center gap-4 mb-8">
         <h1 className="text-3xl font-bold">{t(getCategoryTranslationKey(categoryName) as any) || categoryName}</h1>
@@ -175,6 +180,9 @@ export function CategoryPageClient({ guides: initialGuides, categoryName }: Cate
           <p className="text-muted-foreground">{t('no-guides-in-category')}</p>
         </div>
       )}
+      
+      {/* 728 Banner Ad before footer - Only for category pages */}
+      <Banner728Ad />
     </div>
     </>
   )

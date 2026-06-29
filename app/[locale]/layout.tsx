@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/contexts/language-context";
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, SupportedLanguage, getTranslations } from "@/lib/utils/i18n";
 import { getAllCategories } from "@/lib/data/guides";
 import { notFound } from "next/navigation";
+import { Banner728Ad } from "@/components/ads";
 
 const inter = Inter({ subsets: ["latin"] });
 

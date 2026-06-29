@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { BreadcrumbNav } from "@/components/breadcrumb-nav"
 import { getTranslations } from "@/lib/utils/translations"
 import { isSupportedLanguage, type SupportedLanguage } from "@/lib/utils/i18n"
+import { Banner728Ad } from "@/components/ads"
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -71,6 +72,8 @@ export default async function ContactPage({ params }: PageProps) {
           </div>
         </div>
       </div>
+      {/* 728 Banner Ad before footer - Contact page */}
+      <Banner728Ad />
     </>
   )
 }

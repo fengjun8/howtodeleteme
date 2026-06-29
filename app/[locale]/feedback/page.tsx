@@ -2,6 +2,7 @@ import { FeedbackPageContent } from "@/components/feedback-page-content"
 import type { Metadata } from "next"
 import { getTranslations } from "@/lib/utils/translations"
 import { isSupportedLanguage, type SupportedLanguage } from "@/lib/utils/i18n"
+import { Banner728Ad } from "@/components/ads"
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -39,5 +40,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default function FeedbackPage() {
-  return <FeedbackPageContent />
+  return (
+    <>
+      <FeedbackPageContent />
+      {/* 728 Banner Ad before footer - Feedback page */}
+      <Banner728Ad />
+    </>
+  )
 }

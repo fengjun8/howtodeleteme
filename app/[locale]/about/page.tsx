@@ -2,6 +2,7 @@ import { AboutPageContent } from "@/components/about-page-content"
 import type { Metadata } from "next"
 import { getTranslations } from "@/lib/utils/translations"
 import { isSupportedLanguage, type SupportedLanguage } from "@/lib/utils/i18n"
+import { Banner728Ad } from "@/components/ads"
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -39,5 +40,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function AboutPage({ params }: PageProps) {
-  return <AboutPageContent />
+  return (
+    <>
+      <AboutPageContent />
+      {/* 728 Banner Ad before footer - About page */}
+      <Banner728Ad />
+    </>
+  )
 }

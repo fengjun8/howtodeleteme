@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { BreadcrumbNav } from "@/components/breadcrumb-nav"
+import { Banner728Ad } from "@/components/ads"
 
 export const metadata: Metadata = {
   title: "Disclaimer | howtodelete.me",
@@ -126,6 +127,8 @@ export default function DisclaimerPage() {
           </div>
         </div>
       </div>
+      {/* 728 Banner Ad before footer - Disclaimer page */}
+      <Banner728Ad />
     </>
   )
 }

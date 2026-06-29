@@ -7,6 +7,7 @@ import { Home } from "lucide-react"
 import type { Metadata } from "next"
 import { isSupportedLanguage, type SupportedLanguage } from "@/lib/utils/i18n"
 import { getTranslations } from "@/lib/utils/translations"
+import { Banner728Ad } from "@/components/ads"
 
 interface PageProps {
   params: Promise<{ difficulty: string; locale: string }>
@@ -111,6 +112,8 @@ export default async function DifficultyPage({ params }: PageProps) {
       <div className="py-8 max-w-[1280px] mx-auto px-4">
         <DifficultyPageClient guides={guides} difficulty={difficulty} />
       </div>
+      {/* 728 Banner Ad before footer - Difficulty page */}
+      <Banner728Ad />
     </>
   )
 }

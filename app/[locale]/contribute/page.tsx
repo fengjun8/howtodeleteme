@@ -2,6 +2,7 @@ import { ContributePageContent } from "@/components/contribute-page-content"
 import type { Metadata } from "next"
 import { getTranslations } from "@/lib/utils/translations"
 import { isSupportedLanguage, type SupportedLanguage } from "@/lib/utils/i18n"
+import { Banner728Ad } from "@/components/ads"
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -38,6 +39,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default function ContributePage() {
-  return <ContributePageContent />
+export default async function ContributePage({ params }: PageProps) {
+  return (
+    <>
+      <ContributePageContent />
+      {/* 728 Banner Ad before footer - Contribute page */}
+      <Banner728Ad />
+    </>
+  )
 }

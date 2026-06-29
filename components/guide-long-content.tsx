@@ -6,6 +6,7 @@ import { useLanguage } from "@/contexts/language-context"
 import { getLocalizedDifficulty, type SupportedLanguage } from "@/lib/utils/i18n"
 import type { ProcessedGuide } from "@/lib/types"
 import { Badge } from "@/components/ui/badge"
+import { Banner728Ad } from "@/components/ads"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {
@@ -150,6 +151,9 @@ export function GuideLongContent({
             )}
           </CardContent>
         </Card>
+
+        {/* Adsterra 728x90 Banner centered above Deletion Process */}
+        <Banner728Ad />
 
         <Card id="deletion-process" className="bg-gradient-to-br from-red-50 to-orange-50 border-red-200 shadow-lg overflow-hidden min-w-0">
           <CardHeader className="pb-4">

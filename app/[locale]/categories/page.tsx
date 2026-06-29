@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react"
 import type { Metadata } from "next"
 import { getTranslations } from "@/lib/utils/translations"
 import type { SupportedLanguage } from "@/lib/utils/i18n"
+import { Banner728Ad } from "@/components/ads"
 
 // 使用SSR按需生成（不配置 revalidate）
 
@@ -116,6 +117,8 @@ export default async function CategoriesPage({ params }: PageProps) {
           </div>
         </div>
       </div>
+      {/* 728 Banner Ad before footer - Category listing page */}
+      <Banner728Ad />
     </div>
   )
 }

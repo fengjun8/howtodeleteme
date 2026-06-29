@@ -11,6 +11,7 @@ import Link from "next/link"
 import { ArrowRight, Shield, CheckCircle, Clock } from "lucide-react"
 import { useTranslations } from "@/lib/utils/translations"
 import type { SupportedLanguage } from "@/lib/utils/i18n"
+import { NativeBannerAd } from "@/components/ads"
 
 interface HomePageClientProps {
   initialPopularGuides: ProcessedGuide[]
@@ -81,6 +82,9 @@ export function HomePageClient({
       </section>
 
       <div className="mx-auto w-full max-w-[1280px] px-4">
+        {/* Native Banner Ad */}
+        <NativeBannerAd />
+
         {/* Popular Guides Section */}
         <section className="py-12">
           <div className="space-y-6">
