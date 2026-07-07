@@ -4,7 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/contexts/language-context";
 import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES, getTranslations } from "@/lib/utils/i18n";
 import { FloatingButtons } from "@/components/floating-buttons";
-import { GoogleAnalytics, GoogleAdsense, AdsterraGlobal } from "@/components/analytics";
+import { GoogleAnalytics, AdsterraGlobal } from "@/components/analytics";
 import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -60,7 +60,6 @@ export default function RootLayout({
     <html lang={DEFAULT_LANGUAGE}>
       <head>
         <GoogleAnalytics />
-        <GoogleAdsense />
         <AdsterraGlobal />
       </head>
       <body className={inter.className}>
