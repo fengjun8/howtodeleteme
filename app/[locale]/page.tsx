@@ -9,12 +9,12 @@ interface PageProps { params: Promise<{ locale: string }> }
 export default async function HomePage({ params }: PageProps) {
   const { locale } = await params
   const validLocale: SupportedLanguage = isSupportedLanguage(locale) ? locale : DEFAULT_LANGUAGE
-  const popularGuides = getPopularGuides(20, validLocale)
+  const popularGuides = getPopularGuides(12, validLocale)
   const allGuides = processGuides(validLocale)
   const categories = getAllCategories()
   const categorizedGuides = categories.reduce(
     (acc, category) => {
-      const guides = allGuides.filter((g) => g.category === category).slice(0, 4)
+      const guides = allGuides.filter((g) => g.category === category).slice(0, 2)
       if (guides.length > 0) {
         acc[category] = guides
       }
@@ -69,6 +69,19 @@ export default async function HomePage({ params }: PageProps) {
     ],
   }
 
+  const categoryCounts = categories.reduce((acc, cat) => {
+    acc[cat] = allGuides.filter(g => g.category === cat).length
+    return acc
+  }, {} as Record<string, number>)
+
+  const difficultyCounts = {
+    easy: allGuides.filter(g => g.difficulty === 'easy').length,
+    medium: allGuides.filter(g => g.difficulty === 'medium').length,
+    hard: allGuides.filter(g => g.difficulty === 'hard').length,
+    'limited-availability': allGuides.filter(g => g.difficulty === 'limited-availability').length,
+    impossible: allGuides.filter(g => g.difficulty === 'impossible').length,
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
@@ -78,6 +91,8 @@ export default async function HomePage({ params }: PageProps) {
         categories={categories}
         initialCategorizedGuides={categorizedGuides}
         initialLanguage={validLocale}
+        difficultyCounts={difficultyCounts}
+        categoryCounts={categoryCounts}
       />
     </>
   )

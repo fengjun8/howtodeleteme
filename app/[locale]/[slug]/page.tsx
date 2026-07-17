@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const canonicalUrl = lang === 'en' ? `${baseUrl}/${slug}` : `${baseUrl}/${locale}/${slug}`
 
   return {
-    title: `${t('guide-title-template', { name: guide.name })} | howtodelete.me`,
+    title: `${t('guide-title-template', { name: guide.name })}`,
     description: `${t('guide-description-template', { name: guide.name })} ${guide.notes}`,
     keywords: t('guide-keywords-template', { name: guide.name }),
     alternates: {
@@ -252,7 +252,7 @@ export default async function GuidePage({ params }: PageProps) {
                         guideUrl={`https://howtodelete.me/${guide.slug}`}
                       />
                       <ShareButton 
-                        title={`${t('guide-title-template', { name: guide.name })} | howtodelete.me`}
+                        title={`${t('guide-title-template', { name: guide.name })}`}
                         url={`https://howtodelete.me/${guide.slug}`}
                       />
                     </div>

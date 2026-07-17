@@ -66,6 +66,19 @@ export default function HomePage() {
     ],
   }
 
+  const categoryCounts = categories.reduce((acc, cat) => {
+    acc[cat] = allGuides.filter(g => g.category === cat).length
+    return acc
+  }, {} as Record<string, number>)
+
+  const difficultyCounts = {
+    easy: allGuides.filter(g => g.difficulty === 'easy').length,
+    medium: allGuides.filter(g => g.difficulty === 'medium').length,
+    hard: allGuides.filter(g => g.difficulty === 'hard').length,
+    'limited-availability': allGuides.filter(g => g.difficulty === 'limited-availability').length,
+    impossible: allGuides.filter(g => g.difficulty === 'impossible').length,
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
@@ -75,6 +88,8 @@ export default function HomePage() {
         categories={categories}
         initialCategorizedGuides={categorizedGuides}
         initialLanguage={DEFAULT_LANGUAGE}
+        difficultyCounts={difficultyCounts}
+        categoryCounts={categoryCounts}
       />
     </>
   )

@@ -7,6 +7,7 @@ import { getLocalizedDifficulty, type SupportedLanguage } from "@/lib/utils/i18n
 import type { ProcessedGuide } from "@/lib/types"
 import { Badge } from "@/components/ui/badge"
 import { Banner728Ad } from "@/components/ads"
+import { GuideExtendedContent } from "@/components/guide-extended-content"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {
@@ -517,6 +518,7 @@ export function GuideLongContent({
           </Card>
         </div>
       )}
-    </>
+        <GuideExtendedContent slug={guide.slug} />
+      </>
   )
 }

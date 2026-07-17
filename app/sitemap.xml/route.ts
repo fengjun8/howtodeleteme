@@ -1,10 +1,11 @@
 import { SUPPORTED_LANGUAGES } from "@/lib/utils/i18n"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://howtodelete.me"
+const INDEXED_LANGUAGES = SUPPORTED_LANGUAGES.filter(l => l.code === 'en' || l.code === 'zh')
 
 export async function GET() {
   const now = new Date().toISOString()
-  const indexItems = SUPPORTED_LANGUAGES
+  const indexItems = INDEXED_LANGUAGES
     .map(({ code }) => `<sitemap><loc>${BASE_URL}/sitemap-${code}.xml</loc><lastmod>${now}</lastmod></sitemap>`) 
     .join('')
 

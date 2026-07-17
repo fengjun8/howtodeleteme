@@ -1,5 +1,19 @@
 import Script from 'next/script'
 
+export function GoogleAdsense() {
+  if (process.env.NEXT_PUBLIC_ENABLE_GOOGLE_ADSENSE !== 'true') {
+    return null
+  }
+
+  return (
+    <Script
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0512548983771003"
+      strategy="afterInteractive"
+      crossOrigin="anonymous"
+    />
+  )
+}
+
 export function GoogleAnalytics() {
   if (process.env.NEXT_PUBLIC_ENABLE_ANALYTICS !== 'true') {
     return null
@@ -19,19 +33,6 @@ export function GoogleAnalytics() {
           gtag('config', 'G-E3WNLZWW6G');
         `}
       </Script>
-    </>
-  )
-}
-
-export function AdsterraGlobal() {
-  if (process.env.NEXT_PUBLIC_ENABLE_ADS !== 'true') {
-    return null
-  }
-
-  return (
-    <>
-      {/* Popunder */}
-      <script src="https://pl30120013.effectivecpmnetwork.com/f2/d7/08/f2d70846109fec374b8c8cac076e194c.js"></script>
     </>
   )
 }

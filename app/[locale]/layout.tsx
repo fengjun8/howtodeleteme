@@ -24,6 +24,8 @@ export async function generateMetadata({
     ? (locale as SupportedLanguage)
     : DEFAULT_LANGUAGE;
   const t = getTranslations(validLocale);
+  const keptLanguages = ['en', 'zh'];
+  const shouldNoindex = !keptLanguages.includes(validLocale);
 
   return {
     title: t('site-title'),
@@ -54,12 +56,22 @@ export async function generateMetadata({
       siteName: "HowToDelete",
       locale: validLocale,
       type: "website",
+      images: [
+        {
+          url: '/apple-touch-icon-180x180.png',
+          width: 180,
+          height: 180,
+          alt: 'HowToDelete',
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: t('site-title'),
       description: t('site-description'),
+      images: ['/apple-touch-icon-180x180.png'],
     },
+    ...(shouldNoindex ? { robots: { index: false, follow: true } } : {}),
   };
 }
 

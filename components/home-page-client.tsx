@@ -8,7 +8,7 @@ import { ProcessedGuide } from "@/lib/types"
 import { useLanguage } from "@/contexts/language-context"
 import { useLocalizedLinks } from "@/hooks/use-localized-links"
 import Link from "next/link"
-import { ArrowRight, Shield, CheckCircle, Clock } from "lucide-react"
+import { ArrowRight, Shield, CheckCircle, Clock, AlertTriangle, Ban } from "lucide-react"
 import { useTranslations } from "@/lib/utils/translations"
 import type { SupportedLanguage } from "@/lib/utils/i18n"
 import { NativeBannerAd } from "@/components/ads"
@@ -18,12 +18,16 @@ interface HomePageClientProps {
   categories: string[]
   initialCategorizedGuides: Record<string, ProcessedGuide[]>
   initialLanguage: SupportedLanguage
+  difficultyCounts: Record<string, number>
+  categoryCounts: Record<string, number>
 }
 
 export function HomePageClient({ 
   initialPopularGuides, 
   categories,
   initialCategorizedGuides,
+  difficultyCounts,
+  categoryCounts,
 }: HomePageClientProps) {
   const { localizedLink } = useLocalizedLinks()
   const t = useTranslations()
@@ -109,33 +113,64 @@ export function HomePageClient({
           </div>
         </section>
 
-        {/* Categories Sections */}
-        {Object.entries(categorizedGuides).map(([category, guides]) => (
-          <section key={category} className="py-12 border-t">
-            <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h2 className="text-2xl font-bold tracking-tight">{t(getCategoryTranslationKey(category) as any) || category}</h2>
-                  <p className="text-muted-foreground text-sm mt-1">
-                    {t('category-delete-from').replace('{category}', t(getCategoryTranslationKey(category) as any) || category)}
-                  </p>
-                </div>
-                <Button variant="outline" size="sm" asChild>
-                  <Link href={localizedLink(`/category/${category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "")}`)}>
-                    {t('view-all')}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {guides.map((guide) => (
-                  <GuideCard key={guide.id} guide={guide} />
-                ))}
+        {/* Categories Grid */}
+        <section className="py-12 border-t">
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight">{t("browse-categories")}</h2>
+                <p className="text-muted-foreground mt-1">{t("browse-categories-desc")}</p>
               </div>
             </div>
-          </section>
-        ))}
+
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
+              {sortedCategories.map((category) => {
+                const count = categoryCounts[category] ?? 0
+                const catSlug = category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "")
+                return (
+                  <Link
+                    key={category}
+                    href={localizedLink(`/category/${catSlug}`)}
+                    className="group flex flex-col items-center justify-center p-4 rounded-lg border bg-card hover:shadow-md hover:bg-accent transition-all text-center min-h-[100px]"
+                  >
+                    <span className="text-lg font-medium leading-tight group-hover:text-accent-foreground">{t(getCategoryTranslationKey(category) as any) || category}</span>
+                    <span className="text-sm text-muted-foreground group-hover:text-accent-foreground mt-1">{count} {t("guides")}</span>
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Difficulty Grid */}
+        <section className="py-12 border-t">
+          <div className="space-y-6">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight">{t("browse-difficulty")}</h2>
+              <p className="text-muted-foreground mt-1">{t("browse-difficulty-desc")}</p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
+              {[
+                { slug: "easy", labelKey: "easy", icon: CheckCircle },
+                { slug: "medium", labelKey: "medium", icon: Clock },
+                { slug: "hard", labelKey: "hard", icon: AlertTriangle },
+                { slug: "limited-availability", labelKey: "limited", icon: Shield },
+                { slug: "impossible", labelKey: "impossible", icon: Ban },
+              ].map((diff) => (
+                <Link
+                  key={diff.slug}
+                  href={localizedLink(`/difficulty/${diff.slug}`)}
+                  className="group flex flex-col items-center justify-center p-4 rounded-lg border bg-card hover:shadow-md hover:bg-accent transition-all text-center min-h-[120px]"
+                >
+                  <diff.icon className="h-6 w-6 mb-2 text-muted-foreground group-hover:text-accent-foreground" />
+                  <span className="text-sm font-medium group-hover:text-accent-foreground">{t(diff.labelKey as any)}</span>
+                  <span className="text-xs text-muted-foreground group-hover:text-accent-foreground mt-1">{difficultyCounts[diff.slug] ?? 0} {t("guides")}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
 
       <section className="relative w-full border-t">

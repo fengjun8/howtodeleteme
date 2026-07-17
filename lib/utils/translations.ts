@@ -73,6 +73,10 @@ export interface Translations {
   'resources': string
   'all-categories': string
   'popular-guides': string
+  'browse-categories': string
+  'browse-categories-desc': string
+  'browse-difficulty': string
+  'browse-difficulty-desc': string
   'legal': string
   'disclaimer': string
   'contact': string
@@ -411,7 +415,11 @@ export const translations: {
     'learn-more': 'Learn more →',
     'resources': 'Resources',
     'all-categories': 'All Categories',
-    'popular-guides': 'Popular Guides',
+    'popular-guides': 'Popular Guides on How to Delete Accounts',
+    'browse-categories': 'Browse by Category',
+    'browse-categories-desc': 'Find guides organized by service type and topic',
+    'browse-difficulty': 'Browse by Difficulty',
+    'browse-difficulty-desc': 'Guides categorized by how easy or hard account deletion is',
     'legal': 'Legal',
     'disclaimer': 'Disclaimer',
     'contact': 'Contact',
@@ -485,7 +493,7 @@ export const translations: {
     
     // Page titles and descriptions
     'site-title': 'How to Delete - Complete Guides for Account Deletion',
-    'site-description': 'Step-by-step guides for deleting your accounts from popular websites and services. Clear instructions, verified methods, and privacy-focused solutions.Take back control of your data with howtodelete.me.',
+    'site-description': 'Learn how to delete your accounts from popular websites and services. Step-by-step guides with verified methods and clear instructions — take back control of your data.',
     'site-keywords': 'delete account, how to delete account, remove profile, close account, delete facebook, delete instagram, delete amazon account, deactivate, privacy, data protection',
     'category-title': 'Categories - How to Delete',
     'category-description': 'Browse account deletion guides by category. Find step-by-step instructions for deleting accounts from social media, email services, and more.',
@@ -496,7 +504,7 @@ export const translations: {
     ,
     
     // Home page
-    'home-hero-title': 'Take back control of your online accounts',
+    'home-hero-title': 'How to Delete Your Online Accounts — Verified Guides',
     'home-hero-subtitle': 'Clear, verified guides on how to permanently delete accounts from thousands of websites and apps — updated regularly, no fluff.',
     'trust-verified-title': 'Verified Sources',
     'trust-verified-desc': 'Every guide links to official help pages',
@@ -532,7 +540,7 @@ export const translations: {
     'view-popular-guides': 'View Popular Guides',
 
     // Guide page (detail)
-    'guide-title-template': 'How to Permanently Delete Your {name} Account (2025 Guide)',
+    'guide-title-template': 'How to Permanently Delete My {name} Account',
     'guide-description-template': 'Step-by-step guide to permanently delete your {name} account.',
     'guide-keywords-template': 'delete {name}, remove {name} account, close {name}, deactivate {name}, privacy, data removal',
     'tldr-title': 'TL;DR (Quick Summary)',
@@ -798,7 +806,7 @@ export const translations: {
     'site-title': 'How to Delete - Guías completas para eliminar cuentas',
     'site-description': 'Guías paso a paso para eliminar tus cuentas de sitios y servicios populares. Instrucciones claras, métodos verificados y soluciones centradas en la privacidad.',
     'site-keywords': 'eliminar cuenta, borrar perfil, cerrar cuenta, desactivar, privacidad, protección de datos',
-    'guide-title-template': 'Cómo eliminar permanentemente tu cuenta de {name} (Guía 2025)',
+    'guide-title-template': 'Cómo eliminar permanentemente mi cuenta de {name}',
     'guide-description-template': 'Guía paso a paso para eliminar permanentemente tu cuenta de {name}.',
     'guide-keywords-template': 'eliminar {name}, borrar cuenta de {name}, cerrar {name}, desactivar {name}, privacidad, eliminación de datos',
     'category-title': 'Categorías - How to Delete',
@@ -1008,7 +1016,7 @@ export const translations: {
     'site-title': 'How to Delete - Guides complets pour supprimer des comptes',
     'site-description': 'Guides étape par étape pour supprimer vos comptes sur les sites et services populaires. Instructions claires, méthodes vérifiées et solutions axées sur la confidentialité.',
     'site-keywords': 'supprimer compte, supprimer profil, fermer compte, désactiver, confidentialité, protection des données',
-    'guide-title-template': 'Comment supprimer définitivement votre compte {name} (Guide 2025)',
+    'guide-title-template': 'Comment supprimer définitivement mon compte {name}',
     'guide-description-template': 'Guide étape par étape pour supprimer définitivement votre compte {name}.',
     'guide-keywords-template': 'supprimer {name}, supprimer le compte {name}, fermer {name}, désactiver {name}, confidentialité, suppression des données',
     'category-title': 'Catégories - How to Delete',
@@ -1222,7 +1230,7 @@ export const translations: {
     'site-title': 'How to Delete – Umfassende Leitfäden zur Kontolöschung',
     'site-description': 'Schritt-für-Schritt-Anleitungen zum Löschen Ihrer Konten bei beliebten Websites und Diensten. Klare Hinweise, verifizierte Methoden und datenschutzorientierte Lösungen.',
     'site-keywords': 'Konto löschen, Profil entfernen, Konto schließen, deaktivieren, Datenschutz, Datensicherheit',
-    'guide-title-template': 'So löschen Sie Ihr {name}-Konto dauerhaft (Leitfaden 2025)',
+    'guide-title-template': 'So löschen Sie mein {name}-Konto dauerhaft',
     'guide-description-template': 'Schritt-für-Schritt-Anleitung zum dauerhaften Löschen Ihres {name}-Kontos.',
     'guide-keywords-template': '{name} löschen, {name}-Konto entfernen, {name} schließen, {name} deaktivieren, Datenschutz, Datenlöschung',
     'category-title': 'Kategorien – How to Delete',
@@ -1432,7 +1440,7 @@ export const translations: {
     'site-title': 'How to Delete - Guide complete per eliminare account',
     'site-description': 'Guide passo-passo per eliminare i tuoi account da siti e servizi popolari. Istruzioni chiare, metodi verificati e soluzioni incentrate sulla privacy.',
     'site-keywords': 'eliminare account, rimuovere profilo, chiudere account, disattivare, privacy, protezione dei dati',
-    'guide-title-template': 'Come eliminare definitivamente il tuo account {name} (Guida 2025)',
+    'guide-title-template': 'Come eliminare definitivamente il mio account {name}',
     'guide-description-template': 'Guida passo-passo per eliminare definitivamente il tuo account {name}.',
     'guide-keywords-template': 'eliminare {name}, rimuovere account {name}, chiudere {name}, disattivare {name}, privacy, eliminazione dati',
     'category-title': 'Categorie - How to Delete',
@@ -1644,7 +1652,7 @@ export const translations: {
     'site-title': 'How to Delete - Guia completo para excluir contas',
     'site-description': 'Passo a passo para excluir suas contas de sites e serviços populares. Instruções claras, métodos verificados e soluções com foco em privacidade.',
     'site-keywords': 'excluir conta, remover perfil, encerrar conta, desativar, privacidade, proteção de dados',
-    'guide-title-template': 'Como excluir permanentemente sua conta {name} (Guia 2025)',
+    'guide-title-template': 'Como excluir permanentemente minha conta {name}',
     'guide-description-template': 'Guia passo a passo para excluir permanentemente sua conta {name}.',
     'guide-keywords-template': 'excluir {name}, remover conta {name}, encerrar {name}, desativar {name}, privacidade, exclusão de dados',
     'category-title': 'Categorias - How to Delete',
@@ -2396,7 +2404,7 @@ export const translations: {
     'site-title': 'How to Delete - アカウント削除の総合ガイド',
     'site-description': '人気サイトやサービスのアカウントを削除するための手順を詳しく解説。明確な説明、検証済みの方法、プライバシー重視の解決策。',
     'site-keywords': 'アカウント削除, プロフィール削除, アカウント閉鎖, 無効化, プライバシー, データ保護',
-    'guide-title-template': '{name} アカウントを完全に削除する方法（2025年ガイド）',
+    'guide-title-template': '{name} アカウントを完全に削除する方法',
     'guide-description-template': 'ステップバイステップで {name} アカウントを完全に削除します。',
     'guide-keywords-template': '{name} を削除, {name} アカウントを削除, {name} を閉じる, {name} を無効化, プライバシー, データ削除',
     'category-title': 'カテゴリ - How to Delete',
@@ -2780,7 +2788,7 @@ export const translations: {
     'view-popular-guides': '查看热门指南',
 
     // 详情页（Guide page）
-    'guide-title-template': '如何永久删除你的 {name} 账户（2025 指南）',
+    'guide-title-template': '如何永久删除我的 {name} 账户',
     'guide-description-template': '分步指南，帮助你永久删除 {name} 账户。',
     'guide-keywords-template': '删除 {name}, 移除 {name} 账户, 关闭 {name}, 停用 {name}, 隐私, 数据删除',
     'tldr-title': '要点速览',
@@ -3062,7 +3070,7 @@ export const translations: {
     'site-title': 'How to Delete - 계정 삭제 종합 가이드',
     'site-description': '인기 웹사이트와 서비스의 계정 삭제를 단계별로 안내합니다. 명확한 설명, 검증된 방법, 프라이버시 중심의 해결책.',
     'site-keywords': '계정 삭제, 프로필 제거, 계정 종료, 비활성화, 개인정보, 데이터 보호',
-    'guide-title-template': '{name} 계정을 영구 삭제하는 방법 (2025 가이드)',
+    'guide-title-template': '{name} 계정을 영구 삭제하는 방법',
     'guide-description-template': '{name} 계정을 영구적으로 삭제하는 단계별 안내.',
     'guide-keywords-template': '{name} 삭제, {name} 계정 제거, {name} 계정 종료, {name} 비활성화, 개인정보, 데이터 삭제',
     'category-title': '카테고리 - How to Delete',

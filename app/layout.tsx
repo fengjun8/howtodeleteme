@@ -4,8 +4,9 @@ import "./globals.css";
 import { LanguageProvider } from "@/contexts/language-context";
 import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES, getTranslations } from "@/lib/utils/i18n";
 import { FloatingButtons } from "@/components/floating-buttons";
-import { GoogleAnalytics, AdsterraGlobal } from "@/components/analytics";
+import { GoogleAnalytics } from "@/components/analytics";
 import { Toaster } from "@/components/ui/toaster";
+import { CookieConsent } from "@/components/cookie-consent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,6 +36,16 @@ export async function generateMetadata(): Promise<Metadata> {
         ])
       ),
     },
+    icons: {
+      icon: [
+        { url: '/favicon.ico', sizes: '48x48' },
+        { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      ],
+      apple: [
+        { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      ],
+    },
     openGraph: {
       title: t('site-title'),
       description: t('site-description'),
@@ -42,11 +53,20 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: "HowToDelete",
       locale: DEFAULT_LANGUAGE,
       type: "website",
+      images: [
+        {
+          url: '/apple-touch-icon-180x180.png',
+          width: 180,
+          height: 180,
+          alt: 'HowToDelete',
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: t('site-title'),
       description: t('site-description'),
+      images: ['/apple-touch-icon-180x180.png'],
     },
   };
 }
@@ -60,7 +80,6 @@ export default function RootLayout({
     <html lang={DEFAULT_LANGUAGE}>
       <head>
         <GoogleAnalytics />
-        <AdsterraGlobal />
       </head>
       <body className={inter.className}>
         <LanguageProvider initialLanguage={DEFAULT_LANGUAGE}>
@@ -70,6 +89,7 @@ export default function RootLayout({
           </div>
           <Toaster />
         </LanguageProvider>
+        <CookieConsent />
       </body>
     </html>
   );
